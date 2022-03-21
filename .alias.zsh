@@ -49,4 +49,3 @@ alias l.='ls -d .* --color=auto'
 alias ll='ls -la --color=auto'
 alias ls='ls --color=auto'
 alias pshttpd='ps aux | grep httpd'
-# alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin brew"

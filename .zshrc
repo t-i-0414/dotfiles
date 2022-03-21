@@ -1,3 +1,11 @@
+export ZSH="/Users/t-i-0414/.oh-my-zsh"
+
+ZSH_THEME="agnoster"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
 ## ターミナルの設定 ##
 # 環境変数
 export LANG=ja_JP.UTF-8
@@ -43,8 +51,11 @@ setopt no_beep
 DIRSTACKSIZE=100
 setopt AUTO_PUSHD
 
-#環境変数
+# 環境変数
 export PATH=/usr/local/bin:"$PATH"
+
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Volta
 export VOLTA_HOME="$HOME/.volta"

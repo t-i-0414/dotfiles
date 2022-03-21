@@ -20,7 +20,9 @@ bash init.sh
   - Set up to unlock mac using Apple Watch
   - Turn on FileVault
   - Changed keyboard input source to Google Japanese Input
-  - Require password to wake up sleep and screen saver as soon as it starts
   - Set Turn off display to 15 minutes
-  - Add home directory to frequently used items
+  - Add home directory to Finder's frequently used items
+  - Register additional fingerprints for touchID
+  - Rename computer name
+  - Turn off True Tone and automatic brightness adjustment
 - software

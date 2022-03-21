@@ -28,6 +28,7 @@ brew 'volta'
 brew 'watchman'
 brew 'wget'
 brew 'yq'
+brew 'zsh'
 
 # cask
 cask '1password'

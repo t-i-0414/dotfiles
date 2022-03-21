@@ -21,6 +21,7 @@ defaults write com.apple.dock autohide-delay -float 0
 # Screenshot
 defaults write com.apple.screencapture "disable-shadow" -bool "true"
 defaults write com.apple.screencapture location ~/Downloads
+defaults write com.apple.screencapture type -string "png"
 
 # Finder
 defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
@@ -48,11 +49,10 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool "true"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool "true"
 defaults -currentHost write -g com.apple.mouse.tapBehavior -bool "true"
-defaults write -g com.apple.trackpad.scaling 16
+defaults write -g com.apple.trackpad.scaling 8
 
 # Mouse
-defaults write -g com.apple.mouse.scaling 16
-defaults write -g com.apple.scrollwheel.scaling 16
+defaults write -g com.apple.mouse.scaling 5
 
 # Keyboard
 defaults write NSGlobalDomain KeyRepeat -int 1
@@ -63,7 +63,15 @@ defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 # Security
 sudo defaults delete /Library/Preferences/com.apple.alf globalstate
 
+# Safari
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.Safari AutoFillPasswords -bool false
+
 # Others
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool "false"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool "false"
 defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss"
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
