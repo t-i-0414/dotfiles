@@ -1,0 +1,22 @@
+[user]
+	email = gutlo.ol0414@gmail.com
+	name = t-i-0414
+[core]
+	excludesfile = ~/.gitignore
+	editor = code --wait
+	ignorecase = false
+	quotepath = false
+[color]
+	diff = auto
+  status = auto
+  branch = auto
+[push]
+	default = current
+[init]
+	defaultBranch = main
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
