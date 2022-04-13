@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euxo pipefail
 cd "$(dirname "$0")"
 
 THIS_DIR=$(cd $(dirname $0); pwd)

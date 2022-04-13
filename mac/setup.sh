@@ -60,9 +60,6 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
-# Security
-sudo defaults delete /Library/Preferences/com.apple.alf globalstate
-
 # Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true

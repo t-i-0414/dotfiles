@@ -1,5 +1,4 @@
 #!/bin/bash
-set -euxo pipefail
 cd "$(dirname "$0")"
 
 if !(type "brew" >/dev/null 2>&1); then
