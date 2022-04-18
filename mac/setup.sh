@@ -55,8 +55,8 @@ defaults write -g com.apple.trackpad.scaling 8
 defaults write -g com.apple.mouse.scaling 5
 
 # Keyboard
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 3
+defaults write NSGlobalDomain InitialKeyRepeat -int 20
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
