@@ -54,6 +54,9 @@ setopt AUTO_PUSHD
 # 環境変数
 export PATH=/usr/local/bin:"$PATH"
 
+#git
+export PATH=/opt/homebrew/Cellar/git:$PATH
+
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
