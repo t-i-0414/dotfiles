@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 cd "$(dirname "$0")"
 
 if !(which /opt/homebrew/bin/brew >/dev/null 2>&1); then

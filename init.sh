@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 cd "$(dirname "$0")"
 
 THIS_DIR=$(cd $(dirname $0); pwd)
@@ -23,7 +23,7 @@ cd $THIS_DIR
 # asdf
 echo "setup asdf..."
 cd $THIS_DIR/asdf
-  ./setup.sh
+  ./setup.sh .tool-versions
 cd $THIS_DIR
 
 # mac
