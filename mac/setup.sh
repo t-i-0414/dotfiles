@@ -49,10 +49,10 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool "true"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool "true"
 defaults -currentHost write -g com.apple.mouse.tapBehavior -bool "true"
-defaults write -g com.apple.trackpad.scaling 8
+defaults write -g com.apple.trackpad.scaling 1
 
 # Mouse
-defaults write -g com.apple.mouse.scaling 5
+defaults write -g com.apple.mouse.scaling 1
 
 # Keyboard
 defaults write NSGlobalDomain KeyRepeat -int 3
