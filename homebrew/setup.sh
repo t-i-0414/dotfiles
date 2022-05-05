@@ -23,6 +23,3 @@ brew bundle
 
 echo "run brew cleanup ..."
 brew cleanup
-
-echo "run volta-migrate"
-volta-migrate

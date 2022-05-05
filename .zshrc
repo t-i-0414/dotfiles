@@ -60,10 +60,6 @@ export PATH=/opt/homebrew/Cellar/git:$PATH
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-# Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 # Android Studio
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
