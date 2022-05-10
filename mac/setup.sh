@@ -13,7 +13,7 @@ sudo nvram StartupMute=%01
 defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock "show-recents" -bool "false"
 defaults write com.apple.dock "mru-spaces" -bool "false"
-defaults write com.apple.dock magnification -bool yes
+defaults write com.apple.dock magnification -bool no
 defaults write com.apple.dock largesize -int 96
 defaults write com.apple.dock autohide -bool false
 defaults write com.apple.dock autohide-delay -float 0
