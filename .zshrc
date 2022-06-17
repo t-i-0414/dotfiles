@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 export ZSH="/Users/t-i-0414/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
@@ -69,3 +71,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"
