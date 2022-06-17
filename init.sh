@@ -8,6 +8,8 @@ for dotfile in .alias.zsh .gitconfig .gitignore .zprofile .zshrc .hushlogin; do
   ln -snfv "$(pwd)/$dotfile" "$HOME/$dotfile"
 done
 
+ln -fs "$(pwd)/starship.toml" "$HOME/.config/starship.toml"
+
 # xcode
 echo "homebrew & xcode are installing..."
 cd $THIS_DIR/xcode
