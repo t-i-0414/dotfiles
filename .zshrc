@@ -1,12 +1,7 @@
 # Fig pre block. Keep at the top of this file.
 . "$HOME/.fig/shell/zshrc.pre.zsh"
-export ZSH="/Users/t-i-0414/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
-
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
+eval "$(starship init zsh)"
 
 ## ターミナルの設定 ##
 # 環境変数
@@ -25,23 +20,6 @@ setopt hist_ignore_all_dups
 
 # 同時に起動したzshの間でヒストリを共有
 setopt share_history
-
-# 補完機能を有効にする
-autoload -Uz compinit
-compinit -u
-if [ -e /usr/local/share/zsh-completions ]; then
-  fpath=(/usr/local/share/zsh-completions $fpath)
-fi
-
-# 補完で小文字でも大文字にマッチさせる
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# 補完候補を詰めて表示
-setopt list_packed
-
-# 補完候補一覧をカラー表示
-autoload colors
-zstyle ':completion:*' list-colors ''
 
 # コマンドのスペルを訂正
 setopt correct
