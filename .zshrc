@@ -4,7 +4,7 @@ eval "$(starship init zsh)"
 
 ## ターミナルの設定 ##
 # 環境変数
-export LANG=ja_JP.UTF-8
+LANG=ja_JP.UTF-8
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -31,20 +31,20 @@ DIRSTACKSIZE=100
 setopt AUTO_PUSHD
 
 # 環境変数
-export PATH=/usr/local/bin:"$PATH"
+PATH=/usr/local/bin:"$PATH"
 
 #git
-export PATH=/opt/homebrew/Cellar/git:$PATH
+PATH=/opt/homebrew/Cellar/git:$PATH
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Android Studio
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+ANDROID_HOME=$HOME/Library/Android/sdk
+PATH=$PATH:$ANDROID_HOME/emulator
+PATH=$PATH:$ANDROID_HOME/tools
+PATH=$PATH:$ANDROID_HOME/tools/bin
+PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
