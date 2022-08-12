@@ -52,7 +52,7 @@ defaults -currentHost write -g com.apple.mouse.tapBehavior -bool "true"
 defaults write -g com.apple.trackpad.scaling 1
 
 # Mouse
-defaults write -g com.apple.mouse.scaling 1
+defaults write -g com.apple.mouse.scaling -1
 
 # Keyboard
 defaults write NSGlobalDomain KeyRepeat -int 3
