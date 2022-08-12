@@ -37,6 +37,7 @@ brew 'tmux'
 brew 'tree'
 brew 'watchman'
 brew 'wget'
+brew 'wimlib'
 brew 'yq'
 brew 'zsh'
 
