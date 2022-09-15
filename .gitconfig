@@ -2,7 +2,7 @@
 	email = gutlo.ol0414@gmail.com
 	name = t-i-0414
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/t-i-0414/.gitignore_global
 	editor = code --wait
 	ignorecase = false
 	quotepath = false
@@ -20,3 +20,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = /Users/t-i-0414/.stCommitMsg
