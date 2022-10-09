@@ -16,3 +16,7 @@ format = "[ram${ram_pct}/swap${swap_pct}]($style) "
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
+
+[cmd_duration]
+min_time = 500
+format = "exec time [$duration](bold yellow)"

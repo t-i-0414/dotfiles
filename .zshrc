@@ -1,7 +1,5 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-eval "$(starship init zsh)"
-
 ## ターミナルの設定 ##
 # 環境変数
 LANG=ja_JP.UTF-8
@@ -48,6 +46,14 @@ PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
+
+
+# starship
+eval "$(starship init zsh)"
+
+if [[ -o interactive ]]; then
+    exec fish
+fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
