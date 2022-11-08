@@ -45,8 +45,8 @@ PATH=$PATH:$ANDROID_HOME/tools/bin
 PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # MySQL
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 # alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
