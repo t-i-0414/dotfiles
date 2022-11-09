@@ -44,15 +44,8 @@ PATH=$PATH:$ANDROID_HOME/tools
 PATH=$PATH:$ANDROID_HOME/tools/bin
 PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# MySQL
-PATH=/opt/homebrew/opt/mysql-client/bin:$PATH
-PATH=/opt/homebrew/opt/mysql/bin:$PATH
-PATH=/opt/homebrew/opt/mysql@5.7/bin:$PATH
-PATH=/opt/homebrew/opt/curl/bin:$PATH
-
 # alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
-
 
 # starship
 eval "$(starship init zsh)"

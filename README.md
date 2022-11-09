@@ -25,4 +25,5 @@ bash init.sh
   - Register additional fingerprints for touchID
   - Rename computer name
   - Turn off True Tone and automatic brightness adjustment
+  - setup e-set
 - software
