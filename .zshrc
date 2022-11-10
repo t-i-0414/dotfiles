@@ -44,6 +44,9 @@ PATH=$PATH:$ANDROID_HOME/tools
 PATH=$PATH:$ANDROID_HOME/tools/bin
 PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# go
+PATH=/usr/local/go/bin:$PATH
+
 # alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
 
