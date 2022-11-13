@@ -44,8 +44,8 @@ PATH=$PATH:$ANDROID_HOME/tools
 PATH=$PATH:$ANDROID_HOME/tools/bin
 PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# go
-PATH=/usr/local/go/bin:$PATH
+# rust
+RUST_WITHOUT=rust-docs
 
 # alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
