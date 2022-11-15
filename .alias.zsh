@@ -53,3 +53,4 @@ alias pshttpd='ps aux | grep httpd'
 alias awslogin='saml2aws login --skip-prompt --force'
 alias awsprofile='aws --profile saml sts get-caller-identity'
 alias samlsetup="bash -c 'read -sp \"ClientID: \" client_id && echo && read -sp \"ClientSecret: \" client_secret && echo && saml2aws configure --client-id=\$client_id --client-secret=\$client_secret'"
+alias cleanglobalgem='gem uninstall -I -a -x --user-install --force'
