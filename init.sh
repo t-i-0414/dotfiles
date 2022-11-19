@@ -33,3 +33,6 @@ echo "setup mac..."
 cd $THIS_DIR/mac
   ./setup.sh
 cd $THIS_DIR
+
+# fish
+ln -snfv "$(pwd)/config.fish" "$HOME/.config/fish"
