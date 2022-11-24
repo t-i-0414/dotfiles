@@ -36,3 +36,6 @@ cd $THIS_DIR
 
 # fish
 ln -snfv "$(pwd)/config.fish" "$HOME/.config/fish"
+
+# tmux
+ln -snfv "$(pwd)/.tmux.conf" "$HOME/.tmux.conf"
