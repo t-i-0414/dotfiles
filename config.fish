@@ -47,3 +47,31 @@ alias samlsetup="bash -c 'read -sp \"ClientID: \" client_id && echo && read -sp 
 function checkoutpr
   git fetch upstream pull/$argv/head:$argv && git checkout $argv
 end
+
+function startstrapiwebserver
+  for i in (
+    aws ec2 describe-instances \
+        --filters 'Name=tag:Name,Values=strapi-web-server' \
+        --query 'Reservations[*].Instances[].InstanceId' \
+        --output text
+  )
+    aws ec2 start-instances \
+    --instance-ids {$i} \
+    --output text \
+    --color on
+  end
+end
+
+function stopstrapiwebserver
+  for i in (
+    aws ec2 describe-instances \
+        --filters 'Name=tag:Name,Values=strapi-web-server' \
+        --query 'Reservations[*].Instances[].InstanceId' \
+        --output text
+  )
+    aws ec2 stop-instances \
+    --instance-ids {$i} \
+    --output text \
+    --color on
+  end
+end
