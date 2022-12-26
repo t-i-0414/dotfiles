@@ -75,3 +75,10 @@ function stopstrapiwebserver
     --color on
   end
 end
+
+function statestrapiwebserver
+  aws ec2 describe-instances \
+    --filters 'Name=tag:Name,Values=strapi-web-server' \
+    --query 'Reservations[*].Instances[].State' \
+    --output text
+end
