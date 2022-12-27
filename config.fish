@@ -1,4 +1,13 @@
-starship init fish | source
+# eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# set -U fish_user_paths (string match -v /usr/local/bin $fish_user_paths)
+# set -U fish_user_paths (string match -v /usr/sbin $fish_user_paths)
+# source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
+# set -gx RUST_WITHOUT rust-docs
+# set -x PGDATA /usr/local/var/postgres/
+
+# if status is-interactive
+#   starship init fish | source
+# end
 
 # git
 alias g='git'
@@ -43,6 +52,9 @@ alias pshttpd='ps aux | grep httpd'
 alias awslogin='saml2aws login --skip-prompt --force'
 alias awsprofile='aws --profile saml sts get-caller-identity'
 alias samlsetup="bash -c 'read -sp \"ClientID: \" client_id && echo && read -sp \"ClientSecret: \" client_secret && echo && saml2aws configure --client-id=\$client_id --client-secret=\$client_secret'"
+alias postgreslogin='PGPASSWORD=Password psql --host=strapi-database.cdmqrmfenrch.ap-northeast-1.rds.amazonaws.com --port=5432 --username=postgres --password'
+alias startpm2='pm2 start ~/ecosystem.config.js'
+alias stoppm2='pm2 stop ~/ecosystem.config.js'
 
 function checkoutpr
   git fetch upstream pull/$argv/head:$argv && git checkout $argv
