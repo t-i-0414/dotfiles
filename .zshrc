@@ -1,13 +1,29 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-## ターミナルの設定 ##
-# 環境変数
-LANG=ja_JP.UTF-8
 
-# ヒストリの設定
-HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+# ===========================
+# 環境変数
+# ===========================
+
+# ターミナルの設定
+export LANG="ja_JP.UTF-8"
+export HISTFILE="~/.zsh_history"
+export HISTSIZE=50000
+export SAVEHIST=50000
+export DIRSTACKSIZE=100
+
+# rust
+export RUST_WITHOUT="rust-docs"
+
+# PATH
+export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools"
+
+# ===========================
+# 起動時コマンド
+# ===========================
 
 # 直前のコマンドの重複を削除
 setopt hist_ignore_dups
@@ -24,31 +40,11 @@ setopt correct
 # ビープ音を鳴らさない
 setopt no_beep
 
-# ディレクトリスタック
-DIRSTACKSIZE=100
+# ディレクトリを移動したら自動的にpushd
 setopt AUTO_PUSHD
-
-# 環境変数
-PATH=/usr/local/bin:"$PATH"
-
-#git
-PATH=/opt/homebrew/Cellar/git:$PATH
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# Android Studio
-ANDROID_HOME=$HOME/Library/Android/sdk
-PATH=$PATH:$ANDROID_HOME/emulator
-PATH=$PATH:$ANDROID_HOME/tools
-PATH=$PATH:$ANDROID_HOME/tools/bin
-PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# rust
-RUST_WITHOUT=rust-docs
-
-# alias
-[ -f ~/.alias.zsh ] && source ~/.alias.zsh
 
 # starship
 eval "$(starship init zsh)"

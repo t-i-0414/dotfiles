@@ -1,13 +1,13 @@
 # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-# set -U fish_user_paths (string match -v /usr/local/bin $fish_user_paths)
-# set -U fish_user_paths (string match -v /usr/sbin $fish_user_paths)
 # source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
-# set -gx RUST_WITHOUT rust-docs
-# set -x PGDATA /usr/local/var/postgres/
+set -U fish_user_paths (string match -v /usr/local/bin $fish_user_paths)
+set -U fish_user_paths (string match -v /usr/sbin $fish_user_paths)
+set -gx RUST_WITHOUT rust-docs
+set -x PGDATA /usr/local/var/postgres/
 
-# if status is-interactive
-#   starship init fish | source
-# end
+if status is-interactive
+  starship init fish | source
+end
 
 # git
 alias g='git'

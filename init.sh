@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 
 THIS_DIR=$(cd $(dirname $0); pwd)
 
-for dotfile in .alias.zsh .gitconfig .gitignore .zprofile .zshrc .hushlogin; do
+for dotfile in .gitconfig .gitignore .zprofile .zshrc .hushlogin; do
   ln -snfv "$(pwd)/$dotfile" "$HOME/$dotfile"
 done
 

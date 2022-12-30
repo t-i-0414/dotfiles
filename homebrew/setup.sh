@@ -21,5 +21,8 @@ brew upgrade
 echo "run brew bundle ..."
 brew bundle
 
+echo "run brew autoremove ..."
+brew autoremove
+
 echo "run brew cleanup ..."
 brew cleanup
