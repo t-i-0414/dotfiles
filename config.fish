@@ -50,6 +50,7 @@ alias ls='ls --color=auto'
 alias lfi='lsof -i:'
 alias pshttpd='ps aux | grep httpd'
 alias awslogin='saml2aws login --skip-prompt --force'
+alias awsloginTemp='cd ~/ws/saml2aws && ONELOGIN_MFA_IP_ADDRESS=$(curl ifconfig.me) go run cmd/saml2aws/main.go login --skip-prompt --force'
 alias awsprofile='aws --profile saml sts get-caller-identity'
 alias samlsetup="bash -c 'read -sp \"ClientID: \" client_id && echo && read -sp \"ClientSecret: \" client_secret && echo && saml2aws configure --client-id=\$client_id --client-secret=\$client_secret'"
 alias postgreslogin='PGPASSWORD=Password psql --host=strapi-database.cdmqrmfenrch.ap-northeast-1.rds.amazonaws.com --port=5432 --username=postgres --password'
