@@ -7,7 +7,7 @@ hasura-cli 2.21.0
 nodejs 18.15.0
 pnpm 8.1.0
 python 3.11.2
-ruby 3.2.1
+ruby 3.2.2
 rust 1.68.0
 terraform 1.4.2
 yarn 1.22.19
