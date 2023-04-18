@@ -15,8 +15,9 @@ defaults write com.apple.dock "show-recents" -bool "false"
 defaults write com.apple.dock "mru-spaces" -bool "false"
 defaults write com.apple.dock magnification -bool no
 defaults write com.apple.dock largesize -int 96
-defaults write com.apple.dock autohide -bool false
+defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock orientation -string "right"
 
 # Screenshot
 defaults write com.apple.screencapture "disable-shadow" -bool "true"
@@ -49,13 +50,13 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool "true"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool "true"
 defaults -currentHost write -g com.apple.mouse.tapBehavior -bool "true"
-defaults write -g com.apple.trackpad.scaling 1
+defaults write -g com.apple.trackpad.scaling 30
 
 # Mouse
 defaults write -g com.apple.mouse.scaling -1
 
 # Keyboard
-defaults write NSGlobalDomain KeyRepeat -int 3
+defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 20
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
