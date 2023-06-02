@@ -26,4 +26,5 @@ bash init.sh
   - Rename computer name
   - Turn off True Tone and automatic brightness adjustment
   - setup e-set
+  - setup Xcode and Android Studio
 - software
