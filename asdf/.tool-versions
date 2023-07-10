@@ -12,3 +12,4 @@ rust 1.70.0
 terraform 1.5.0
 yarn 1.22.19
 direnv 2.32.3
+poetry 1.5.1
