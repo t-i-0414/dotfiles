@@ -23,6 +23,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools"
 export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
+export CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)"
 
 # ===========================
 # 起動時コマンド
