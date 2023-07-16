@@ -1,11 +1,11 @@
-awscli 2.12.1
-dart 3.0.5
-firebase 12.4.0
-flutter 3.10.5-stable
+awscli 2.13.1
+dart 3.0.6
+firebase 12.4.4
+flutter 3.10.6-stable
 golang 1.20.5
 hasura-cli 2.27.0
 nodejs 18.16.1
-pnpm 8.6.6
+pnpm 8.6.7
 python 3.11.4
 ruby 3.2.2
 rust 1.70.0
