@@ -6,7 +6,7 @@ golang 1.20.7
 hasura-cli 2.31.0
 nodejs 18.17.1
 pnpm 8.6.12
-python 3.11.4
+python 3.11.5
 ruby 3.2.2
 rust 1.70.0
 terraform 1.5.4
