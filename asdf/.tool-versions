@@ -13,4 +13,4 @@ terraform 1.5.6
 yarn 1.22.19
 direnv 2.32.3
 poetry 1.6.1
-google-cloud-sdk 444.0.0
+gcloud 444.0.0
