@@ -1596,7 +1596,7 @@
         }
       },
       "google-chrome": {
-        "version": "116.0.5845.140",
+        "version": "116.0.5845.179",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -1731,7 +1731,7 @@
         }
       },
       "slack": {
-        "version": "4.33.90",
+        "version": "4.34.115",
         "options": {
           "full_name": "slack",
           "args": {
@@ -1776,7 +1776,7 @@
         }
       },
       "zoom": {
-        "version": "5.15.11.22019",
+        "version": "5.15.12.22445",
         "options": {
           "full_name": "zoom",
           "args": {
@@ -1801,13 +1801,40 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "1password-cli": {
+        "version": "2.20.0",
+        "options": {
+          "full_name": "1password-cli",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "firefox": {
+        "version": "117.0",
+        "options": {
+          "full_name": "firefox",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "guitar-pro": {
+        "version": "8.1",
+        "options": {
+          "full_name": "guitar-pro",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
   "system": {
     "macos": {
       "ventura": {
-        "HOMEBREW_VERSION": "4.1.8-24-ge93d560",
+        "HOMEBREW_VERSION": "4.1.8-38-g43295b2",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "14.3.1.0.1.1683849156",
