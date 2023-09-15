@@ -14,3 +14,4 @@ yarn 1.22.19
 direnv 2.32.3
 poetry 1.6.1
 gcloud 444.0.0
+cocoapods 1.12.1
