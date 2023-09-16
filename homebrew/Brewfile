@@ -43,7 +43,6 @@ brew 'watchman'
 brew 'wget'
 brew 'wimlib'
 brew 'yq'
-brew 'zsh'
 
 # cask
 cask '1password'
