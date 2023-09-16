@@ -4,8 +4,6 @@ cask_args appdir: '/Applications'
 
 # tap
 tap 'homebrew/bundle'
-tap 'homebrew/core'
-tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 
@@ -32,6 +30,7 @@ brew 'mas'
 brew 'num-utils'
 brew 'postgresql@14'
 brew 'python-tk'
+brew 'rbenv'
 brew 'readline'
 brew 'rename'
 brew 'starship'

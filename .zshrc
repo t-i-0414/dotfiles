@@ -47,6 +47,10 @@ setopt no_beep
 # ディレクトリを移動したら自動的にpushd
 setopt AUTO_PUSHD
 
+# # rbenv
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
