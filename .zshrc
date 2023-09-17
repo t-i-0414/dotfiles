@@ -22,8 +22,9 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # android
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # java
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-20.jdk/Contents/Home"
