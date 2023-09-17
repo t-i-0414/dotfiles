@@ -1,13 +1,15 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
+setopt incappendhistory
+
 # ===========================
 # environment variables
 # ===========================
 
 # terminal
 export LANG="ja_JP.UTF-8"
-export HISTFILE="~/.zsh_history"
+export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=50000
 export SAVEHIST=50000
 export DIRSTACKSIZE=100
@@ -31,6 +33,9 @@ export RUST_WITHOUT="rust-docs"
 
 # asdf direnv
 export ASDF_DIRENV_IGNORE_MISSING_PLUGINS=1
+
+# rdbg
+export RUBY_DEBUG_DAP_SHOW_PROTOCOL=1
 
 # ===========================
 # on startup

@@ -41,6 +41,7 @@ brew 'wget'
 brew 'wimlib'
 brew 'yq'
 brew 'zsh-autosuggestions'
+brew 'zsh-syntax-highlighting'
 
 # cask
 cask '1password'
