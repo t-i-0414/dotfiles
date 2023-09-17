@@ -16,4 +16,4 @@ if [ -f $1 ]; then
   done < $1
 fi
 
-sudo asdf install
+asdf install
