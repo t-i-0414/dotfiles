@@ -64,9 +64,6 @@ setopt AUTO_PUSHD
 # asdf
 # ===========================
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
-# # rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
 
 # ===========================
 # starship
