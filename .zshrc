@@ -27,7 +27,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-20.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home"
 
 # rust
 export RUST_WITHOUT="rust-docs"
