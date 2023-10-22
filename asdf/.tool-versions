@@ -1,7 +1,7 @@
-awscli 2.13.26
-dart 3.1.3
+awscli 2.13.28
+dart 3.1.4
 firebase 12.7.0
-flutter 3.13.7-stable
+flutter 3.13.8-stable
 golang 1.21.3
 hasura-cli 2.34.0
 nodejs 20.8.1
@@ -9,9 +9,9 @@ pnpm 8.9.2
 python 3.11.5
 ruby 3.2.2
 rust 1.73.0
-terraform 1.6.1
+terraform 1.6.2
 yarn 1.22.19
 direnv 2.32.3
 poetry 1.6.1
-gcloud 444.0.0
+gcloud 451.0.1
 cocoapods 1.13.0
