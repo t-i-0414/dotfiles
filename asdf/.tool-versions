@@ -15,3 +15,4 @@ direnv 2.32.3
 poetry 1.6.1
 gcloud 452.0.0
 cocoapods 1.13.0
+bun 1.0.7
