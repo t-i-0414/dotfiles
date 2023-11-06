@@ -12,7 +12,7 @@ rust 1.73.0
 terraform 1.6.3
 yarn 1.22.19
 direnv 2.32.3
-poetry 1.6.3
+poetry 1.7.0
 gcloud 453.0.0
 cocoapods 1.14.2
 bun 1.0.8
