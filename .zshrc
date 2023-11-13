@@ -140,6 +140,9 @@ alias samlsetup="bash -c 'read -sp \"ClientID: \" client_id && echo && read -sp 
 alias awslogin='saml2aws login --skip-prompt --force'
 alias awsprofile='aws --profile saml sts get-caller-identity'
 
+# sed
+alias sed='gsed'
+
 # takudev
 alias postgreslogin='PGPASSWORD=Password psql --host=strapi-database.cdmqrmfenrch.ap-northeast-1.rds.amazonaws.com --port=5432 --username=postgres --password'
 alias startpm2='pm2 start ~/ecosystem.config.js'
