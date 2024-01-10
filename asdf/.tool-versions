@@ -1,6 +1,6 @@
 awscli 2.15.8
 dart 3.2.4
-firebase 13.0.2
+firebase 13.0.3
 flutter 3.16.5-stable
 golang 1.21.5
 hasura-cli 2.36.1
