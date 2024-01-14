@@ -66,8 +66,8 @@ setopt AUTO_PUSHD
 # ===========================
 # asdf
 # ===========================
-# . /opt/homebrew/opt/asdf/libexec/asdf.sh
-. /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 
 # ===========================
 # starship
