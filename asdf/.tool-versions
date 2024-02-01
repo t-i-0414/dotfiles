@@ -13,6 +13,6 @@ terraform 1.6.6
 yarn 1.22.19
 direnv 2.33.0
 poetry 1.7.1
-gcloud 461.0.0
+gcloud 462.0.1
 cocoapods 1.14.3
 bun 1.0.20
