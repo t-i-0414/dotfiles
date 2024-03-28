@@ -5,7 +5,7 @@ flutter 3.19.4-stable
 golang 1.22.0
 hasura-cli 2.37.1
 nodejs 20.11.1
-pnpm 8.15.4
+pnpm 8.15.5
 python 3.11.4
 ruby 3.3.0
 rust 1.76.0
