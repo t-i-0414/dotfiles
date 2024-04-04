@@ -4,7 +4,7 @@ firebase 13.5.2
 flutter 3.19.4-stable
 golang 1.22.0
 hasura-cli 2.37.1
-nodejs 20.11.1
+nodejs 20.12.1
 pnpm 8.15.6
 python 3.11.4
 ruby 3.3.0
