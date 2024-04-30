@@ -1,5 +1,5 @@
 awscli 2.15.42
-dart 3.3.3
+dart 3.3.4
 firebase 13.7.2
 flutter 3.19.5-stable
 golang 1.22.2
@@ -13,6 +13,6 @@ terraform 1.8.0
 yarn 1.22.19
 direnv 2.34.0
 poetry 1.8.2
-gcloud 471.0.0
+gcloud 473.0.0
 cocoapods 1.15.2
 bun 1.1.3
