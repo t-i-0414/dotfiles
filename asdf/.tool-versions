@@ -9,8 +9,8 @@ flutter 3.19.5-stable
 gcloud 473.0.0
 golang 1.22.2
 hasura-cli 2.38.1
-nodejs 20.12.2
-pnpm 9.0.6
+nodejs 20.13.1
+pnpm 9.1.0
 poetry 1.8.2
 python 3.11.4
 ruby 3.3.0
