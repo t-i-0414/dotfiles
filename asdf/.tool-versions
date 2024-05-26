@@ -1,4 +1,4 @@
-awscli 2.15.48
+awscli 2.15.58
 bun 1.1.3
 cocoapods 1.15.2
 dart 3.3.4
@@ -10,7 +10,7 @@ gcloud 473.0.0
 golang 1.22.2
 hasura-cli 2.38.1
 nodejs 20.13.1
-pnpm 9.1.0
+pnpm 9.1.2
 poetry 1.8.2
 python 3.11.4
 ruby 3.3.0
