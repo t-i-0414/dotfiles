@@ -37,8 +37,6 @@ export ASDF_DIRENV_IGNORE_MISSING_PLUGINS=1
 # rdbg
 export RUBY_DEBUG_DAP_SHOW_PROTOCOL=1
 
-# mysql
-export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 
 # ===========================
 # on startup
