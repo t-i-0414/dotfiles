@@ -37,6 +37,8 @@ export ASDF_DIRENV_IGNORE_MISSING_PLUGINS=1
 # rdbg
 export RUBY_DEBUG_DAP_SHOW_PROTOCOL=1
 
+# aws
+export AWS_PROFILE="default"
 
 # ===========================
 # on startup
