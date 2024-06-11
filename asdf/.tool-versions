@@ -1,4 +1,4 @@
-awscli 2.15.62
+awscli 2.16.5
 bun 1.1.10
 cocoapods 1.15.2
 dart 3.4.2
@@ -6,7 +6,7 @@ deno 1.44.0
 direnv 2.34.0
 firebase 13.10.2
 flutter 3.22.1-stable
-gcloud 478.0.0
+gcloud 480.0.0
 golang 1.22.3
 hasura-cli 2.39.2
 nodejs 20.14.0
