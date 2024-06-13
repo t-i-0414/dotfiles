@@ -150,7 +150,7 @@ alias startpm2='pm2 start ~/ecosystem.config.js'
 alias stoppm2='pm2 stop ~/ecosystem.config.js'
 
 # good morning
-alias gm='brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor && saml2awslogin'
+alias gm='brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor'
 
 # ===========================
 # functions
