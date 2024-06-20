@@ -114,6 +114,9 @@ alias dr='docker rm'
 alias dri='docker rmi'
 alias dl='docker ps'
 alias dla='docker ps -a'
+alias dpa='docker system prune -a'
+alias dpa24='docker system prune -a --filter "until=24h"'
+alias dpv='docker volume prune'
 
 # terraform
 alias tf='terraform'
