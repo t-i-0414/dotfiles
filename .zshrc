@@ -161,42 +161,34 @@ alias gm='brew update && brew upgrade && brew cleanup && brew autoremove && brew
 function checkout_origin_pr {
   git fetch origin pull/$argv/head:$argv && git checkout $argv
 }
+alias gcpr='checkout_origin_pr'
 
 function checkout_upstream_pr {
   git fetch upstream pull/$argv/head:$argv && git checkout $argv
 }
+alias gcupr='checkout_upstream_pr'
 
-function start_takudev_cms_server {
-  instanceId=`aws ec2 describe-instances \
-    --filters 'Name=tag:Name,Values=strapi-web-server' \
-    --query 'Reservations[*].Instances[].InstanceId' \
-    --output text`
+function git_switch_branch_with_suffix() {
+  set -eu
 
-  aws ec2 start-instances \
-    --instance-id $instanceId \
-    --output text \
-    --color on
+  # 引数が渡されているか確認
+  if [ -z "${1:-}" ]; then
+    echo "使用方法: switch_branch_with_suffix <suffix>"
+    return 1
+  fi
+
+  # 引数を取得
+  suffix=$1
+
+  # 現在のブランチ名を取得し、指定されたサフィックスを追加
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+  new_branch="${current_branch}-${suffix}"
+
+  # 新しいブランチに切り替え
+  git switch -c "$new_branch"
 }
-
-function stop_takudev_cms_server {
-  instanceId=`aws ec2 describe-instances \
-    --filters 'Name=tag:Name,Values=strapi-web-server' \
-    --query 'Reservations[*].Instances[].InstanceId' \
-    --output text`
-
-  aws ec2 stop-instances \
-    --instance-id $instanceId \
-    --output text \
-    --color on
-}
-
-function get_takudev_cms_server_status {
-  aws ec2 describe-instances \
-    --filters 'Name=tag:Name,Values=strapi-web-server' \
-    --query 'Reservations[*].Instances[].State' \
-    --output text
-}
-
+# エイリアスの設定
+alias gscws='git_switch_branch_with_suffix'
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
