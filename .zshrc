@@ -65,8 +65,11 @@ setopt AUTO_PUSHD
 # ===========================
 # asdf
 # ===========================
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-# . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+if [ "$(uname)" = 'Darwin' ]; then
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+else
+  . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+fi
 
 # ===========================
 # starship
