@@ -158,6 +158,9 @@ alias stoppm2='pm2 stop ~/ecosystem.config.js'
 # good morning
 alias gm='brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor'
 
+# cd to the root of the git project
+alias cdr='cd $(git rev-parse --show-toplevel)'
+
 # ===========================
 # functions
 # ===========================
