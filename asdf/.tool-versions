@@ -1,12 +1,12 @@
-awscli 2.17.47
-bun 1.1.26
+awscli 2.17.50
+bun 1.1.27
 cocoapods 1.15.2
-dart 3.5.2
+dart 3.5.3
 deno 1.46.3
 direnv 2.34.0
-firebase 13.16.0
-flutter 3.24.2-stable
-gcloud 491.0.0
+firebase 13.17.0
+flutter 3.24.3-stable
+gcloud 492.0.0
 golang 1.23.1
 hasura-cli 2.43.0
 nodejs 22.8.0
@@ -16,5 +16,5 @@ python 3.12.5
 ruby 3.3.5
 rust 1.81.0
 terraform 1.9.5
-uv 0.4.6
+uv 0.4.9
 yarn 1.22.19
