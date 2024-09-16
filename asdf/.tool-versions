@@ -10,7 +10,7 @@ gcloud 492.0.0
 golang 1.23.1
 hasura-cli 2.43.0
 nodejs 22.8.0
-pnpm 9.9.0
+pnpm 9.10.0
 poetry 1.8.3
 python 3.12.5
 ruby 3.3.5
