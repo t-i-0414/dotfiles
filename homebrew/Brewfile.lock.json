@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "b82ff8731cffa2725007a2d3907b3c626f954477"
+        "revision": "a882a221ecb33f855f8a0b78adaa525926901a19"
       },
       "homebrew/services": {
-        "revision": "c7f12486d51773c385fd695218d785aa13240a25"
+        "revision": "d5d8a1d4ba61312a490fc818f1f2d733be50a467"
       }
     },
     "brew": {
@@ -2203,7 +2203,7 @@
         }
       },
       "alfred": {
-        "version": "5.5,2257",
+        "version": "5.5.1,2273",
         "options": {
           "full_name": "alfred",
           "args": {
@@ -2266,7 +2266,7 @@
         }
       },
       "deepl": {
-        "version": "24.9.21271708",
+        "version": "24.9.31277381",
         "options": {
           "full_name": "deepl",
           "args": {
@@ -2347,7 +2347,7 @@
         }
       },
       "google-chrome": {
-        "version": "129.0.6668.59",
+        "version": "129.0.6668.71",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -2482,7 +2482,7 @@
         }
       },
       "postman": {
-        "version": "11.13.0",
+        "version": "11.14.0",
         "options": {
           "full_name": "postman",
           "args": {
@@ -2527,7 +2527,7 @@
         }
       },
       "spotify": {
-        "version": "1.2.45.454",
+        "version": "1.2.47.364",
         "options": {
           "full_name": "spotify",
           "args": {
