@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "5fe8e86642f7a5c1094c59d705de8dc3fcdeafac"
+        "revision": "ea9d90e4a2a986897444fe5abd2a4a968bc8e9cb"
       },
       "homebrew/services": {
-        "revision": "725da8c538c6256ab98b8ea97f8c237cc59f4319"
+        "revision": "94054ceff87df29652756e4a7a58953d6f1251b6"
       }
     },
     "brew": {
@@ -2543,7 +2543,7 @@
         }
       },
       "zoom": {
-        "version": "6.2.2.40571",
+        "version": "6.2.3.40682",
         "options": {
           "full_name": "zoom",
           "args": {
