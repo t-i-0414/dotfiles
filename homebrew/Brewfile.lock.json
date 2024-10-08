@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "b1f54020a4b7ac0df4477896b7af155b18abf030"
+        "revision": "61fa8774077c9f807639ca2cdc340a0bc3c65964"
       },
       "homebrew/services": {
         "revision": "5eb425975cd0370c86d9b92e4638fb2fe9f2585f"
