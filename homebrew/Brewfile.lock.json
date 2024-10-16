@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "836b67f84a21deec9016253f41f994c2a98cea15"
+        "revision": "7b8dc37ca3c79bf386b59d75076ab977731b2432"
       },
       "homebrew/services": {
-        "revision": "8c790ff3af4c4084a222b8d1f16e6938ed6e180a"
+        "revision": "fa388d6744b2919f51b76c3a33c489387b9313b1"
       }
     },
     "brew": {
@@ -1890,40 +1890,40 @@
         }
       },
       "watchman": {
-        "version": "2024.10.07.00",
+        "version": "2024.10.14.00",
         "bottle": {
-          "rebuild": 1,
+          "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
             "arm64_sequoia": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:5592605e17b4dc4736596e76220446358dad99eeea510b33058735fb7738c7a4",
-              "sha256": "5592605e17b4dc4736596e76220446358dad99eeea510b33058735fb7738c7a4"
+              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:3e3c7a95706c08c2d3938d9d17851b8fbd43f63ac75b2408fa80676c1a499b3d",
+              "sha256": "3e3c7a95706c08c2d3938d9d17851b8fbd43f63ac75b2408fa80676c1a499b3d"
             },
             "arm64_sonoma": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:7062a6bed313a5404f8c4a5a21ee49632f675d131c28a2aed8cec38ad4c16124",
-              "sha256": "7062a6bed313a5404f8c4a5a21ee49632f675d131c28a2aed8cec38ad4c16124"
+              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:d8414e582bf33e7a4438ef800752bb415eeadc8e4c582d4f24a9a38d2aeced7e",
+              "sha256": "d8414e582bf33e7a4438ef800752bb415eeadc8e4c582d4f24a9a38d2aeced7e"
             },
             "arm64_ventura": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:80202924eea037442b52d9a294ee987f936eef7c81ce97f64796a0c344f0f1fb",
-              "sha256": "80202924eea037442b52d9a294ee987f936eef7c81ce97f64796a0c344f0f1fb"
+              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:253658df039361973336a0f4d6c650b020f4fc4a2c261b4f2ac427633ed3244a",
+              "sha256": "253658df039361973336a0f4d6c650b020f4fc4a2c261b4f2ac427633ed3244a"
             },
             "sonoma": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:ee1270fc8b5011ffec7dcd288ddc647b526b2d52bee6b6861ee5a096c96eec02",
-              "sha256": "ee1270fc8b5011ffec7dcd288ddc647b526b2d52bee6b6861ee5a096c96eec02"
+              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:be75889830e3548db46792b5233e7325cf014b166ca42bca224d85c58c6f2f6d",
+              "sha256": "be75889830e3548db46792b5233e7325cf014b166ca42bca224d85c58c6f2f6d"
             },
             "ventura": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:fd542dd7226f069609f36ca657f4cea4f915a76e29658554b3b902b39016a64a",
-              "sha256": "fd542dd7226f069609f36ca657f4cea4f915a76e29658554b3b902b39016a64a"
+              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:f8bf248b8a075aff53119faf064835379c05c3416011f65713e2c3e0101e2d86",
+              "sha256": "f8bf248b8a075aff53119faf064835379c05c3416011f65713e2c3e0101e2d86"
             },
             "x86_64_linux": {
               "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:0b6856615b636ce197b87d4e222a5f40df35f362b65f75bbb0dd16efed43101d",
-              "sha256": "0b6856615b636ce197b87d4e222a5f40df35f362b65f75bbb0dd16efed43101d"
+              "url": "https://ghcr.io/v2/homebrew/core/watchman/blobs/sha256:87f32f1da49d0376d4919b92c4342945504eab1894263c5a84afdf0217aa9136",
+              "sha256": "87f32f1da49d0376d4919b92c4342945504eab1894263c5a84afdf0217aa9136"
             }
           }
         }
@@ -2106,7 +2106,7 @@
     },
     "cask": {
       "1password": {
-        "version": "8.10.46",
+        "version": "8.10.48",
         "options": {
           "full_name": "1password",
           "args": {
@@ -2151,7 +2151,7 @@
         }
       },
       "android-studio": {
-        "version": "2024.2.1.9",
+        "version": "2024.2.1.10",
         "options": {
           "full_name": "android-studio",
           "args": {
@@ -2160,7 +2160,7 @@
         }
       },
       "chatgpt": {
-        "version": "1.2024.275,1728081553",
+        "version": "1.2024.282,1729017691",
         "options": {
           "full_name": "chatgpt",
           "args": {
@@ -2241,7 +2241,7 @@
         }
       },
       "expressvpn": {
-        "version": "11.61.0.86322",
+        "version": "11.61.1.86582",
         "options": {
           "full_name": "expressvpn",
           "args": {
@@ -2277,7 +2277,7 @@
         }
       },
       "google-chrome": {
-        "version": "129.0.6668.101",
+        "version": "130.0.6723.59",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -2376,7 +2376,7 @@
         }
       },
       "microsoft-excel": {
-        "version": "16.89.24091630",
+        "version": "16.90.24101387",
         "options": {
           "full_name": "microsoft-excel",
           "args": {
@@ -2385,7 +2385,7 @@
         }
       },
       "microsoft-outlook": {
-        "version": "16.89.24091630",
+        "version": "16.90.24101387",
         "options": {
           "full_name": "microsoft-outlook",
           "args": {
@@ -2394,7 +2394,7 @@
         }
       },
       "microsoft-word": {
-        "version": "16.89.24091630",
+        "version": "16.90.24101387",
         "options": {
           "full_name": "microsoft-word",
           "args": {
@@ -2412,7 +2412,7 @@
         }
       },
       "postman": {
-        "version": "11.16.0",
+        "version": "11.17.0",
         "options": {
           "full_name": "postman",
           "args": {
@@ -2502,7 +2502,7 @@
         }
       },
       "zulu": {
-        "version": "23.0.0,23.28.85",
+        "version": "23.0.1,23.30.13",
         "options": {
           "full_name": "zulu",
           "args": {
