@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "6dd24ba3e950ac272f80d9d104cd2ae763b092b7"
+        "revision": "b1730f81cd41a54da7040accf00326f1fc2703aa"
       },
       "homebrew/services": {
-        "revision": "c107c71f8ef06bbfdbb58a4b70fef3aaa252c763"
+        "revision": "22ded35a3d11dae8ab3c7858dbbd52b57e26c5e4"
       }
     },
     "brew": {
@@ -2130,7 +2130,7 @@
         }
       },
       "chatgpt": {
-        "version": "1.2024.282,1729017691",
+        "version": "1.2024.289,1729717854",
         "options": {
           "full_name": "chatgpt",
           "args": {
@@ -2175,7 +2175,7 @@
         }
       },
       "discord": {
-        "version": "0.0.322",
+        "version": "0.0.323",
         "options": {
           "full_name": "discord",
           "args": {
@@ -2238,7 +2238,7 @@
         }
       },
       "github": {
-        "version": "3.4.6-e598d339",
+        "version": "3.4.8-e3aa0782",
         "options": {
           "full_name": "github",
           "args": {
@@ -2247,7 +2247,7 @@
         }
       },
       "google-chrome": {
-        "version": "130.0.6723.59",
+        "version": "130.0.6723.70",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -2409,7 +2409,7 @@
         }
       },
       "rectangle": {
-        "version": "0.83",
+        "version": "0.84",
         "options": {
           "full_name": "rectangle",
           "args": {
@@ -2418,7 +2418,7 @@
         }
       },
       "slack": {
-        "version": "4.40.133",
+        "version": "4.41.96",
         "options": {
           "full_name": "slack",
           "args": {
@@ -2463,7 +2463,7 @@
         }
       },
       "zoom": {
-        "version": "6.2.3.40682",
+        "version": "6.2.5.41699",
         "options": {
           "full_name": "zoom",
           "args": {
