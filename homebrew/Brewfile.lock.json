@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "bfd6d1882776f0a21cb0bf6ce30386e579581e2d"
+        "revision": "3e8fbee631be3e2dd03e361501f561f610cb82c4"
       },
       "homebrew/services": {
         "revision": "a8a57180dee442bedac6f35a08027dec7dccbf04"
@@ -2463,7 +2463,7 @@
         }
       },
       "zoom": {
-        "version": "6.2.5.41699",
+        "version": "6.2.6.41824",
         "options": {
           "full_name": "zoom",
           "args": {
