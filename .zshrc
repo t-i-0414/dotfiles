@@ -174,6 +174,12 @@ function checkout_upstream_pr {
 }
 alias gcupr='checkout_upstream_pr'
 
+function checkout_merge_base_commit {
+  git branch $1 $(git merge-base $2 $3)
+  git checkout $1
+}
+alias gcmb='checkout_merge_base_commit'
+
 function git_switch_branch_with_suffix() {
   set -eu
 
