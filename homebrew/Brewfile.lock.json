@@ -5,7 +5,7 @@
         "revision": "bb8ff046665f91ff4d55d11bcc4cf317a5d47d27"
       },
       "homebrew/services": {
-        "revision": "43c25544185482258b562481b1e3292dc4881eee"
+        "revision": "70c5367eb69742703430bbbedc2b5418ead1a609"
       }
     },
     "brew": {
@@ -197,38 +197,38 @@
       "curl": {
         "version": "8.11.0_1",
         "bottle": {
-          "rebuild": 0,
+          "rebuild": 1,
           "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
             "arm64_sequoia": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:05cdbd5a5239f020ad8fc9f404124d07bcaafdfeca41dff6df3ac651fb178cb8",
-              "sha256": "05cdbd5a5239f020ad8fc9f404124d07bcaafdfeca41dff6df3ac651fb178cb8"
+              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:0e473c47dbd796d60e564c40f6447f406bc325aae2d0c5085074a60e2466b257",
+              "sha256": "0e473c47dbd796d60e564c40f6447f406bc325aae2d0c5085074a60e2466b257"
             },
             "arm64_sonoma": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:4377a15e290a54c2fdff7767a2fbd23e1af8038e0d0ebb9f4093380393b6e3e7",
-              "sha256": "4377a15e290a54c2fdff7767a2fbd23e1af8038e0d0ebb9f4093380393b6e3e7"
+              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:47b31a69fda0558adedb16bdac0d4003a3efd902a0f28a6615734dbf3c1042d1",
+              "sha256": "47b31a69fda0558adedb16bdac0d4003a3efd902a0f28a6615734dbf3c1042d1"
             },
             "arm64_ventura": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:441834e35458af4f0cbb3cb1d58653be4cf64e557b937cf852148e53e363e01e",
-              "sha256": "441834e35458af4f0cbb3cb1d58653be4cf64e557b937cf852148e53e363e01e"
+              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:fa50c33145ed41a6de273ce0ea9af5491f975bb34c4c1f11dfb598bc899e0c77",
+              "sha256": "fa50c33145ed41a6de273ce0ea9af5491f975bb34c4c1f11dfb598bc899e0c77"
             },
             "sonoma": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:69c4657fbd079a9192933f1205b50f690f018037d83e53ce10df680f557541cb",
-              "sha256": "69c4657fbd079a9192933f1205b50f690f018037d83e53ce10df680f557541cb"
+              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:7dadb384a5a42e7a4b5607791b5e43209d825df771172aca4aea549bb8f09c8a",
+              "sha256": "7dadb384a5a42e7a4b5607791b5e43209d825df771172aca4aea549bb8f09c8a"
             },
             "ventura": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:bd40aabe7d09572350a12a64e9f49a6525928953b0f898ae60279a68440958d7",
-              "sha256": "bd40aabe7d09572350a12a64e9f49a6525928953b0f898ae60279a68440958d7"
+              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:e92eb6ae945a5ff54db7e4564df57b98cf02b958a7b0efbf7872103076ffabf2",
+              "sha256": "e92eb6ae945a5ff54db7e4564df57b98cf02b958a7b0efbf7872103076ffabf2"
             },
             "x86_64_linux": {
               "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:b42beac54aca92af753ad9fb27d24baa404cf5ad97c7ed80e95bf93673bac051",
-              "sha256": "b42beac54aca92af753ad9fb27d24baa404cf5ad97c7ed80e95bf93673bac051"
+              "url": "https://ghcr.io/v2/homebrew/core/curl/blobs/sha256:48c94b796c1615b3695ebea3b95b8f40168697e80122ca4f1266e410d3eca91c",
+              "sha256": "48c94b796c1615b3695ebea3b95b8f40168697e80122ca4f1266e410d3eca91c"
             }
           }
         }
@@ -2327,7 +2327,7 @@
         }
       },
       "postman": {
-        "version": "11.18.0",
+        "version": "11.19.0",
         "options": {
           "full_name": "postman",
           "args": {
@@ -2399,7 +2399,7 @@
         }
       },
       "warp": {
-        "version": "0.2024.10.29.08.02.stable_02",
+        "version": "0.2024.11.05.08.02.stable_02",
         "options": {
           "full_name": "warp",
           "args": {
@@ -2445,6 +2445,14 @@
         "CLT": "15.3.0.0.1.1708646388",
         "Xcode": "15.4",
         "macOS": "14.6.1"
+      },
+      "sequoia": {
+        "HOMEBREW_VERSION": "4.4.4",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "16.1.0.0.1.1729049160",
+        "Xcode": "15.4",
+        "macOS": "15.1"
       }
     }
   }
