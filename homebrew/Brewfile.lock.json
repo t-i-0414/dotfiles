@@ -5,7 +5,7 @@
         "revision": "055eb6e7c6fc2e2d5fce43c6531a23ded4cb5d7a"
       },
       "homebrew/services": {
-        "revision": "f510edd588446b315c1a9d846426e949f194a143"
+        "revision": "858b7de3c1a45b85379b233b1228a09672941c14"
       }
     },
     "brew": {
@@ -1971,7 +1971,7 @@
     },
     "cask": {
       "1password": {
-        "version": "8.10.50",
+        "version": "8.10.52",
         "options": {
           "full_name": "1password",
           "args": {
@@ -2034,7 +2034,7 @@
         }
       },
       "cleanmymac": {
-        "version": "5.0.2,50002.0.2411051457,1730832767",
+        "version": "5.0.3,50003.0.2411121516,1731433077",
         "options": {
           "full_name": "cleanmymac",
           "args": {
@@ -2070,7 +2070,7 @@
         }
       },
       "discord": {
-        "version": "0.0.324",
+        "version": "0.0.325",
         "options": {
           "full_name": "discord",
           "args": {
@@ -2124,7 +2124,7 @@
         }
       },
       "firefox": {
-        "version": "132.0.1",
+        "version": "132.0.2",
         "options": {
           "full_name": "firefox",
           "args": {
@@ -2142,7 +2142,7 @@
         }
       },
       "google-chrome": {
-        "version": "130.0.6723.117",
+        "version": "131.0.6778.70",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -2178,7 +2178,7 @@
         }
       },
       "iterm2": {
-        "version": "3.5.7",
+        "version": "3.5.8",
         "options": {
           "full_name": "iterm2",
           "args": {
@@ -2241,7 +2241,7 @@
         }
       },
       "microsoft-excel": {
-        "version": "16.90.24101387",
+        "version": "16.91.24111020",
         "options": {
           "full_name": "microsoft-excel",
           "args": {
@@ -2250,7 +2250,7 @@
         }
       },
       "microsoft-outlook": {
-        "version": "16.90.24101387",
+        "version": "16.91.24111020",
         "options": {
           "full_name": "microsoft-outlook",
           "args": {
@@ -2259,7 +2259,7 @@
         }
       },
       "microsoft-word": {
-        "version": "16.90.24101387",
+        "version": "16.91.24111020",
         "options": {
           "full_name": "microsoft-word",
           "args": {
