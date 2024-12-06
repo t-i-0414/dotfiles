@@ -3,7 +3,6 @@ bun 1.1.38
 deno 2.1.1
 direnv 2.35.0
 firebase 13.27.0
-flutter 3.24.5-stable
 gcloud 502.0.0
 golang 1.23.3
 hasura-cli 2.44.0
