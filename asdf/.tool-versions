@@ -1,8 +1,8 @@
-awscli 2.22.4
+awscli 2.22.12
 bun 1.1.38
 deno 2.1.1
 direnv 2.35.0
-firebase 13.27.0
+firebase 13.28.0
 gcloud 502.0.0
 golang 1.23.3
 hasura-cli 2.44.0
@@ -13,5 +13,5 @@ python 3.13.0
 ruby 3.3.6
 rust 1.82.0
 terraform 1.9.8
-uv 0.5.5
+uv 0.5.7
 yarn 1.22.19
