@@ -6,6 +6,10 @@ setopt incappendhistory
 # environment variables
 # ===========================
 
+if [ -f ~/.zsh_envvars ]; then
+  source ~/.zsh_envvars
+fi
+
 # terminal
 export LANG="ja_JP.UTF-8"
 export HISTFILE=${HOME}/.zsh_history
@@ -91,6 +95,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 # alias
 # ===========================
 
+if [ -f ~/.zsh_aliases ]; then
+  source ~/.zsh_aliases
+fi
+
 # git
 alias g='git'
 alias ga='git add'
@@ -164,6 +172,11 @@ alias cdr='cd $(git rev-parse --show-toplevel)'
 # ===========================
 # functions
 # ===========================
+
+if [ -f ~/.zsh_functions ]; then
+  source ~/.zsh_functions
+fi
+
 function checkout_origin_pr {
   git fetch origin pull/$argv/head:$argv && git checkout $argv
 }
@@ -201,8 +214,6 @@ function git_switch_branch_with_suffix() {
 }
 # エイリアスの設定
 alias gscws='git_switch_branch_with_suffix'
-
-[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
