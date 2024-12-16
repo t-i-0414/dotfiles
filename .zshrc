@@ -21,16 +21,10 @@ export DIRSTACKSIZE=100
 export PATH="/usr/local/bin:$PATH"
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
-# flutter
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-
 # android
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
 
 # rust
 export RUST_WITHOUT="rust-docs"
@@ -144,10 +138,6 @@ alias l.='ls -d .* --color=auto'
 alias ll='ls -la --color=auto'
 alias ls='ls --color=auto'
 
-# lsof
-alias lfi='lsof -i:'
-alias pshttpd='ps aux | grep httpd'
-
 # saml2aws
 alias saml2awssetup="bash -c 'read -sp \"ClientID: \" client_id && echo && read -sp \"ClientSecret: \" client_secret && echo && saml2aws configure --client-id=\$client_id --client-secret=\$client_secret'"
 alias saml2awslogin='saml2aws login --session-duration 14400 --force --skip-prompt --browser-type=chrome'
@@ -157,11 +147,6 @@ alias awsprofile='aws --profile default sts get-caller-identity'
 
 # sed
 alias sed='gsed'
-
-# takudev
-alias postgreslogin='PGPASSWORD=Password psql --host=strapi-database.cdmqrmfenrch.ap-northeast-1.rds.amazonaws.com --port=5432 --username=postgres --password'
-alias startpm2='pm2 start ~/ecosystem.config.js'
-alias stoppm2='pm2 stop ~/ecosystem.config.js'
 
 # good morning
 alias gm='brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor'
