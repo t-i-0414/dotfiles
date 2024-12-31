@@ -13,5 +13,5 @@ python 3.12.8
 ruby 3.3.6
 rust 1.83.0
 terraform 1.10.3
-uv 0.5.11
+uv 0.5.13
 yarn 1.22.19
