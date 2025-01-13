@@ -3,7 +3,7 @@ bun 1.1.43
 deno 2.1.5
 direnv 2.35.0
 firebase 13.29.1
-gcloud 504.0.1
+gcloud 505.0.0
 golang 1.23.4
 hasura-cli 2.45.1
 nodejs 22.12.0
