@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 awscli 2.23.9
 bun 1.2.0
+=======
+awscli 2.23.6
+bun 1.2.1
+>>>>>>> Stashed changes
 deno 2.1.7
 direnv 2.35.0
 firebase 13.29.1
