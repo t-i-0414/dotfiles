@@ -31,6 +31,8 @@ export RUST_WITHOUT="rust-docs"
 
 # asdf direnv
 export ASDF_DIRENV_IGNORE_MISSING_PLUGINS=1
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 # rdbg
 export RUBY_DEBUG_DAP_SHOW_PROTOCOL=1
@@ -64,7 +66,7 @@ setopt AUTO_PUSHD
 # asdf
 # ===========================
 if [ "$(uname)" = 'Darwin' ]; then
-  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+  # . /opt/homebrew/opt/asdf/libexec/asdf.sh
 else
   . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 fi
