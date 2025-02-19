@@ -1,22 +1,88 @@
 [user]
-email = takuya.iwashiro@takudev.net
 name = t-i-0414
+email = takuya.iwashiro@takudev.net
+
 [core]
-excludesfile = /Users/t-i-0414/.gitignore_global
+excludesfile = ~/.gitignore_global
 ignorecase = false
 quotepath = false
+autocrlf = input
+safecrlf = true
+
 [color]
+ui = auto
 diff = auto
 status = auto
 branch = auto
+
+[alias]
+a = add
+aa = add --all
+br = branch
+brd = branch -d
+brD = branch -D
+brm = branch -m
+brM = branch -M
+brv = branch -v
+brvv = branch -vv
+brvm = branch -vv --merged
+brvn = branch -vv --no-merged
+ci = commit
+cim = commit -m
+cia = commit --amend
+cit = commit --amend --no-edit
+co = checkout
+df = diff
+dfc = diff --cached
+f = fetch
+fa = fetch --all
+fp = fetch --prune
+ff = merge --ff-only
+graph = log --all --graph --decorate --oneline
+last = log -1 HEAD --stat
+lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+pl = pull
+ps = push
+psf = push --force-with-lease
+psu = !git push --set-upstream origin $(git branch --show-current)
+psd = !git push origin --delete
+st = status
+sth = stash
+stha = stash apply
+sthc = stash clear
+sthd = stash drop
+sthl = stash list
+sthp = stash pop
+sthu = stash -u
+sw = switch
+swc = switch -c
+unstage = reset HEAD --
+
 [push]
 default = current
-[init]
-defaultBranch = main
-[commit]
-template = /Users/t-i-0414/.stCommitMsg
+
 [pull]
 ff = only
+
+[commit]
+template = ~/.stCommitMsg
+
+[init]
+defaultBranch = main
+
+[merge]
+tool = code --wait
+conflictstyle = diff3
+
+[rerere]
+enabled = true
+
+[diff]
+tool = code --wait
+
+[diff "lfs"]
+textconv = git-lfs diff
+
 [filter "lfs"]
 required = true
 clean = git-lfs clean -- %f

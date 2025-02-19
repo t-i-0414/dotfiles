@@ -97,20 +97,6 @@ fi
 
 # git
 alias g='git'
-alias ga='git add'
-alias gcm='git commit -m'
-alias gc='git commit'
-alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gs='git switch'
-alias gsb='git switch -c'
-alias gp='git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD)"'
-alias gpl='git pull'
-alias gst='git stash'
-alias gsl='git stash list'
-alias gsu='git stash -u'
-alias gsa='git stash apply'
-alias gsx='git stash drop'
 
 # docker
 alias d='docker'
