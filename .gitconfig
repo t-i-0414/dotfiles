@@ -1,24 +1,24 @@
 [user]
-	email = gutlo.ol0414@gmail.com
-	name = t-i-0414
+email = takuya.iwashiro@takudev.net
+name = t-i-0414
 [core]
-	excludesfile = /Users/t-i-0414/.gitignore_global
-	ignorecase = false
-	quotepath = false
+excludesfile = /Users/t-i-0414/.gitignore_global
+ignorecase = false
+quotepath = false
 [color]
-	diff = auto
-  status = auto
-  branch = auto
+diff = auto
+status = auto
+branch = auto
 [push]
-	default = current
+default = current
 [init]
-	defaultBranch = main
+defaultBranch = main
 [commit]
-	template = /Users/t-i-0414/.stCommitMsg
+template = /Users/t-i-0414/.stCommitMsg
 [pull]
-	ff = only
+ff = only
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
