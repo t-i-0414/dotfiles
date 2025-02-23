@@ -41,15 +41,19 @@ cd "$THIS_DIR"
 echo "setup git ..."
 cd "$THIS_DIR/git"
 ./setup.sh
+cd "$THIS_DIR"
 
 echo "setup tmux..."
 cd "$THIS_DIR/tmux"
 ./setup.sh
+cd "$THIS_DIR"
 
 echo "setup starship..."
 cd "$THIS_DIR/starship"
 ./setup.sh
+cd "$THIS_DIR"
 
 echo "setup zsh..."
 cd "$THIS_DIR/zsh"
 ./setup.sh
+cd "$THIS_DIR"
