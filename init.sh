@@ -9,9 +9,13 @@ THIS_DIR=$(
 
 touch "$HOME/.hushlogin"
 
-for dotfile in .gitconfig .gitignore .zprofile .zshrc; do
-  ln -snfv "$(pwd)/$dotfile" "$HOME/$dotfile"
-done
+echo "setup git ..."
+cd "$THIS_DIR/git"
+./setup.sh
+
+echo "setup zsh..."
+cd "$THIS_DIR/zsh"
+./setup.sh
 
 ln -fs "$(pwd)/starship.toml" "$HOME/.config/starship.toml"
 
