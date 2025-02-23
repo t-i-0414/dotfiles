@@ -1,10 +1,10 @@
 #!/bin/bash
-set -euo pipefail
+
 cd "$(dirname "$0")"
 
-if [ $(uname) != "Darwin" ] ; then
-	echo "Not MacOS!"
-	exit 0
+if [ $(uname) != "Darwin" ]; then
+  echo "Not MacOS!"
+  exit 0
 fi
 
 sudo nvram StartupMute=%01

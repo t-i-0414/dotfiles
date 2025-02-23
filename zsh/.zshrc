@@ -161,13 +161,15 @@ function checkout_upstream_pr {
 alias gcupr='checkout_upstream_pr'
 
 function checkout_merge_base_commit {
+  set -euo pipefail
+
   git branch $1 $(git merge-base $2 $3)
   git checkout $1
 }
 alias gcmb='checkout_merge_base_commit'
 
 function git_switch_branch_with_suffix() {
-  set -eu
+  set -euo pipefail
 
   # 引数が渡されているか確認
   if [ -z "${1:-}" ]; then
