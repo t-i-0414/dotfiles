@@ -7,6 +7,8 @@ THIS_DIR=$(
   pwd
 )
 
+touch "$HOME/.hushlogin"
+
 for dotfile in .gitconfig .gitignore .zprofile .zshrc; do
   ln -snfv "$(pwd)/$dotfile" "$HOME/$dotfile"
 done
