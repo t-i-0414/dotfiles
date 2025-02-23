@@ -1,5 +1,5 @@
 #!/bin/bash
 
-for dotfile in .zprofile .zshrc scripts; do
+for dotfile in .zprofile .zshrc; do
   ln -snfv "$(pwd)/$dotfile" "$HOME/$dotfile"
 done

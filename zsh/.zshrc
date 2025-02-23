@@ -151,44 +151,137 @@ if [ -f ~/.zsh_functions ]; then
 fi
 
 function checkout_origin_pr {
-  git fetch origin pull/$argv/head:$argv && git checkout $argv
+  if [[ $# -ne 1 ]]; then
+    echo "Usage: checkout_origin_pr <PR_NUMBER>"
+    return 1
+  fi
+
+  local pr_number=$1
+  local pr_branch="pr-$pr_number"
+
+  echo "Fetching PR #$pr_number from origin..."
+
+  if ! git fetch origin "pull/$pr_number/head:$pr_branch"; then
+    echo "Error: Failed to fetch PR #$pr_number"
+    return 1
+  fi
+
+  echo "Checking out PR #$pr_number as $pr_branch"
+  git checkout "$pr_branch"
 }
 alias gcpr='checkout_origin_pr'
 
 function checkout_upstream_pr {
-  git fetch upstream pull/$argv/head:$argv && git checkout $argv
+  if [[ $# -ne 1 ]]; then
+    echo "Usage: checkout_upstream_pr <PR_NUMBER>"
+    return 1
+  fi
+
+  local pr_number=$1
+  local pr_branch="upstream-pr-$pr_number"
+
+  echo "Fetching PR #$pr_number from upstream..."
+
+  if ! git fetch upstream "pull/$pr_number/head:$pr_branch"; then
+    echo "Error: Failed to fetch PR #$pr_number"
+    return 1
+  fi
+
+  echo "Checking out PR #$pr_number as $pr_branch"
+  git checkout "$pr_branch"
 }
 alias gcupr='checkout_upstream_pr'
 
 function checkout_merge_base_commit {
-  set -euo pipefail
+  if [[ $# -ne 3 ]]; then
+    echo "Usage: checkout_merge_base_commit <new-branch-name> <branch-A> <branch-B>"
+    return 1
+  fi
 
-  git branch $1 $(git merge-base $2 $3)
-  git checkout $1
+  local new_branch=$1
+  local branch_a=$2
+  local branch_b=$3
+
+  local base_commit
+  if ! base_commit=$(git merge-base "$branch_a" "$branch_b"); then
+    echo "Error: Failed to find merge-base between $branch_a and $branch_b"
+    return 1
+  fi
+
+  echo "Creating branch '$new_branch' at merge-base commit $base_commit..."
+  if ! git branch "$new_branch" "$base_commit"; then
+    echo "Error: Failed to create branch '$new_branch'"
+    return 1
+  fi
+
+  echo "Switching to branch '$new_branch'"
+  if ! git checkout "$new_branch"; then
+    echo "Error: Failed to checkout branch '$new_branch'"
+    return 1
+  fi
 }
 alias gcmb='checkout_merge_base_commit'
 
 function git_switch_branch_with_suffix() {
-  set -euo pipefail
-
-  # 引数が渡されているか確認
-  if [ -z "${1:-}" ]; then
-    echo "使用方法: switch_branch_with_suffix <suffix>"
+  if [[ $# -ne 1 ]]; then
+    echo "Usage: git_switch_branch_with_suffix <suffix>"
     return 1
   fi
 
-  # 引数を取得
-  suffix=$1
+  local suffix=$1
 
-  # 現在のブランチ名を取得し、指定されたサフィックスを追加
-  current_branch=$(git rev-parse --abbrev-ref HEAD)
-  new_branch="${current_branch}-${suffix}"
+  local current_branch
+  if ! current_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null); then
+    echo "Error: Not a git repository or cannot determine the current branch."
+    return 1
+  fi
 
-  # 新しいブランチに切り替え
-  git switch -c "$new_branch"
+  local new_branch="${current_branch}-${suffix}"
+  if git show-ref --verify --quiet "refs/heads/$new_branch"; then
+    echo "Error: Branch '$new_branch' already exists."
+    return 1
+  fi
+
+  echo "Creating and switching to branch: $new_branch"
+  if ! git switch -c "$new_branch"; then
+    echo "Error: Failed to create and switch to branch '$new_branch'."
+    return 1
+  fi
 }
-# エイリアスの設定
 alias gscws='git_switch_branch_with_suffix'
+
+function update_git_repos() {
+  local BASE_DIR="$HOME/workspace"
+
+  if [[ ! -d "$BASE_DIR" ]]; then
+    echo "Error: BASE_DIR ($BASE_DIR) does not exist."
+    return 1
+  fi
+
+  for dir in "$BASE_DIR"/*/; do
+    if [[ -d "$dir" && -d "$dir/.git" ]]; then
+      echo "Processing: $dir"
+      cd "$dir" || continue
+
+      local DEFAULT_BRANCH
+      DEFAULT_BRANCH=$(git remote show origin | awk '/HEAD branch/ {print $NF}')
+
+      if [[ -n "$DEFAULT_BRANCH" ]]; then
+        echo "Pulling latest changes from $DEFAULT_BRANCH..."
+        git checkout "$DEFAULT_BRANCH" && git pull origin "$DEFAULT_BRANCH"
+      else
+        echo "Warning: Could not determine default branch for $dir"
+      fi
+
+      cd "$BASE_DIR" || return 1
+    else
+      echo "Skipping (not a git repository): $dir"
+    fi
+  done
+
+  echo "All repositories updated."
+}
+alias ugr='update_git_repos'
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
