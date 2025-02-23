@@ -9,6 +9,11 @@ echo "Script Directory: $THIS_DIR"
 
 touch "$HOME/.hushlogin"
 
+echo "fonts are installing..."
+cd "$THIS_DIR/fonts"
+./setup.sh
+cd "$THIS_DIR"
+
 # xcode
 echo "homebrew & xcode are installing..."
 cd "$THIS_DIR/xcode"
