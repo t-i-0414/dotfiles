@@ -9,6 +9,11 @@ echo "Script Directory: $THIS_DIR"
 
 touch "$HOME/.hushlogin"
 
+echo "setup mac..."
+cd "$THIS_DIR/mac"
+./setup.sh
+cd "$THIS_DIR"
+
 echo "fonts are installing..."
 cd "$THIS_DIR/fonts"
 ./setup.sh
@@ -30,12 +35,6 @@ cd "$THIS_DIR"
 echo "setup asdf..."
 cd "$THIS_DIR/asdf"
 ./setup.sh .tool-versions
-cd "$THIS_DIR"
-
-# mac
-echo "setup mac..."
-cd "$THIS_DIR/mac"
-./setup.sh
 cd "$THIS_DIR"
 
 echo "setup git ..."

@@ -1,8 +1,6 @@
 #!/bin/bash
 
-cd "$(dirname "$0")"
-
-if [ $(uname) != "Darwin" ]; then
+if [ "$(uname)" != "Darwin" ]; then
   echo "Not MacOS!"
   exit 0
 fi
