@@ -33,11 +33,12 @@ cd "$THIS_DIR/mac"
 ./setup.sh
 cd "$THIS_DIR"
 
-# tmux
-ln -snfv "$(pwd)/.tmux.conf" "$HOME/.tmux.conf"
-
 echo "setup git ..."
 cd "$THIS_DIR/git"
+./setup.sh
+
+echo "setup tmux..."
+cd "$THIS_DIR/tmux"
 ./setup.sh
 
 echo "setup starship..."
