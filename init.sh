@@ -19,22 +19,14 @@ cd "$THIS_DIR/fonts"
 ./setup.sh
 cd "$THIS_DIR"
 
-# xcode
-echo "homebrew & xcode are installing..."
+echo "xcode-select is installing..."
 cd "$THIS_DIR/xcode"
 ./setup.sh
 cd "$THIS_DIR"
 
-# homebrew
-echo "CUI & GUI Softwares are installing..."
+echo "homebrew is installing..."
 cd "$THIS_DIR/homebrew"
 ./setup.sh
-cd "$THIS_DIR"
-
-# asdf
-echo "setup asdf..."
-cd "$THIS_DIR/asdf"
-./setup.sh .tool-versions
 cd "$THIS_DIR"
 
 echo "setup git ..."
@@ -49,6 +41,11 @@ cd "$THIS_DIR"
 
 echo "setup starship..."
 cd "$THIS_DIR/starship"
+./setup.sh
+cd "$THIS_DIR"
+
+echo "setup asdf..."
+cd "$THIS_DIR/asdf"
 ./setup.sh
 cd "$THIS_DIR"
 
