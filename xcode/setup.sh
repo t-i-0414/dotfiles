@@ -1,13 +1,10 @@
 #!/bin/bash
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 1
 
-if !(which /opt/homebrew/bin/brew >/dev/null 2>&1); then
-  echo "installing Homebrew ..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
-if !(which xcode-select >/dev/null 2>&1); then
+if ! xcode-select -p >/dev/null 2>&1; then
+  echo "Installing Xcode Command Line Tools..."
   xcode-select --install
+else
+  echo "Xcode Command Line Tools are already installed."
 fi
