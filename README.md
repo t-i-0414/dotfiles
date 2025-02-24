@@ -1,4 +1,4 @@
-# dotfiles(Apple silicon compatible version)
+# dotfiles
 
 ## Setup
 
@@ -12,19 +12,18 @@ bash init.sh
 
 ## Other manual settings
 
-- mac
-  - Change default web browser to google chrome
-  - Set Screen Saver
-  - Add credit card to wallet
-  - Set pointer control with accessibility
-  - Set up to unlock mac using Apple Watch
-  - Turn on FileVault
-  - Changed keyboard input source to Google Japanese Input
-  - Set Turn off display to 15 minutes
-  - Add home directory to Finder's frequently used items
-  - Register additional fingerprints for touchID
+- Mac
   - Rename computer name
-  - Turn off True Tone and automatic brightness adjustment
-  - setup e-set
-  - setup Xcode and Android Studio
-- software
+  - Set up Wallet & Apple Pay settings
+  - Register additional fingerprints for Touch ID
+  - Set up to unlock Mac using Apple Watch
+  - Set up Screen Saver
+  - Set up Wallpaper randomly
+  - Set up Focus mode
+  - Turn off Night Shift
+  - Turn off True Tone
+  - Turn off Auto-Brightness
+  - Change keyboard input source to Google Japanese Input
+  - Change default web browser to Google Chrome
+  - Setup each app
+  - Setup ESET
