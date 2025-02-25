@@ -7,8 +7,6 @@ THIS_DIR=$(
 )
 echo "Script Directory: $THIS_DIR"
 
-touch "$HOME/.hushlogin"
-
 echo "setup mac..."
 cd "$THIS_DIR/mac"
 ./setup.sh
