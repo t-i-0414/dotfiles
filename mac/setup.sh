@@ -176,9 +176,10 @@ configure_lock_screen() {
   defaults write com.apple.screensaver askForPasswordDelay -int 0
 
   # ロック画面の表示オプション
-  defaults write com.apple.loginwindow AdminHostInfo HostName
-  defaults write com.apple.menuextra.clock IsAnalog -bool false                # 24 時間表示
-  defaults write com.apple.loginwindow SHOWFULLNAME -bool false                # ユーザー名と写真を表示
+  defaults delete com.apple.loginwindow AdminHostInfo
+  defaults write com.apple.menuextra.clock IsAnalog -bool false                # デジタル時計を表示
+  defaults write com.apple.loginwindow SHOWFULLNAME -bool false                # ユーザー名と写真を非表示
+  defaults write com.apple.loginwindow GuestEnabled -bool false                # ゲストユーザーを無効化
   defaults write com.apple.loginwindow RetriesUntilHint -int 0                 # パスワードヒントを表示しない
   defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "" # ロック画面メッセージを空に
 
