@@ -63,12 +63,19 @@ setopt no_beep
 setopt AUTO_PUSHD
 
 # ===========================
+# homebrew(Linux)
+# ===========================
+if [[ "$(uname)" == "Linux" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+# ===========================
 # asdf
 # ===========================
 if [ "$(uname)" = 'Darwin' ]; then
   # . /opt/homebrew/opt/asdf/libexec/asdf.sh
 else
-  . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+  # . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 fi
 
 # ===========================
