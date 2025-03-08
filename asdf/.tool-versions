@@ -2,7 +2,7 @@ awscli 2.24.19
 bun 1.2.4
 deno 2.2.2
 direnv 2.35.0
-firebase 13.31.2
+firebase 13.33.0
 gcloud 510.0.0
 golang 1.24.0
 hasura-cli 2.45.1
