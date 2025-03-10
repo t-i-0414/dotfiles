@@ -23,7 +23,7 @@ bash init.sh
   - Turn off Night Shift
   - Turn off True Tone
   - Turn off Auto-Brightness
-  - Turn of bio-metric authentication to unlock Mac
+  - Turn on bio-metric authentication to unlock Mac
   - Change keyboard input source to Google Japanese Input
   - Change default web browser to Google Chrome
   - Setup each app
