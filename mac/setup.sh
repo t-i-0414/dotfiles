@@ -130,12 +130,10 @@ configure_dock_desktop() {
 configure_notifications() {
   echo "Configuring Notification Center settings..."
 
-  defaults write com.apple.ncprefs.plist dnd_prefs -dict-add "dndDisplayLock" -bool true # 通知のプレビューを「ロック解除時のみ」に設定
-  defaults write com.apple.ncprefs.plist dnd_prefs -dict-add "dndSleep" -bool false      # ディスプレイがスリープ中でも通知を許可しない
-  defaults write com.apple.ncprefs.plist dnd_prefs -dict-add "dndLockScreen" -bool false # 画面ロック中に通知を許可しない
-  defaults write com.apple.ncprefs.plist dnd_prefs -dict-add "dndMirroring" -bool false  # 画面ミラーリングまたは共有時の通知を許可しない
-  defaults write com.apple.ncprefs.plist dnd_prefs -dict-add "dndPhoneCalls" -bool true  # iPhone からの通知を許可
-  defaults write com.apple.ncprefs.plist dnd_prefs -dict-add "dndSummary" -bool true     # 通知を要約表示する
+  defaults write com.apple.notificationcenterui bannerPreviewStyle -int 2               # 通知のプレビューを「ロック解除時のみ」に設定
+  defaults write com.apple.notificationcenterui doNotDisturb -bool true                 # ディスプレイがスリープ中でも通知を許可しない
+  defaults write com.apple.notificationcenterui screenSharingDoNotDisturb -bool true    # 画面ミラーリングまたは共有時の通知を許可しない
+  defaults write com.apple.notificationcenterui iPhoneNotificationForwarding -bool true # iPhone からの通知を許可
 
   killall NotificationCenter
 
@@ -149,8 +147,6 @@ configure_sound() {
   defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool true                                     # UI のサウンドエフェクトを有効化
   defaults write -g com.apple.sound.beep.feedback -bool false                                                  # 音量変更時のフィードバック音を無効化
   defaults write com.apple.systemsound "com.apple.sound.beep.sound" -string "/System/Library/Sounds/Boop.aiff" # 警告音を "Boop" に設定
-
-  killall SystemUIServer
 
   echo "Complete configuring Sound settings!"
 }
@@ -176,18 +172,8 @@ configure_lock_screen() {
   defaults write com.apple.screensaver askForPasswordDelay -int 0
 
   # ロック画面の表示オプション
-  defaults delete com.apple.loginwindow AdminHostInfo
-  defaults write com.apple.menuextra.clock IsAnalog -bool false                # デジタル時計を表示
-  defaults write com.apple.loginwindow SHOWFULLNAME -bool false                # ユーザー名と写真を非表示
-  defaults write com.apple.loginwindow GuestEnabled -bool false                # ゲストユーザーを無効化
-  defaults write com.apple.loginwindow RetriesUntilHint -int 0                 # パスワードヒントを表示しない
-  defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "" # ロック画面メッセージを空に
-
-  # ユーザー切り替え
-  sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWOTHERUSERS_MANAGED -bool true # ユーザー一覧を表示
-  sudo defaults write /Library/Preferences/com.apple.loginwindow PowerOffDisabled -bool false      # スリープ、再起動、シャットダウンボタンを表示
-
-  killall SystemUIServer
+  defaults write com.apple.menuextra.clock IsAnalog -bool false                           # デジタル時計を表示
+  sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false # ゲストユーザーを無効化
 
   echo "Complete configuring Lock Screen settings!"
 }
@@ -206,19 +192,7 @@ configure_security() {
   defaults write com.apple.screensaver askForPassword -int 1                                            # スクリーンセーバーやスリープ解除時にパスワードを要求
   defaults write com.apple.screensaver askForPasswordDelay -int 0                                       # スクリーンセーバーやスリープ解除後のパスワード要求を即時に
 
-  killall SystemUIServer
-
   echo "Complete configuring Security settings!"
-}
-
-configure_touch_id() {
-  echo "Configuring Touch ID settings..."
-
-  # Mac のロック解除に Touch ID を使用
-  sudo bioutil -w -u "$(id -u)" -a
-
-  echo "Some settings like Apple Pay and autofill must be enabled manually in System Settings."
-  echo "Complete configuring Touch ID settings!"
 }
 
 configure_keyboard() {
@@ -234,8 +208,6 @@ configure_keyboard() {
   defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false                          # オートピリオド（自動句読点）を無効化
   defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false                              # 自動大文字変換を無効化
   defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false                          # 自動スペルチェックを無効化
-
-  killall SystemUIServer
 
   echo "Complete configuring Keyboard settings!"
 }
@@ -274,9 +246,6 @@ configure_trackpad() {
   defaults write com.apple.dock showLaunchpadGestureEnabled -bool true                                                # Launchpad（親指と 3 本指でピンチ）
   defaults write com.apple.dock showDesktopGestureEnabled -bool true                                                  # デスクトップ表示（親指と 3 本指で広げる）
 
-  # 設定を適用
-  killall SystemUIServer
-
   echo "Complete configuring Trackpad settings!"
 }
 
@@ -288,8 +257,6 @@ configure_mouse() {
   defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string "TwoButton" # 副ボタンクリック（右クリックを有効化）
   defaults write NSGlobalDomain com.apple.mouse.doubleClickThreshold -float 0.75                     # ダブルクリックの速度（最速に近い設定）
   defaults write NSGlobalDomain com.apple.scrollwheel.scaling -float 0.75                            # スクロール速度（中程度に設定）
-
-  killall SystemUIServer
 
   echo "Complete configuring Mouse settings!"
 }
@@ -377,30 +344,60 @@ configure_safari() {
   defaults write com.apple.Safari WebRTCIPHandlingPolicy -string "DisableNonProxiedUdp"   # WebRTC の IP 露出を防ぐ
   defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true                     # 広告トラッキングを防ぐ
 
-  killall Safari
-
   echo "Complete configuring Safari settings!"
 }
 
 main() {
   configure_sound_effects
+  echo ""
+
   configure_scrollbar
+  echo ""
+
   configure_time
+  echo ""
+
   configure_battery
+  echo ""
+
   configure_screenshot
+  echo ""
+
   configure_controlcenter
+  echo ""
+
   configure_dock_desktop
+  echo ""
+
   configure_notifications
+  echo ""
+
   configure_sound
+  echo ""
+
   configure_focus
+  echo ""
+
   configure_lock_screen
+  echo ""
+
   configure_security
-  configure_touch_id
+  echo ""
+
   configure_keyboard
+  echo ""
+
   configure_trackpad
+  echo ""
+
   configure_mouse
+  echo ""
+
   configure_finder
+  echo ""
+
   configure_safari
+  echo ""
 }
 
 main
