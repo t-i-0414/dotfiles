@@ -80,7 +80,7 @@ configure_dock_desktop() {
   # Dock
   defaults write com.apple.dock tilesize -int 48                            # アイコンサイズを48pxに
   defaults write com.apple.dock magnification -bool false                   # Dock の拡大を無効化
-  defaults write com.apple.dock orientation -string "bottom"                # 位置を下（Bottom）
+  defaults write com.apple.dock orientation -string "right"                 # 位置を右
   defaults write com.apple.dock mineffect -string "genie"                   # 最小化エフェクトをジニーに
   defaults write NSGlobalDomain AppleActionOnDoubleClick -string "Maximize" # タイトルバーのダブルクリックをズームに
   defaults write com.apple.dock minimize-to-application -bool true          # ウィンドウをアプリアイコンに最小化する
