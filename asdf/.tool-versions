@@ -1,6 +1,6 @@
 awscli 2.24.24
 bun 1.2.5
-deno 2.2.2
+deno 2.2.4
 direnv 2.35.0
 firebase 13.33.0
 gcloud 510.0.0
