@@ -10,7 +10,7 @@ nodejs 22.12.0
 pnpm 10.6.2
 python 3.12.8
 ruby 3.4.1
-rust 1.83.0
+rust 1.85.0
 terraform 1.10.3
 uv 0.5.21
 yarn 1.22.19
