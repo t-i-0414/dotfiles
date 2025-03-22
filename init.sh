@@ -1,53 +1,26 @@
 #!/bin/bash
+
 set -euo pipefail
 
-THIS_DIR=$(
-  cd "$(dirname "$0")"
-  pwd
-)
-echo "Script Directory: $THIS_DIR"
+THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-echo "setup mac..."
-cd "$THIS_DIR/mac"
-./setup.sh
-cd "$THIS_DIR"
+# shellcheck source=/dev/null
+source "${THIS_DIR}/utils.sh"
 
-echo "fonts are installing..."
-cd "$THIS_DIR/fonts"
-./setup.sh
-cd "$THIS_DIR"
+main() {
+  log "Starting system setup..."
 
-echo "xcode-select is installing..."
-cd "$THIS_DIR/xcode"
-./setup.sh
-cd "$THIS_DIR"
+  run_setup "mac"
+  run_setup "fonts"
+  run_setup "xcode"
+  run_setup "homebrew"
+  run_setup "git"
+  run_setup "tmux"
+  run_setup "starship"
+  run_setup "asdf"
+  run_setup "zsh"
 
-echo "homebrew is installing..."
-cd "$THIS_DIR/homebrew"
-./setup.sh
-cd "$THIS_DIR"
+  log "System setup completed successfully"
+}
 
-echo "setup git ..."
-cd "$THIS_DIR/git"
-./setup.sh
-cd "$THIS_DIR"
-
-echo "setup tmux..."
-cd "$THIS_DIR/tmux"
-./setup.sh
-cd "$THIS_DIR"
-
-echo "setup starship..."
-cd "$THIS_DIR/starship"
-./setup.sh
-cd "$THIS_DIR"
-
-echo "setup asdf..."
-cd "$THIS_DIR/asdf"
-./setup.sh
-cd "$THIS_DIR"
-
-echo "setup zsh..."
-cd "$THIS_DIR/zsh"
-./setup.sh
-cd "$THIS_DIR"
+main
