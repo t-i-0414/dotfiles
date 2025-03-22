@@ -9,14 +9,6 @@ error_handler() {
   exit 1
 }
 
-check_internet() {
-  log "Checking internet connection..."
-  if ! curl -s --connect-timeout 5 https://www.google.com >/dev/null; then
-    log "Error: No internet connection detected"
-    exit 1
-  fi
-}
-
 run_setup() {
   local module=$1
   log "Setting up $module..."
