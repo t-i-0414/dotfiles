@@ -1,55 +1,69 @@
 #!/bin/bash
 
+set -euo pipefail
+
+THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# shellcheck source=/dev/null
+source "${THIS_DIR}/../utils.sh"
+
+check_requirements() {
+  if [ "$(uname)" != "Darwin" ]; then
+    log "Error: This script is for macOS only!"
+    return 1
+  fi
+}
+
 if [ "$(uname)" != "Darwin" ]; then
-  echo "This script is for macOS only!"
+  log "This script is for macOS only!"
   exit 1
 fi
 
 configure_sound_effects() {
-  echo "Configuring sound effects..."
+  log "Configuring sound effects..."
 
   sudo nvram StartupMute=%01 #起動音をミュート
 
-  echo "Complete configuring sound effects!"
+  log "Complete configuring sound effects!"
 }
 
 configure_scrollbar() {
-  echo "Configuring scrollbar..."
+  log "Configuring scrollbar..."
 
   defaults write NSGlobalDomain AppleShowScrollBars -string "Always" # スクロールバーを常に表示
 
-  echo "Complete configuring scrollbar!"
+  log "Complete configuring scrollbar!"
 }
 
 configure_time() {
-  echo "Configuring time settings..."
+  log "Configuring time settings..."
 
   defaults write NSGlobalDomain AppleICUForce24HourTime -bool true                           # 24時間表示にする
   defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss" # メニューバーの時計フォーマットを「月日(曜日) 時:分:秒」に設定
 
-  echo "Complete configuring time settings!"
+  log "Complete configuring time settings!"
 }
 
 configure_battery() {
-  echo "Configuring battery settings..."
+  log "Configuring battery settings..."
 
   sudo pmset -a LowPowerMode 0 # Low Power Modeを無効化
 
-  echo "Complete configuring battery settings!"
+  log "Complete configuring battery settings!"
 }
 
 configure_screenshot() {
-  echo "Configuring screenshot settings..."
+  log "Configuring screenshot settings..."
 
   defaults write com.apple.screencapture "disable-shadow" -bool true # スクリーンショットに影を付けない
   defaults write com.apple.screencapture location ~/Downloads        # スクリーンショットの保存先をDownloadsに変更
   defaults write com.apple.screencapture type -string "png"          # スクリーンショットのファイル形式をPNGに変更
 
-  echo "Complete configuring screenshot settings!"
+  log "Complete configuring screenshot settings!"
 }
 
 configure_controlcenter() {
-  echo "Configuring control center settings..."
+  log "Configuring control center settings..."
 
   defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool false                   # Wi-Fi: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool false              # Bluetooth: メニューバーに表示しない
@@ -71,11 +85,11 @@ configure_controlcenter() {
 
   killall ControlCenter
 
-  echo "Complete configuring control center settings!"
+  log "Complete configuring control center settings!"
 }
 
 configure_dock_desktop() {
-  echo "Configuring Dock and Desktop settings..."
+  log "Configuring Dock and Desktop settings..."
 
   # Dock
   defaults write com.apple.dock tilesize -int 48                            # アイコンサイズを48pxに
@@ -124,11 +138,11 @@ configure_dock_desktop() {
   killall Dock
   killall Finder
 
-  echo "Complete configuring Dock and Desktop settings!"
+  log "Complete configuring Dock and Desktop settings!"
 }
 
 configure_notifications() {
-  echo "Configuring Notification Center settings..."
+  log "Configuring Notification Center settings..."
 
   defaults write com.apple.notificationcenterui bannerPreviewStyle -int 2               # 通知のプレビューを「ロック解除時のみ」に設定
   defaults write com.apple.notificationcenterui doNotDisturb -bool true                 # ディスプレイがスリープ中でも通知を許可しない
@@ -137,33 +151,33 @@ configure_notifications() {
 
   killall NotificationCenter
 
-  echo "Complete configuring Notification Center settings!"
+  log "Complete configuring Notification Center settings!"
 }
 
 configure_sound() {
-  echo "Configuring Sound settings..."
+  log "Configuring Sound settings..."
 
   sudo nvram SystemAudioVolume="%00"                                                                           # 起動時のサウンドをオフ
   defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool true                                     # UI のサウンドエフェクトを有効化
   defaults write -g com.apple.sound.beep.feedback -bool false                                                  # 音量変更時のフィードバック音を無効化
   defaults write com.apple.systemsound "com.apple.sound.beep.sound" -string "/System/Library/Sounds/Boop.aiff" # 警告音を "Boop" に設定
 
-  echo "Complete configuring Sound settings!"
+  log "Complete configuring Sound settings!"
 }
 
 configure_focus() {
-  echo "Configuring Focus settings..."
+  log "Configuring Focus settings..."
 
   defaults write com.apple.ncprefs.plist focusMode -dict-add "shareAcrossDevices" -bool true # フォーカスモードをデバイス間で共有する
   defaults write com.apple.ncprefs.plist focusMode -dict-add "focusStatus" -bool true        # フォーカスステータスをアプリと共有する
 
   killall NotificationCenter
 
-  echo "Complete configuring Focus settings!"
+  log "Complete configuring Focus settings!"
 }
 
 configure_lock_screen() {
-  echo "Configuring Lock Screen settings..."
+  log "Configuring Lock Screen settings..."
 
   defaults -currentHost write com.apple.screensaver idleTime -int 180 # スクリーンセーバーの開始時間（3 分）
   sudo pmset -b displaysleep 5                                        # バッテリー使用時のディスプレイオフ時間（5 分）
@@ -175,11 +189,11 @@ configure_lock_screen() {
   defaults write com.apple.menuextra.clock IsAnalog -bool false                           # デジタル時計を表示
   sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false # ゲストユーザーを無効化
 
-  echo "Complete configuring Lock Screen settings!"
+  log "Complete configuring Lock Screen settings!"
 }
 
 configure_security() {
-  echo "Configuring Security settings..."
+  log "Configuring Security settings..."
 
   # 許可するアプリのソースを「App Store & Known Developers」に設定
   sudo spctl --master-enable
@@ -188,15 +202,19 @@ configure_security() {
 
   sudo defaults write /Library/Preferences/com.apple.AccessorySecurity "AccessorySecurityPolicy" -int 1 # アクセサリの接続を「新しいアクセサリの接続を確認」に設定
   sudo defaults write /Library/Preferences/com.apple.security.lockdown "Mode" -bool false               # Lockdown Mode をオフに設定（Lockdown Mode の変更は手動が推奨される）
-  sudo fdesetup enable                                                                                  # FileVault を有効化
-  defaults write com.apple.screensaver askForPassword -int 1                                            # スクリーンセーバーやスリープ解除時にパスワードを要求
-  defaults write com.apple.screensaver askForPasswordDelay -int 0                                       # スクリーンセーバーやスリープ解除後のパスワード要求を即時に
+  if ! fdesetup status | grep -q "FileVault is On."; then                                               # FileVault を有効化
+    sudo fdesetup enable
+  else
+    log "FileVault is already enabled. Skipping."
+  fi
+  defaults write com.apple.screensaver askForPassword -int 1      # スクリーンセーバーやスリープ解除時にパスワードを要求
+  defaults write com.apple.screensaver askForPasswordDelay -int 0 # スクリーンセーバーやスリープ解除後のパスワード要求を即時に
 
-  echo "Complete configuring Security settings!"
+  log "Complete configuring Security settings!"
 }
 
 configure_keyboard() {
-  echo "Configuring Keyboard settings..."
+  log "Configuring Keyboard settings..."
 
   defaults write NSGlobalDomain KeyRepeat -int 2                                                          # キーリピート速度（0 が最速、2 以上で遅くなる）
   defaults write NSGlobalDomain InitialKeyRepeat -int 15                                                  # キーリピート開始の遅延（短くする）
@@ -209,11 +227,11 @@ configure_keyboard() {
   defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false                              # 自動大文字変換を無効化
   defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false                          # 自動スペルチェックを無効化
 
-  echo "Complete configuring Keyboard settings!"
+  log "Complete configuring Keyboard settings!"
 }
 
 configure_trackpad() {
-  echo "Configuring Trackpad settings..."
+  log "Configuring Trackpad settings..."
 
   defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3                                                   # トラッキング速度（1 ～ 3 の範囲で設定）
   defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 1                                         # クリック強度（0=軽い, 1=中, 2=強い）
@@ -246,11 +264,11 @@ configure_trackpad() {
   defaults write com.apple.dock showLaunchpadGestureEnabled -bool true                                                # Launchpad（親指と 3 本指でピンチ）
   defaults write com.apple.dock showDesktopGestureEnabled -bool true                                                  # デスクトップ表示（親指と 3 本指で広げる）
 
-  echo "Complete configuring Trackpad settings!"
+  log "Complete configuring Trackpad settings!"
 }
 
 configure_mouse() {
-  echo "Configuring Mouse settings..."
+  log "Configuring Mouse settings..."
 
   defaults write NSGlobalDomain com.apple.mouse.scaling -float 3.0                                   # トラッキング速度（1.0 - 3.0 の範囲で設定可能）
   defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true                            # ナチュラルスクロール（オン）
@@ -258,11 +276,11 @@ configure_mouse() {
   defaults write NSGlobalDomain com.apple.mouse.doubleClickThreshold -float 0.75                     # ダブルクリックの速度（最速に近い設定）
   defaults write NSGlobalDomain com.apple.scrollwheel.scaling -float 0.75                            # スクロール速度（中程度に設定）
 
-  echo "Complete configuring Mouse settings!"
+  log "Complete configuring Mouse settings!"
 }
 
 configure_finder() {
-  echo "Configuring Finder settings..."
+  log "Configuring Finder settings..."
 
   # 隠しファイルを表示
   defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -329,22 +347,7 @@ configure_finder() {
   sleep 1
   killall Finder
 
-  echo "Complete configuring Finder settings!"
-}
-
-configure_safari() {
-  echo "Configuring Safari settings..."
-
-  defaults write com.apple.Safari IncludeDevelopMenu -bool true                           # 開発メニューを有効化
-  defaults write com.apple.Safari IncludeInternalDebugMenu -bool true                     # 内部デバッグメニューを有効化
-  defaults write com.apple.Safari AutoFillPasswords -bool false                           # パスワードの自動入力を無効化
-  defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true                # アドレスバーにフル URL を表示
-  defaults write com.apple.Safari ShowStatusBar -bool true                                # ステータスバーを常に表示
-  defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false # ポップアップウィンドウをブロック
-  defaults write com.apple.Safari WebRTCIPHandlingPolicy -string "DisableNonProxiedUdp"   # WebRTC の IP 露出を防ぐ
-  defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true                     # 広告トラッキングを防ぐ
-
-  echo "Complete configuring Safari settings!"
+  log "Complete configuring Finder settings!"
 }
 
 main() {
@@ -394,9 +397,6 @@ main() {
   echo ""
 
   configure_finder
-  echo ""
-
-  configure_safari
   echo ""
 }
 
