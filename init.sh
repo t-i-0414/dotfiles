@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+set -eu pipefail
 
 THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
 
