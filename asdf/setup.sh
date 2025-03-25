@@ -13,7 +13,7 @@ else
   SOURCE_CMD="."
 fi
 
-$SOURCE_CMD some_file.sh
+$SOURCE_CMD "${THIS_DIR}/../utils.sh"
 
 check_requirements() {
   if ! command -v asdf >/dev/null 2>&1; then

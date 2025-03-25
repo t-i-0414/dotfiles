@@ -15,7 +15,7 @@ else
   SOURCE_CMD="."
 fi
 
-$SOURCE_CMD some_file.sh
+$SOURCE_CMD "${THIS_DIR}/../utils.sh"
 
 check_requirements() {
   if [ ! -f "$THIS_DIR/$TARGET_FILE" ]; then

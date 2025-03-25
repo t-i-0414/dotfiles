@@ -5,7 +5,15 @@ set -eu pipefail
 THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # shellcheck source=/dev/null
-source "${THIS_DIR}/utils.sh"
+if [ -n "$BASH_VERSION" ]; then
+  SOURCE_CMD="source"
+elif [ -n "$ZSH_VERSION" ]; then
+  SOURCE_CMD="source"
+else
+  SOURCE_CMD="."
+fi
+
+$SOURCE_CMD "${THIS_DIR}/utils.sh"
 
 main() {
   log "Starting system setup..."
