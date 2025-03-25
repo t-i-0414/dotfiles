@@ -4,7 +4,7 @@ set -eu pipefail
 
 THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
+if command -v source >/dev/null 2>&1; then
   SOURCE_CMD="source"
 else
   SOURCE_CMD="."
