@@ -8,7 +8,7 @@ deno 2.2.5
 # Package Managers
 pnpm 10.7.0
 yarn 1.22.19
-bun 1.2.5
+bun 1.2.8
 uv 0.6.10
 # Cloud Tools
 awscli 2.25.6
