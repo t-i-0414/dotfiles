@@ -150,3 +150,6 @@ cask 'guitar-pro'                # Guitar tablature editor
 
 # Development Runtime
 cask 'zulu'                      # OpenJDK distribution
+
+# Xcode management
+cask 'xcodes'                   # Xcode version manager
