@@ -93,6 +93,11 @@ fi
 # Initialize starship prompt
 eval "$(starship init zsh)"
 
+# Initialize direnv
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 # zsh plugins
 if [[ -n "$HOMEBREW_PREFIX" ]]; then
   if [[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
