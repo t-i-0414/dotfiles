@@ -144,7 +144,6 @@ alias fgrep='fgrep --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias l.='ls -d .* --color=auto'
-alias sed='gsed'
 
 # Development workflow aliases
 alias gm='brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor'
