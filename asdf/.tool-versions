@@ -6,7 +6,7 @@ ruby 3.4.2
 rust 1.85.1
 deno 2.2.5
 # Package Managers
-pnpm 10.7.0
+pnpm 10.7.1
 yarn 1.22.19
 bun 1.2.8
 uv 0.6.12
