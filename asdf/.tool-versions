@@ -11,7 +11,7 @@ yarn 1.22.19
 bun 1.2.8
 uv 0.6.12
 # Cloud Tools
-awscli 2.25.13
+awscli 2.26.1
 gcloud 517.0.0
 terraform 1.10.3
 firebase 14.0.1
