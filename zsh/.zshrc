@@ -123,6 +123,7 @@ fi
 
 # Base aliases
 alias g='git'
+alias galias='git config --get-regexp ^alias\.'
 alias d='docker'
 alias tf='terraform'
 
