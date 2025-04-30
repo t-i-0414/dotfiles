@@ -17,4 +17,4 @@ terraform 1.11.4
 firebase 14.2.1
 hasura-cli 2.45.1
 # Development Tools
-direnv 2.35.0
+direnv 2.36.0
