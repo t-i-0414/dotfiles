@@ -14,7 +14,7 @@ uv 0.7.2
 awscli 2.27.2
 gcloud 518.0.0
 terraform 1.11.4
-firebase 14.2.1
+firebase 14.2.2
 hasura-cli 2.45.1
 # Development Tools
 direnv 2.36.0
