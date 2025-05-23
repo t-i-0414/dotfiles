@@ -275,7 +275,8 @@ configure_trackpad() {
 configure_mouse() {
   log "Configuring Mouse settings..."
 
-  defaults write NSGlobalDomain com.apple.mouse.scaling -float 3.0                                   # トラッキング速度（1.0 - 3.0 の範囲で設定可能）
+  defaults write NSGlobalDomain com.apple.mouse.scaling -float -1                                    # マウスのトラッキング速度（1.0 - 3.0 の範囲で設定可能）
+  defaults write NSGlobalDomain com.apple.trackpad.scaling -float -1                                 # トラックパッドのトラッキング速度（1.0 - 3.0 の範囲で設定可能）
   defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true                            # ナチュラルスクロール（オン）
   defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string "TwoButton" # 副ボタンクリック（右クリックを有効化）
   defaults write NSGlobalDomain com.apple.mouse.doubleClickThreshold -float 0.75                     # ダブルクリックの速度（最速に近い設定）
