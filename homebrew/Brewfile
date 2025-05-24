@@ -39,7 +39,6 @@ brew 'yq'                      # YAML processor
 brew 'asdf'                    # Multi-language version manager
 brew 'python-tk'               # Python Tkinter
 brew 'fvm'                     # Flutter version management
-brew 'nodenv'                  # Only used for Cline's MCP
 
 # Database Tools
 brew 'mysql'                  # MySQL database
