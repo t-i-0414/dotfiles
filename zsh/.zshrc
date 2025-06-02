@@ -90,6 +90,9 @@ fi
 # plugins & tools
 # ===========================
 
+autoload -Uz compinit
+compinit
+
 # Initialize starship prompt
 eval "$(starship init zsh)"
 
@@ -108,6 +111,10 @@ if [[ -n "$HOMEBREW_PREFIX" ]]; then
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
   fi
 fi
+
+# terraform zsh completion
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /Users/takuya-iwashiro/.asdf/installs/terraform/1.12.1/bin/terraform terraform
 
 # ===========================
 # aliases & functions
