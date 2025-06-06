@@ -128,6 +128,8 @@ alias g='git'
 alias galias='git config --get-regexp ^alias\.'
 alias d='docker'
 alias tf='terraform'
+alias awsprofile='aws --profile default sts get-caller-identity'
+alias awsprofilelist='aws configure list-profiles'
 
 # Docker aliases
 alias di='docker images'
