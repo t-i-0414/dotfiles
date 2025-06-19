@@ -6,8 +6,8 @@ email = takuya.iwashiro@takudev.net
 excludesfile = ~/.gitignore_global
 ignorecase = false
 quotepath = false
-autocrlf = input
-safecrlf = true
+	autocrlf = input
+	safecrlf = false
 
 [color]
 ui = auto
