@@ -289,6 +289,9 @@ configure_mouse() {
 configure_finder() {
   log "Configuring Finder settings..."
 
+  # Finder のデフォルト並び順を「Kind」に設定
+  defaults write com.apple.finder FXPreferredGroupBy -string "Kind"
+
   # 隠しファイルを表示
   defaults write com.apple.finder AppleShowAllFiles -bool true
 
