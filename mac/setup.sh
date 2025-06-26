@@ -87,6 +87,7 @@ configure_controlcenter() {
   defaults write com.apple.controlcenter "NSStatusItem Visible TimeMachine" -bool false            # Time Machine: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible VPN" -bool false                    # VPN: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible Weather" -bool false                # Weather: メニューバーに表示しない
+  defaults write com.apple.spaces spans-displays -bool false                                       # ディスプレイごとにスペースを分離しない
 
   killall ControlCenter
 
