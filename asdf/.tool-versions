@@ -9,7 +9,7 @@ deno 2.3.6
 pnpm 10.12.4
 yarn 1.22.19
 bun 1.2.15
-uv 0.7.17
+uv 0.7.18
 # Cloud Tools
 awscli 2.27.45
 gcloud 525.0.0
