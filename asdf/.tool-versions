@@ -2,7 +2,7 @@
 python 3.11.4
 nodejs 22.17.0
 golang 1.24.3
-ruby 3.4.2
+ruby 3.4.4
 rust 1.88.0
 deno 2.4.0
 # Package Managers
