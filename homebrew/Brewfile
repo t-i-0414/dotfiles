@@ -7,6 +7,7 @@ cask_args appdir: '/Applications'
 # Taps
 # ====================
 tap 'leoafarias/fvm'           # Flutter Version Management
+tap 'mobile-dev-inc/tap'       # Mobile development tools
 
 # ====================
 # Development Tools
@@ -55,6 +56,7 @@ brew 'localstack'             # Local AWS cloud stack emulator
 brew 'ios-deploy'            # iOS deploying tool
 brew 'fastlane'              # iOS & Android deployment tool
 brew 'watchman'              # File watching service
+brew 'maestro'               # Mobile e2e testing tool
 
 # Image Processing
 brew 'imagemagick'           # Image manipulation library
