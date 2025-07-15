@@ -115,6 +115,8 @@ cask 'karabiner-elements'        # Keyboard customizer
 cask 'notion'                    # Note taking & collaboration
 cask 'meetingbar'                # Calendar meetings in menu bar
 cask 'menubarx'                  # Menubar browser
+cask 'obsidian'                  # Note-taking app
+cask 'raycast'                   # Command palette & productivity tool
 
 # Communication
 cask 'slack'                     # Team communication
