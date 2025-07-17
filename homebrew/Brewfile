@@ -110,7 +110,6 @@ cask 'firefox@nightly'           # Firefox Nightly
 # Productivity
 cask 'alfred'                    # Productivity app
 cask 'cleanmymac'                # System cleaner
-cask 'rectangle'                 # Window manager
 cask 'karabiner-elements'        # Keyboard customizer
 cask 'notion'                    # Note taking & collaboration
 cask 'meetingbar'                # Calendar meetings in menu bar
