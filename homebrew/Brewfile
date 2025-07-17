@@ -108,7 +108,6 @@ cask 'microsoft-edge'            # Edge browser
 cask 'firefox@nightly'           # Firefox Nightly
 
 # Productivity
-cask 'alfred'                    # Productivity app
 cask 'cleanmymac'                # System cleaner
 cask 'karabiner-elements'        # Keyboard customizer
 cask 'notion'                    # Note taking & collaboration
