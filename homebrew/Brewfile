@@ -81,6 +81,7 @@ brew 'rename'                # File renaming tool
 brew 'telnet'                # Telnet client
 brew 'wimlib'                # Windows Imaging library
 brew 'yt-dlp'                # YouTube video downloader
+brew 'terminal-notifier'     # Send macOS notifications from the command line
 
 # ====================
 # Applications (Casks)
