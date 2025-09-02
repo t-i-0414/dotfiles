@@ -12,7 +12,7 @@ bun 1.2.21
 uv 0.8.14
 # Cloud Tools
 awscli 2.28.21
-gcloud 533.0.0
+gcloud 536.0.1
 terraform 1.12.2
 firebase 14.15.1
 hasura-cli 2.47.0
