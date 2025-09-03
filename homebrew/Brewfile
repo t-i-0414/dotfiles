@@ -74,6 +74,7 @@ brew 'gibo'                  # .gitignore boilerplates
 brew 'gpg'                   # GNU Privacy Guard
 brew 'libyaml'               # YAML parser
 brew 'mas'                   # Mac App Store CLI
+brew 'mcp-proxy'             # MCP Proxy
 brew 'num-utils'             # Number utilities
 brew 'pkg-config'            # Package compiler/linker helper
 brew 'readline'              # Command-line editing library
