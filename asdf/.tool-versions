@@ -9,10 +9,10 @@ deno 2.4.5
 pnpm 10.14.0
 yarn 1.22.19
 bun 1.2.21
-uv 0.8.14
+uv 0.8.15
 # Cloud Tools
-awscli 2.28.21
-gcloud 536.0.1
+awscli 2.28.23
+gcloud 537.0.0
 terraform 1.13.1
 firebase 14.15.1
 hasura-cli 2.48.4
