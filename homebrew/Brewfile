@@ -76,6 +76,7 @@ brew 'libyaml'               # YAML parser
 brew 'mas'                   # Mac App Store CLI
 brew 'mcp-proxy'             # MCP Proxy
 brew 'num-utils'             # Number utilities
+brew 'pipx'                  # Python package runner
 brew 'pkg-config'            # Package compiler/linker helper
 brew 'readline'              # Command-line editing library
 brew 'rename'                # File renaming tool
