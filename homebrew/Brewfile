@@ -158,4 +158,8 @@ cask 'guitar-pro'                # Guitar tablature editor
 cask 'zulu'                      # OpenJDK distribution
 
 # Xcode management
-cask 'xcodes'                   # Xcode version manager
+cask 'xcodes'                    # Xcode version manager
+
+# AI Tools
+cask 'chatgpt'                   # ChatGPT client
+cask 'claude'                    # Claude AI client
