@@ -76,6 +76,7 @@ brew 'libyaml'               # YAML parser
 brew 'mas'                   # Mac App Store CLI
 brew 'mcp-proxy'             # MCP Proxy
 brew 'num-utils'             # Number utilities
+brew 'ollama'                # Local LLMs
 brew 'overmind'              # Memory overcommitment tool
 brew 'pipx'                  # Python package runner
 brew 'pkg-config'            # Package compiler/linker helper
@@ -97,10 +98,8 @@ cask 'expressvpn'                # VPN client
 
 # Development Tools
 cask 'visual-studio-code'        # Code editor
-cask 'cursor'                    # AI-powered code editor
 cask 'android-studio'            # Android IDE
 cask 'iterm2'                    # Terminal emulator
-cask 'warp'                      # Modern terminal
 cask 'docker'                    # Container platform
 cask 'postman'                   # API development
 cask 'react-native-debugger'     # React Native debugging
