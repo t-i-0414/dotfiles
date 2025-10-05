@@ -100,7 +100,7 @@ cask 'expressvpn'                # VPN client
 cask 'visual-studio-code'        # Code editor
 cask 'android-studio'            # Android IDE
 cask 'iterm2'                    # Terminal emulator
-cask 'docker'                    # Container platform
+cask 'docker-desktop'                    # Container platform
 cask 'postman'                   # API development
 cask 'react-native-debugger'     # React Native debugging
 cask 'tableplus'                 # Database management
@@ -158,7 +158,7 @@ cask 'guitar-pro'                # Guitar tablature editor
 cask 'zulu'                      # OpenJDK distribution
 
 # Xcode management
-cask 'xcodes'                    # Xcode version manager
+cask 'xcodes-app'                # Xcode version manager
 
 # AI Tools
 cask 'chatgpt'                   # ChatGPT client
