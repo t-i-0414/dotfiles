@@ -43,7 +43,7 @@ brew 'fvm'                     # Flutter version management
 
 # Database Tools
 brew 'mysql'                  # MySQL database
-brew 'postgresql@14'          # PostgreSQL database
+brew 'postgresql@18'          # PostgreSQL database
 brew 'libpq'                  # PostgreSQL library
 
 # Cloud & DevOps Tools
