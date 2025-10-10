@@ -12,7 +12,7 @@ fi
 
 $SOURCE_CMD "${THIS_DIR}/../utils.sh"
 
-DOTFILES=(.gitconfig .gitignore)
+DOTFILES=(.gitconfig .gitignore .czrc)
 
 check_requirements() {
   for file in "${DOTFILES[@]}"; do
