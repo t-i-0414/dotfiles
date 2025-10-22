@@ -81,6 +81,7 @@ brew 'overmind'              # Memory overcommitment tool
 brew 'pipx'                  # Python package runner
 brew 'pkg-config'            # Package compiler/linker helper
 brew 'readline'              # Command-line editing library
+brew 'redis'                 # In-memory data structure store
 brew 'rename'                # File renaming tool
 brew 'telnet'                # Telnet client
 brew 'wimlib'                # Windows Imaging library
