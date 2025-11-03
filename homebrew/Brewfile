@@ -87,6 +87,7 @@ brew 'telnet'                # Telnet client
 brew 'wimlib'                # Windows Imaging library
 brew 'yt-dlp'                # YouTube video downloader
 brew 'terminal-notifier'     # Send macOS notifications from the command line
+brew 'gemini-cli'            # Gemini AI client
 
 # ====================
 # Applications (Casks)
@@ -165,3 +166,4 @@ cask 'xcodes-app'                # Xcode version manager
 cask 'chatgpt'                   # ChatGPT client
 cask 'claude'                    # Claude AI client
 cask 'claude-code'               # Claude Code AI client
+cask 'codex'                     # Codex AI client
