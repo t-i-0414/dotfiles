@@ -10,13 +10,13 @@ tap 'leoafarias/fvm'           # Flutter Version Management
 tap 'mobile-dev-inc/tap'       # Mobile development tools
 
 # ====================
-# Development Tools
+# Formulae
 # ====================
 
-# Version Control
+# Version Control & Collaboration
+brew 'gh'                      # GitHub CLI
 brew 'git'                     # Version control system
 brew 'git-filter-repo'         # Git history rewriting tool
-brew 'gh'                      # GitHub CLI
 
 # Shell & Terminal
 brew 'starship'                # Cross-shell prompt
@@ -24,146 +24,145 @@ brew 'tmux'                    # Terminal multiplexer
 brew 'zsh-autosuggestions'     # Fish-like autosuggestions for zsh
 brew 'zsh-syntax-highlighting' # Fish shell like syntax highlighting
 
-# Core Utils
-brew 'coreutils'               # GNU core utilities
-brew 'gnu-sed'                 # GNU implementation of sed
-brew 'gawk'                    # GNU awk
+# Core Utilities
 brew 'bat'                     # Cat clone with syntax highlighting
+brew 'coreutils'               # GNU core utilities
+brew 'curl'                    # Command line tool for transferring data
+brew 'gawk'                    # GNU awk
+brew 'gnu-sed'                 # GNU implementation of sed
+brew 'jq'                      # Command-line JSON processor
 brew 'ripgrep'                 # Fast grep replacement
 brew 'tree'                    # Directory listing as tree
 brew 'wget'                    # Internet file retriever
-brew 'curl'                    # Command line tool for transferring data
-brew 'jq'                      # Command-line JSON processor
 brew 'yq'                      # YAML processor
 
-# Programming Languages & Package Managers
+# Language & Runtime Managers
 brew 'asdf'                    # Multi-language version manager
+# brew 'fvm'                     # Flutter version management
+brew 'pipx'                    # Python package runner
 brew 'python-tk'               # Python Tkinter
-brew 'fvm'                     # Flutter version management
 
-# Database Tools
-brew 'mysql'                  # MySQL database
-brew 'postgresql@18'          # PostgreSQL database
-brew 'libpq'                  # PostgreSQL library
+# Databases & Data Stores
+brew 'libpq'                   # PostgreSQL library
+brew 'mysql'                   # MySQL database
+brew 'postgresql@18'           # PostgreSQL database
+brew 'redis'                   # In-memory data structure store
 
-# Cloud & DevOps Tools
-brew 'act'                    # Run GitHub Actions locally
-brew 'saml2aws'               # Login to AWS using SAML
-brew 'terraformer'            # Generate terraform files from existing infrastructure
-brew 'localstack'             # Local AWS cloud stack emulator
+# Cloud & DevOps
+brew 'act'                     # Run GitHub Actions locally
+brew 'localstack'              # Local AWS cloud stack emulator
+brew 'overmind'                # Memory overcommitment tool
+brew 'saml2aws'                # Login to AWS using SAML
+brew 'terraformer'             # Generate terraform files from existing infrastructure
 
 # Mobile Development
-brew 'ios-deploy'            # iOS deploying tool
-brew 'fastlane'              # iOS & Android deployment tool
-brew 'watchman'              # File watching service
-brew 'maestro'               # Mobile e2e testing tool
+brew 'fastlane'                # iOS & Android deployment tool
+brew 'ios-deploy'              # iOS deploying tool
+brew 'maestro'                 # Mobile e2e testing tool
+brew 'watchman'                # File watching service
 
-# Image Processing
-brew 'imagemagick'           # Image manipulation library
-brew 'cairo'                 # Vector graphics library
-brew 'giflib'                # GIF library
-brew 'jpeg'                  # JPEG library
-brew 'libpng'                # PNG library
-brew 'librsvg'               # SVG library
-brew 'pango'                 # Text layout engine
-brew 'pixman'                # Low-level pixel manipulation
+# Graphics & Media Processing
+brew 'cairo'                   # Vector graphics library
+brew 'giflib'                  # GIF library
+brew 'imagemagick'             # Image manipulation library
+brew 'jpeg'                    # JPEG library
+brew 'libpng'                  # PNG library
+brew 'librsvg'                 # SVG library
+brew 'pango'                   # Text layout engine
+brew 'pixman'                  # Low-level pixel manipulation
+brew 'yt-dlp'                  # YouTube video downloader
 
-# Other Tools
-brew 'blueutil'              # Bluetooth CLI
-brew 'gibo'                  # .gitignore boilerplates
-brew 'gpg'                   # GNU Privacy Guard
-brew 'libyaml'               # YAML parser
-brew 'mas'                   # Mac App Store CLI
-brew 'mcp-proxy'             # MCP Proxy
-brew 'num-utils'             # Number utilities
-brew 'ollama'                # Local LLMs
-brew 'overmind'              # Memory overcommitment tool
-brew 'pipx'                  # Python package runner
-brew 'pkg-config'            # Package compiler/linker helper
-brew 'readline'              # Command-line editing library
-brew 'redis'                 # In-memory data structure store
-brew 'rename'                # File renaming tool
-brew 'telnet'                # Telnet client
-brew 'wimlib'                # Windows Imaging library
-brew 'yt-dlp'                # YouTube video downloader
-brew 'terminal-notifier'     # Send macOS notifications from the command line
-brew 'gemini-cli'            # Gemini AI client
+# AI & Automation
+brew 'gemini-cli'              # Gemini AI client
+brew 'mcp-proxy'               # MCP Proxy
+brew 'ollama'                  # Local LLMs
+
+# System Utilities & Misc
+brew 'blueutil'                # Bluetooth CLI
+brew 'gibo'                    # .gitignore boilerplates
+brew 'gpg'                     # GNU Privacy Guard
+brew 'libyaml'                 # YAML parser
+brew 'mas'                     # Mac App Store CLI
+brew 'num-utils'               # Number utilities
+brew 'pkg-config'              # Package compiler/linker helper
+brew 'readline'                # Command-line editing library
+brew 'rename'                  # File renaming tool
+brew 'telnet'                  # Telnet client
+brew 'terminal-notifier'       # Send macOS notifications from the command line
+brew 'wimlib'                  # Windows Imaging library
 
 # ====================
 # Applications (Casks)
 # ====================
 
 # Security & Privacy
-cask '1password'                 # Password manager
-cask '1password-cli'             # 1Password CLI
-cask 'expressvpn'                # VPN client
+cask '1password'               # Password manager
+cask '1password-cli'           # 1Password CLI
+cask 'expressvpn'              # VPN client
 
-# Development Tools
-cask 'visual-studio-code'        # Code editor
-cask 'android-studio'            # Android IDE
-cask 'iterm2'                    # Terminal emulator
-cask 'docker-desktop'                    # Container platform
-cask 'postman'                   # API development
-cask 'react-native-debugger'     # React Native debugging
-cask 'tableplus'                 # Database management
+# Development & Runtime
+cask 'android-studio'          # Android IDE
+cask 'docker-desktop'          # Container platform
+cask 'iterm2'                  # Terminal emulator
+cask 'postman'                 # API development
+cask 'react-native-debugger'   # React Native debugging
+cask 'tableplus'               # Database management
+cask 'visual-studio-code'      # Code editor
+cask 'xcodes-app'              # Xcode version manager
+cask 'zulu'                    # OpenJDK distribution
 
 # Browsers
-cask 'google-chrome'             # Chrome browser
-cask 'microsoft-edge'            # Edge browser
-cask 'firefox@nightly'           # Firefox Nightly
+cask 'firefox@nightly'         # Firefox Nightly
+cask 'google-chrome'           # Chrome browser
+cask 'microsoft-edge'          # Edge browser
 
-# Productivity
-cask 'cleanmymac'                # System cleaner
-cask 'karabiner-elements'        # Keyboard customizer
-cask 'notion'                    # Note taking & collaboration
-cask 'notion-calendar'           # Calendar integration for Notion
-cask 'meetingbar'                # Calendar meetings in menu bar
-cask 'menubarx'                  # Menubar browser
-cask 'obsidian'                  # Note-taking app
-cask 'raycast'                   # Command palette & productivity tool
+# Productivity & Organization
+cask 'cleanmymac'              # System cleaner
+cask 'karabiner-elements'      # Keyboard customizer
+cask 'meetingbar'              # Calendar meetings in menu bar
+cask 'menubarx'                # Menubar browser
+cask 'notion'                  # Note taking & collaboration
+cask 'notion-calendar'         # Calendar integration for Notion
+cask 'obsidian'                # Note-taking app
+cask 'raycast'                 # Command palette & productivity tool
 
 # Communication
-cask 'slack'                     # Team communication
-cask 'discord'                   # Chat & communities
-cask 'zoom'                      # Video conferencing
+cask 'discord'                 # Chat & communities
+cask 'slack'                   # Team communication
+cask 'zoom'                    # Video conferencing
 
-# Microsoft Office
-cask 'microsoft-excel'           # Spreadsheet
-cask 'microsoft-outlook'         # Email client
-cask 'microsoft-word'            # Word processor
+# Office Suite
+cask 'microsoft-excel'         # Spreadsheet
+cask 'microsoft-outlook'       # Email client
+cask 'microsoft-word'          # Word processor
 
 # Design & Creative
-cask 'adobe-creative-cloud'      # Adobe suite
-cask 'figma'                     # Design tool
-cask 'drawio'                    # Diagram software
+cask 'adobe-creative-cloud'    # Adobe suite
+cask 'drawio'                  # Diagram software
+cask 'figma'                   # Design tool
 
 # Cloud Storage & Sync
-cask 'google-drive'              # Google Drive
+cask 'google-drive'            # Google Drive
 
 # Language & Translation
-cask 'google-japanese-ime'       # Japanese input
-cask 'deepl'                     # Translation tool
+cask 'deepl'                   # Translation tool
+cask 'google-japanese-ime'     # Japanese input
 
 # Utilities
-cask 'cyberduck'                 # FTP client
-cask 'keyboardcleantool'         # Keyboard cleaning utility
-cask 'licecap'                   # Screen recorder
-cask 'amazon-q'                  # Amazon Q AI assistant
-cask 'chatgpt'                   # ChatGPT client
-cask 'parallels'                 # Virtual machine platform
+cask 'cyberduck'               # FTP client
+cask 'keyboardcleantool'       # Keyboard cleaning utility
+cask 'licecap'                 # Screen recorder
+
+# Virtualization & Device Tools
+cask 'parallels'               # Virtual machine platform
 
 # Entertainment
-cask 'spotify'                   # Music streaming
-cask 'guitar-pro'                # Guitar tablature editor
-
-# Development Runtime
-cask 'zulu'                      # OpenJDK distribution
-
-# Xcode management
-cask 'xcodes-app'                # Xcode version manager
+cask 'guitar-pro'              # Guitar tablature editor
+cask 'spotify'                 # Music streaming
 
 # AI Tools
-cask 'chatgpt'                   # ChatGPT client
-cask 'claude'                    # Claude AI client
-cask 'claude-code'               # Claude Code AI client
-cask 'codex'                     # Codex AI client
+cask 'amazon-q'                # Amazon Q AI assistant
+cask 'chatgpt'                 # ChatGPT client
+cask 'claude'                  # Claude AI client
+cask 'claude-code'             # Claude Code AI client
+cask 'codex'                   # Codex AI client
