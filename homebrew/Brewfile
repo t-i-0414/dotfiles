@@ -38,7 +38,7 @@ brew 'yq'                      # YAML processor
 
 # Language & Runtime Managers
 brew 'asdf'                    # Multi-language version manager
-# brew 'fvm'                     # Flutter version management
+brew 'fvm'                     # Flutter version management
 brew 'pipx'                    # Python package runner
 brew 'python-tk'               # Python Tkinter
 
