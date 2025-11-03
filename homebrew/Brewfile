@@ -164,3 +164,4 @@ cask 'xcodes-app'                # Xcode version manager
 # AI Tools
 cask 'chatgpt'                   # ChatGPT client
 cask 'claude'                    # Claude AI client
+cask 'claude-code'               # Claude Code AI client
