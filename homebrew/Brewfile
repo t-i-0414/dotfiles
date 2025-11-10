@@ -166,3 +166,6 @@ cask 'chatgpt'                 # ChatGPT client
 cask 'claude'                  # Claude AI client
 cask 'claude-code'             # Claude Code AI client
 cask 'codex'                   # Codex AI client
+
+# Task
+brew "go-task/tap/go-task"     # Task runner
