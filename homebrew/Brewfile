@@ -108,12 +108,14 @@ cask 'postman'                 # API development
 cask 'react-native-debugger'   # React Native debugging
 cask 'tableplus'               # Database management
 cask 'visual-studio-code'      # Code editor
+cask 'cursor'                  # AI-powered IDE
 cask 'xcodes-app'              # Xcode version manager
 cask 'zulu'                    # OpenJDK distribution
 
 # Browsers
 cask 'firefox@nightly'         # Firefox Nightly
 cask 'google-chrome'           # Chrome browser
+cask 'chatgpt-atlas'           # ChatGPT in browser
 cask 'microsoft-edge'          # Edge browser
 
 # Productivity & Organization
@@ -161,7 +163,7 @@ cask 'guitar-pro'              # Guitar tablature editor
 cask 'spotify'                 # Music streaming
 
 # AI Tools
-cask 'amazon-q'                # Amazon Q AI assistant
+cask 'kiro-cli'                # Amazon Q AI assistant
 cask 'chatgpt'                 # ChatGPT client
 cask 'claude'                  # Claude AI client
 cask 'claude-code'             # Claude Code AI client
