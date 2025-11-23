@@ -108,6 +108,7 @@ cask 'postman'                 # API development
 cask 'react-native-debugger'   # React Native debugging
 cask 'tableplus'               # Database management
 cask 'visual-studio-code'      # Code editor
+cask 'cursor'                  # AI-powered IDE
 cask 'xcodes-app'              # Xcode version manager
 cask 'zulu'                    # OpenJDK distribution
 
