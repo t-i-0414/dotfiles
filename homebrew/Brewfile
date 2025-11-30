@@ -54,6 +54,9 @@ brew 'localstack'              # Local AWS cloud stack emulator
 brew 'overmind'                # Memory overcommitment tool
 brew 'saml2aws'                # Login to AWS using SAML
 brew 'terraformer'             # Generate terraform files from existing infrastructure
+brew "tflint"                 # Terraform linter
+brew "terraform-docs"         # Generate documentation from Terraform modules
+brew "checkov"                # Static code analysis for Terraform
 
 # Mobile Development
 brew 'fastlane'                # iOS & Android deployment tool
