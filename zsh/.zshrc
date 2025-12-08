@@ -297,6 +297,10 @@ function update_git_repos() {
 }
 alias ugr='update_git_repos'
 
+function expo-config() {
+  APP_ENV="$1" npx expo config --type public
+}
+
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
