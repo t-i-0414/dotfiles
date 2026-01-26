@@ -130,6 +130,7 @@ cask 'notion'                  # Note taking & collaboration
 cask 'notion-calendar'         # Calendar integration for Notion
 cask 'obsidian'                # Note-taking app
 cask 'raycast'                 # Command palette & productivity tool
+cask 'homerow'                 # Window management
 
 # Communication
 cask 'discord'                 # Chat & communities
