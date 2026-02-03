@@ -3,7 +3,7 @@ python 3.11.4
 nodejs 24.11.1
 golang 1.25.6
 ruby 4.0.0
-rust 1.92.0
+rust 1.93.0
 deno 2.6.5
 # Package Managers
 pnpm 10.28.2
