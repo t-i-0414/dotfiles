@@ -4,7 +4,7 @@ nodejs 24.11.1
 golang 1.25.7
 ruby 4.0.0
 rust 1.93.0
-deno 2.6.8
+deno 2.6.9
 # Package Managers
 pnpm 10.29.2
 yarn 1.22.19
