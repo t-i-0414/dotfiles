@@ -14,7 +14,7 @@ uv 0.10.0
 awscli 2.34.4
 gcloud 558.0.0
 terraform 1.13.5
-terragrunt 0.97.2
+terragrunt 0.99.4
 firebase 15.3.1
 hasura-cli 2.48.4
 # Development Tools
