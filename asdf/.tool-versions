@@ -15,7 +15,7 @@ awscli 2.34.8
 gcloud 558.0.0
 terraform 1.14.6
 terragrunt 0.99.4
-firebase 15.3.1
+firebase 15.10.0
 hasura-cli 2.48.4
 # Development Tools
 direnv 2.37.1
