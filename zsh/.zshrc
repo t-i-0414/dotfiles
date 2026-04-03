@@ -162,6 +162,9 @@ alias saml2awssetup="bash -c 'read -sp \"ClientID: \" client_id && echo && read 
 alias saml2awslogin='saml2aws login --session-duration 14400 --force --skip-prompt --browser-type=chrome'
 alias awsprofile='aws --profile default sts get-caller-identity'
 
+# AI tools aliases
+alias c='/opt/homebrew/bin/claude'
+
 # Load custom functions if exists
 [[ -f ~/.zsh_functions ]] && source ~/.zsh_functions
 
