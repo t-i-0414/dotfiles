@@ -26,3 +26,4 @@ direnv = "2.37.1"
 
 [settings]
 legacy_version_file = true
+python.github_attestations = false
