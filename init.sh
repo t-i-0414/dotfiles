@@ -22,7 +22,7 @@ main() {
   run_setup "git"
   run_setup "tmux"
   run_setup "starship"
-  run_setup "asdf"
+  run_setup "mise"
   run_setup "zsh"
 
   log "System setup completed successfully"

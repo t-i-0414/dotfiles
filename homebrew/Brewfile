@@ -36,7 +36,7 @@ brew 'wget'                    # Internet file retriever
 brew 'yq'                      # YAML processor
 
 # Language & Runtime Managers
-brew 'asdf'                    # Multi-language version manager
+brew 'mise'                    # Multi-language version manager
 brew 'pipx'                    # Python package runner
 brew 'python-tk'               # Python Tkinter
 

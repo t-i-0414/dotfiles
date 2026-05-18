@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git rm *)",
+      "Bash(chmod +x /Users/takuya-iwashiro/workspace/dotfiles/mise/setup.sh)"
+    ]
+  }
+}

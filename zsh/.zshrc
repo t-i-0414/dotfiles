@@ -57,9 +57,6 @@ path=(
 
 # Tool configurations
 export RUST_WITHOUT="rust-docs"
-export ASDF_DIRENV_IGNORE_MISSING_PLUGINS=1
-export ASDF_DATA_DIR="$HOME/.asdf"
-path=("$ASDF_DATA_DIR/shims" $path)
 export PATH
 
 # Development settings
@@ -81,9 +78,9 @@ setopt AUTO_PUSHD           # ディレクトリを移動したら自動的にpu
 # platform specific settings
 # ===========================
 
-# Platform specific settings
-if [[ -f "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh" ]]; then
-  source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
+# Activate mise (version manager)
+if command -v mise &>/dev/null; then
+  eval "$(mise activate zsh)"
 fi
 
 # ===========================
@@ -114,7 +111,9 @@ fi
 
 # terraform zsh completion
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /Users/takuya-iwashiro/.asdf/installs/terraform/1.12.1/bin/terraform terraform
+if command -v terraform &>/dev/null; then
+  complete -o nospace -C "$(command -v terraform)" terraform
+fi
 
 # ===========================
 # aliases & functions
