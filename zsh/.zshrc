@@ -162,7 +162,7 @@ alias saml2awslogin='saml2aws login --session-duration 14400 --force --skip-prom
 alias awsprofile='aws --profile default sts get-caller-identity'
 
 # AI tools aliases
-alias c='/opt/homebrew/bin/claude'
+alias c='~/.local/bin/claude'
 
 # Load custom functions if exists
 [[ -f ~/.zsh_functions ]] && source ~/.zsh_functions

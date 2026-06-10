@@ -164,7 +164,6 @@ cask 'spotify'                 # Music streaming
 cask 'kiro-cli'                # Amazon Q AI assistant
 cask 'chatgpt'                 # ChatGPT client
 cask 'claude'                  # Claude AI client
-cask 'claude-code'             # Claude Code AI client
 cask 'codex'                   # Codex AI client
 
 # Task
