@@ -15,7 +15,7 @@ uv = "0.11.13"
 
 # Cloud Tools
 awscli = "2.34.57"
-gcloud = "569.0.0"
+gcloud = "575.0.0"
 terraform = "1.15.5"
 terragrunt = "1.0.7"
 firebase = "15.19.0"
