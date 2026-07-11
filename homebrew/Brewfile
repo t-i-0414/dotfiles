@@ -38,7 +38,8 @@ brew 'yq'                      # YAML processor
 # Language & Runtime Managers
 brew 'mise'                    # Multi-language version manager
 brew 'pipx'                    # Python package runner
-brew 'python-tk'               # Python Tkinter
+brew 'python-tk@3.13'          # Python Tkinter (3.13)
+brew 'python-tk@3.14'          # Python Tkinter (3.14)
 
 # Databases & Data Stores
 brew 'libpq'                   # PostgreSQL library
@@ -48,19 +49,18 @@ brew 'redis'                   # In-memory data structure store
 
 # Cloud & DevOps
 brew 'act'                     # Run GitHub Actions locally
-brew 'localstack'              # Local AWS cloud stack emulator
-brew 'overmind'                # Memory overcommitment tool
+brew 'cloudflared'             # Cloudflare Tunnel client
+brew 'overmind'                # Process manager for Procfile-based applications
 brew 'saml2aws'                # Login to AWS using SAML
-brew 'terraformer'             # Generate terraform files from existing infrastructure
-brew "tflint"                 # Terraform linter
-brew "terraform-docs"         # Generate documentation from Terraform modules
-brew "checkov"                # Static code analysis for Terraform
+brew 'terraform-docs'          # Generate documentation from Terraform modules
+brew 'checkov'                 # Static code analysis for Terraform
 
 # Mobile Development
 brew 'maestro'                 # Mobile e2e testing tool
 brew 'watchman'                # File watching service
 
 # Graphics & Media Processing
+brew 'cairo'                   # 2D graphics library
 brew 'giflib'                  # GIF library
 brew 'imagemagick'             # Image manipulation library
 brew 'jpeg'                    # JPEG library
@@ -68,21 +68,22 @@ brew 'libpng'                  # PNG library
 brew 'librsvg'                 # SVG library
 brew 'pango'                   # Text layout engine
 brew 'pixman'                  # Low-level pixel manipulation
+brew 'poppler'                 # PDF rendering library
 brew 'yt-dlp'                  # YouTube video downloader
 
 # AI & Automation
-brew 'gemini-cli'              # Gemini AI client
 brew 'mcp-proxy'               # MCP Proxy
 brew 'ollama'                  # Local LLMs
+brew 'rulesync'                # Unified AI rules management CLI
 
 # System Utilities & Misc
 brew 'blueutil'                # Bluetooth CLI
 brew 'gibo'                    # .gitignore boilerplates
-brew 'gpg'                     # GNU Privacy Guard
+brew 'gnupg'                   # GNU Privacy Guard
 brew 'libyaml'                 # YAML parser
 brew 'mas'                     # Mac App Store CLI
-brew 'num-utils'               # Number utilities
-brew 'pkg-config'              # Package compiler/linker helper
+brew 'openssl@3'               # Cryptography and SSL/TLS toolkit
+brew 'pkgconf'                 # Package compiler/linker helper
 brew 'readline'                # Command-line editing library
 brew 'rename'                  # File renaming tool
 brew 'telnet'                  # Telnet client
@@ -108,7 +109,7 @@ cask 'tableplus'               # Database management
 cask 'visual-studio-code'      # Code editor
 cask 'xcodes-app'              # Xcode version manager
 cask 'zulu'                    # OpenJDK distribution
-cask 'cmux'                    # AI terminal multiplexer
+cask 'zulu@17'                 # OpenJDK 17 distribution
 
 # Browsers
 cask 'firefox@nightly'         # Firefox Nightly
@@ -120,10 +121,8 @@ cask 'microsoft-edge'          # Edge browser
 cask 'cleanmymac'              # System cleaner
 cask 'karabiner-elements'      # Keyboard customizer
 cask 'meetingbar'              # Calendar meetings in menu bar
-cask 'menubarx'                # Menubar browser
 cask 'notion'                  # Note taking & collaboration
 cask 'notion-calendar'         # Calendar integration for Notion
-cask 'obsidian'                # Note-taking app
 cask 'raycast'                 # Command palette & productivity tool
 
 # Communication
@@ -149,7 +148,7 @@ cask 'deepl'                   # Translation tool
 cask 'google-japanese-ime'     # Japanese input
 
 # Utilities
-cask 'cyberduck'               # FTP client
+cask 'gemini'                  # Duplicate file finder
 cask 'keyboardcleantool'       # Keyboard cleaning utility
 cask 'licecap'                 # Screen recorder
 
@@ -157,11 +156,9 @@ cask 'licecap'                 # Screen recorder
 cask 'parallels'               # Virtual machine platform
 
 # Entertainment
-cask 'guitar-pro'              # Guitar tablature editor
 cask 'spotify'                 # Music streaming
 
 # AI Tools
-cask 'kiro-cli'                # Amazon Q AI assistant
 cask 'chatgpt'                 # ChatGPT client
 cask 'claude'                  # Claude AI client
 cask 'codex'                   # Codex AI client
