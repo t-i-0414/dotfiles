@@ -12,6 +12,7 @@ pnpm = "11.1.2"
 yarn = "1.22.19"
 bun = "1.3.12"
 uv = "0.11.13"
+pipenv = "2026.6.2"
 
 # Cloud Tools
 awscli = "2.34.57"

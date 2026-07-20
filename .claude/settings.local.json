@@ -3,7 +3,11 @@
     "allow": [
       "Bash(git rm *)",
       "Bash(chmod +x /Users/takuya-iwashiro/workspace/dotfiles/mise/setup.sh)",
-      "Bash(brew bundle *)"
+      "Bash(brew bundle *)",
+      "Bash(mise latest *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
