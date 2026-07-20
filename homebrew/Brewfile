@@ -37,6 +37,7 @@ brew 'yq'                      # YAML processor
 
 # Language & Runtime Managers
 brew 'mise'                    # Multi-language version manager
+brew 'pipenv'                  # Python dependency manager
 brew 'pipx'                    # Python package runner
 brew 'python-tk@3.13'          # Python Tkinter (3.13)
 brew 'python-tk@3.14'          # Python Tkinter (3.14)
