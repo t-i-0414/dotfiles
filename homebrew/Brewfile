@@ -75,7 +75,6 @@ brew 'yt-dlp'                  # YouTube video downloader
 # AI & Automation
 brew 'mcp-proxy'               # MCP Proxy
 brew 'ollama'                  # Local LLMs
-brew 'rulesync'                # Unified AI rules management CLI
 
 # System Utilities & Misc
 brew 'blueutil'                # Bluetooth CLI
