@@ -114,7 +114,6 @@ cask 'zulu@17'                 # OpenJDK 17 distribution
 # Browsers
 cask 'firefox@nightly'         # Firefox Nightly
 cask 'google-chrome'           # Chrome browser
-cask 'chatgpt-atlas'           # ChatGPT in browser
 cask 'microsoft-edge'          # Edge browser
 
 # Productivity & Organization
