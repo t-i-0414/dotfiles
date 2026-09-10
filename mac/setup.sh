@@ -40,6 +40,15 @@ configure_scrollbar() {
   log "Complete configuring scrollbar!"
 }
 
+configure_appearance() {
+  log "Configuring Appearance settings..."
+
+  defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"                   # 外観モードをダークに
+  defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool false # 外観の自動切り替えを無効化
+
+  log "Complete configuring Appearance settings!"
+}
+
 configure_time() {
   log "Configuring time settings..."
 
@@ -219,6 +228,26 @@ configure_security() {
   log "Complete configuring Security settings!"
 }
 
+configure_autofill_passwords() {
+  log "Configuring AutoFill & Passwords settings..."
+
+  defaults write com.apple.onetimepasscodes DeleteVerificationCodes -bool false # 確認コードを使用後に自動削除しない
+
+  # AutoFill の候補元として 1Password の拡張機能を有効化
+  if [ -n "$(pluginkit -m -i com.1password.1password.autofill-extension 2>/dev/null)" ]; then
+    pluginkit -e use -i com.1password.1password.autofill-extension
+  else
+    log "1Password AutoFill extension not found. Skipping."
+  fi
+
+  # 「AutoFill Passwords and Passkeys」本体のオンオフと、候補元「Passwords」(Apple 純正) のオフは
+  # ~/Library/Application Support/com.apple.AuthenticationServices 配下に保存され、
+  # TCC で保護されていて defaults からは書き換えられないため、System Settings で手動設定する
+  log "Set 'AutoFill Passwords and Passkeys' = on and 'Passwords' (Apple) = off manually in System Settings > General > AutoFill & Passwords."
+
+  log "Complete configuring AutoFill & Passwords settings!"
+}
+
 configure_keyboard() {
   log "Configuring Keyboard settings..."
 
@@ -367,6 +396,9 @@ main() {
   configure_scrollbar
   echo ""
 
+  configure_appearance
+  echo ""
+
   configure_time
   echo ""
 
@@ -395,6 +427,9 @@ main() {
   echo ""
 
   configure_security
+  echo ""
+
+  configure_autofill_passwords
   echo ""
 
   configure_keyboard
