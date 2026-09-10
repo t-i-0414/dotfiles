@@ -52,8 +52,12 @@ configure_appearance() {
 configure_time() {
   log "Configuring time settings..."
 
-  defaults write NSGlobalDomain AppleICUForce24HourTime -bool true                           # 24時間表示にする
-  defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss" # メニューバーの時計フォーマットを「月日(曜日) 時:分:秒」に設定
+  defaults write NSGlobalDomain AppleICUForce24HourTime -bool true  # 24時間表示にする
+  defaults write com.apple.menuextra.clock Show24Hour -bool true    # メニューバーの時計を24時間表示にする
+  defaults write com.apple.menuextra.clock ShowAMPM -bool true      # AM/PM を表示（24時間表示時は無視される）
+  defaults write com.apple.menuextra.clock ShowDate -int 0          # 日付の表示は自動
+  defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true # 曜日を表示
+  defaults write com.apple.menuextra.clock ShowSeconds -bool true   # 秒を表示
 
   log "Complete configuring time settings!"
 }
@@ -69,9 +73,9 @@ configure_battery() {
 configure_screenshot() {
   log "Configuring screenshot settings..."
 
-  defaults write com.apple.screencapture "disable-shadow" -bool true # スクリーンショットに影を付けない
-  defaults write com.apple.screencapture location ~/Downloads        # スクリーンショットの保存先をDownloadsに変更
-  defaults write com.apple.screencapture type -string "png"          # スクリーンショットのファイル形式をPNGに変更
+  defaults write com.apple.screencapture "disable-shadow" -bool true  # スクリーンショットに影を付けない
+  defaults write com.apple.screencapture location "${HOME}/Downloads" # スクリーンショットの保存先をDownloadsに変更
+  defaults write com.apple.screencapture type -string "png"           # スクリーンショットのファイル形式をPNGに変更
 
   log "Complete configuring screenshot settings!"
 }
@@ -79,24 +83,27 @@ configure_screenshot() {
 configure_controlcenter() {
   log "Configuring control center settings..."
 
+  # メニューバーに表示するかどうか
   defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool false                   # Wi-Fi: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool false              # Bluetooth: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible AirDrop" -bool false                # AirDrop: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible FocusModes" -bool false             # Focus: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible StageManager" -bool false           # Stage Manager: メニューバーに表示しない
-  defaults write com.apple.controlcenter "NSStatusItem Visible ScreenMirroring" -bool true         # Screen Mirroring: 使用時のみメニューバーに表示
-  defaults write com.apple.controlcenter "NSStatusItem Visible Display" -bool true                 # Display: 使用時のみメニューバーに表示
-  defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true                   # Sound: 常にメニューバーに表示
-  defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool true              # Now Playing: 使用時のみメニューバーに表示
-  defaults write com.apple.controlcenter "NSStatusItem Visible AccessibilityShortcuts" -bool false # Accessibility Shortcuts: メニューバーには表示しないが、コントロールセンターには表示
-  defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true                 # Battery: メニューバーとコントロールセンターに表示
-  defaults write com.apple.controlcenter "BatteryShowPercentage" -bool true                        # Battery: メニューバーとコントロールセンターに表示
-  defaults write com.apple.Spotlight "NSStatusItem Visible Item" -bool false                       # Spotlight: メニューバーに表示しない
-  defaults write com.apple.Siri "StatusMenuVisible" -bool true                                     # Siri: メニューバーに表示する
+  defaults write com.apple.controlcenter "NSStatusItem Visible Display" -bool true                 # Display: メニューバーに表示する
+  defaults write com.apple.controlcenter "NSStatusItem Visible AccessibilityShortcuts" -bool false # Accessibility Shortcuts: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible TimeMachine" -bool false            # Time Machine: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible VPN" -bool false                    # VPN: メニューバーに表示しない
   defaults write com.apple.controlcenter "NSStatusItem Visible Weather" -bool false                # Weather: メニューバーに表示しない
-  defaults write com.apple.spaces spans-displays -bool false                                       # ディスプレイごとにスペースを分離しない
+  defaults write com.apple.controlcenter "NSStatusItem Visible Shortcuts" -bool false              # Shortcuts: メニューバーに表示しない
+  defaults write com.apple.controlcenter "NSStatusItem Visible BentoBox" -bool true                # コントロールセンター本体のアイコンをメニューバーに表示
+  defaults write com.apple.Spotlight "NSStatusItem Visible Item" -bool false                       # Spotlight: メニューバーに表示しない
+  defaults write com.apple.Siri "StatusMenuVisible" -bool false                                    # Siri: メニューバーに表示しない
+
+  # コントロールセンター内に表示するかどうか
+  defaults write com.apple.controlcenter "NSStatusItem VisibleCC Battery" -bool true # Battery: コントロールセンターに表示
+  defaults write com.apple.controlcenter "NSStatusItem VisibleCC Sound" -bool true   # Sound: コントロールセンターに表示
+  defaults write com.apple.controlcenter "NSStatusItem VisibleCC Clock" -bool true   # 時計: コントロールセンターに表示
+  defaults write com.apple.controlcenter BatteryShowPercentage -bool true            # バッテリー残量をパーセントで表示
 
   killall ControlCenter
 
@@ -109,7 +116,7 @@ configure_dock_desktop() {
   # Dock
   defaults write com.apple.dock tilesize -int 48                            # アイコンサイズを48pxに
   defaults write com.apple.dock magnification -bool false                   # Dock の拡大を無効化
-  defaults write com.apple.dock orientation -string "right"                 # 位置を右
+  defaults write com.apple.dock orientation -string "bottom"                # 位置を下
   defaults write com.apple.dock mineffect -string "genie"                   # 最小化エフェクトをジニーに
   defaults write NSGlobalDomain AppleActionOnDoubleClick -string "Maximize" # タイトルバーのダブルクリックをズームに
   defaults write com.apple.dock minimize-to-application -bool true          # ウィンドウをアプリアイコンに最小化する
@@ -117,19 +124,24 @@ configure_dock_desktop() {
   defaults write com.apple.dock launchanim -bool false                      # アプリ起動時のアニメーションをオフ
   defaults write com.apple.dock show-process-indicators -bool true          # 開いているアプリのインジケーターを表示
   defaults write com.apple.dock show-recents -bool false                    # 最近使ったアプリを Dock に表示しない
+  defaults write com.apple.dock autohide-delay -float 0                     # 自動的に隠した Dock を再表示するまでの待ち時間をなくす
+  defaults write com.apple.dock largesize -int 96                           # 拡大時のアイコンサイズ（拡大は無効なので実際には使われない）
+  defaults write com.apple.dock no-bouncing -bool false                     # 通知時に Dock アイコンを跳ねさせる
 
   # Desktop & Stage Manager 設定
   defaults write com.apple.finder CreateDesktop -bool true                               # デスクトップアイテムを表示
   defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool true     # デスクトップを表示するために壁紙をクリック
   defaults write com.apple.WindowManager StageManager -bool false                        # Stage Manager を無効化
+  defaults write com.apple.WindowManager GloballyEnabled -bool false                     # Stage Manager を無効化（全体トグル）
+  defaults write com.apple.WindowManager AutoHide -bool false                            # Stage Manager のサイドバーを自動的に隠さない
   defaults write com.apple.WindowManager ShowRecentApplications -bool true               # 最近使ったアプリを Stage Manager に表示
   defaults write com.apple.WindowManager GroupWindowsByApplication -string "all-at-once" # アプリのウィンドウ表示を「すべて同時」
 
   # ウィジェット設定
-  defaults write com.apple.desktoppicture ShowWidgets -bool true  # デスクトップにウィジェットを表示
-  defaults write com.apple.StageManager ShowWidgets -bool true    # Stage Manager でウィジェットを表示
-  defaults write com.apple.widget.WidgetStyle -string "automatic" # ウィジェットスタイルを自動
-  defaults write com.apple.widget.UseiPhoneWidgets -bool true     # iPhone ウィジェットを有効化
+  defaults write com.apple.desktoppicture ShowWidgets -bool true             # デスクトップにウィジェットを表示
+  defaults write com.apple.StageManager ShowWidgets -bool true               # Stage Manager でウィジェットを表示
+  defaults write com.apple.WindowManager StandardHideWidgets -bool false     # 通常のデスクトップでウィジェットを隠さない
+  defaults write com.apple.WindowManager StageManagerHideWidgets -bool false # Stage Manager 使用時もウィジェットを隠さない
 
   # Windows 設定
   defaults write NSGlobalDomain AppleWindowTabbingMode -string "fullscreen" # タブ優先（フルスクリーン時のみ）
@@ -141,13 +153,23 @@ configure_dock_desktop() {
   defaults write com.apple.WindowManager EnableFullscreenOnDrag -bool false
   defaults write com.apple.WindowManager EnableSnapToEdge -bool false
   defaults write com.apple.WindowManager TiledWindowsHaveMargins -bool false
+  defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
+  defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
+  defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
+  defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
 
   # Mission Control 設定
-  defaults write com.apple.dock mru-spaces -bool false              # 最近使用した順に Space を自動配置しない
-  defaults write com.apple.dock appswitcher-all-displays -bool true # アプリ切り替え時に開いている Space に移動
-  defaults write com.apple.dock expose-group-by-app -bool false     # アプリごとにウィンドウをグループ化しない
-  defaults write com.apple.spaces spans-displays -bool true         # ディスプレイごとに Space を分離
-  defaults write com.apple.dock hot-corners -bool true              # 画面上部へのドラッグで Mission Control に入る
+  defaults write com.apple.dock mru-spaces -bool false                        # 最近使用した順に Space を自動配置しない
+  defaults write com.apple.dock appswitcher-all-displays -bool true           # アプリ切り替え時に開いている Space に移動
+  defaults write com.apple.spaces spans-displays -bool false                  # ディスプレイごとに Space を分離しない
+  defaults write com.apple.dock expose-group-by-app -bool false               # アプリごとにウィンドウをグループ化しない
+  defaults write com.apple.dock enterMissionControlByTopWindowDrag -bool true # 画面上部へのウィンドウドラッグで Mission Control に入る
+  defaults write com.apple.dock hot-corners -bool true                        # ホットコーナーを有効化
+
+  # ホットコーナー（1=なし, 2=Mission Control, 4=デスクトップ, 5=スクリーンセーバ開始, 11=Launchpad, 12=通知センター, 13=画面をロック, 14=クイックメモ）
+  defaults write com.apple.dock wvous-tl-corner -int 1   # 左上: なし
+  defaults write com.apple.dock wvous-tl-modifier -int 0 # 左上: 修飾キーなし
+  defaults write com.apple.dock wvous-br-corner -int 14  # 右下: クイックメモ
 
   # 設定を適用
   killall Dock
@@ -172,7 +194,7 @@ configure_notifications() {
 configure_sound() {
   log "Configuring Sound settings..."
 
-  sudo nvram SystemAudioVolume="%00"                                                                           # 起動時のサウンドをオフ
+  sudo nvram SystemAudioVolume="%80"                                                                           # 起動音の音量（ミュート自体は configure_sound_effects の StartupMute で行う）
   defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool true                                     # UI のサウンドエフェクトを有効化
   defaults write -g com.apple.sound.beep.feedback -bool false                                                  # 音量変更時のフィードバック音を無効化
   defaults write com.apple.systemsound "com.apple.sound.beep.sound" -string "/System/Library/Sounds/Boop.aiff" # 警告音を "Boop" に設定
@@ -210,10 +232,13 @@ configure_lock_screen() {
 configure_security() {
   log "Configuring Security settings..."
 
-  # 許可するアプリのソースを「App Store & Known Developers」に設定
-  sudo spctl --master-enable
-  sudo defaults write /Library/Preferences/com.apple.security GKAutoRearm -bool true
-  sudo defaults write /Library/Preferences/com.apple.security GKAllowAppDownloadFrom -string "identified-developers"
+  # 許可するアプリのソースは「App Store & Known Developers」（macOS の既定値）
+  # spctl での変更は現行 macOS では Recovery からしか行えないため、状態の確認だけする
+  if spctl --status 2>/dev/null | grep -q "assessments enabled"; then
+    log "Gatekeeper is enabled."
+  else
+    log "Gatekeeper is disabled. Enable it from Recovery OS."
+  fi
 
   sudo defaults write /Library/Preferences/com.apple.AccessorySecurity "AccessorySecurityPolicy" -int 1 # アクセサリの接続を「新しいアクセサリの接続を確認」に設定
   sudo defaults write /Library/Preferences/com.apple.security.lockdown "Mode" -bool false               # Lockdown Mode をオフに設定（Lockdown Mode の変更は手動が推奨される）
@@ -305,8 +330,7 @@ configure_trackpad() {
 configure_mouse() {
   log "Configuring Mouse settings..."
 
-  defaults write NSGlobalDomain com.apple.mouse.scaling -float 0.5                                   # マウスのトラッキング速度（1.0 - 3.0 の範囲で設定可能）
-  defaults write NSGlobalDomain com.apple.trackpad.scaling -float 0.875                              # トラックパッドのトラッキング速度（1.0 - 3.0 の範囲で設定可能）
+  defaults write NSGlobalDomain com.apple.mouse.scaling -float 1.5                                   # マウスのトラッキング速度（トラックパッド側は configure_trackpad で設定）
   defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true                            # ナチュラルスクロール（オン）
   defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string "TwoButton" # 副ボタンクリック（右クリックを有効化）
   defaults write NSGlobalDomain com.apple.mouse.doubleClickThreshold -float 0.75                     # ダブルクリックの速度（最速に近い設定）
@@ -331,11 +355,14 @@ configure_finder() {
   defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
   # Finder の UI 設定
-  defaults write com.apple.finder ShowPathbar -bool true
-  defaults write com.apple.finder ShowStatusBar -bool true
-  defaults write com.apple.finder _FXShowPosixPathInTitle -bool true # Finder ウィンドウタイトルにフルパスを表示
-  defaults write com.apple.finder FinderSounds -bool false           # Finder のサウンドをオフ
-  defaults write com.apple.finder FinderSpawnTab -bool true          # 新しいウィンドウの代わりにタブで開く
+  defaults write com.apple.finder ShowPathbar -bool true              # パスバーを表示
+  defaults write com.apple.finder ShowStatusBar -bool false           # ステータスバーを表示しない
+  defaults write com.apple.finder ShowSidebar -bool true              # サイドバーを表示
+  defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv" # 既定の表示形式をリストに
+  defaults write com.apple.finder FXArrangeGroupViewBy -string "Name" # グループ内の並び順を名前順に
+  defaults write com.apple.finder _FXShowPosixPathInTitle -bool true  # Finder ウィンドウタイトルにフルパスを表示
+  defaults write com.apple.finder FinderSounds -bool false            # Finder のサウンドをオフ
+  defaults write com.apple.finder FinderSpawnTab -bool true           # 新しいウィンドウの代わりにタブで開く
 
   # ゴミ箱の設定
   defaults write com.apple.finder WarnOnEmptyTrash -bool false
