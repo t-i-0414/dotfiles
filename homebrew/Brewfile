@@ -136,6 +136,7 @@ cask 'microsoft-word'          # Word processor
 
 # Design & Creative
 cask 'adobe-creative-cloud'    # Adobe suite
+cask 'canva'                   # Graphic design
 cask 'drawio'                  # Diagram software
 cask 'figma'                   # Design tool
 cask 'miro'                    # Collaborative whiteboard
