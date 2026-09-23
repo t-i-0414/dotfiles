@@ -161,6 +161,8 @@ cask 'spotify'                 # Music streaming
 cask 'chatgpt'                 # ChatGPT client
 cask 'claude'                  # Claude AI client
 cask 'codex'                   # Codex AI client
+cask 'cursor'                  # AI code editor
+cask 'zed'                     # High-performance code editor
 
 # Task
 brew "go-task/tap/go-task"     # Task runner
