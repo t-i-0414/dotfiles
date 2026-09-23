@@ -138,6 +138,7 @@ cask 'microsoft-word'          # Word processor
 cask 'adobe-creative-cloud'    # Adobe suite
 cask 'drawio'                  # Diagram software
 cask 'figma'                   # Design tool
+cask 'miro'                    # Collaborative whiteboard
 
 # Cloud Storage & Sync
 cask 'google-drive'            # Google Drive
@@ -159,7 +160,6 @@ cask 'spotify'                 # Music streaming
 
 # AI Tools
 cask 'claude'                  # Claude AI client
-cask 'codex'                   # Codex AI client
 cask 'cursor'                  # AI code editor
 
 # Task
