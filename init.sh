@@ -23,6 +23,7 @@ main() {
   run_setup "tmux"
   run_setup "starship"
   run_setup "mise"
+  run_setup "claude"
   run_setup "zsh"
 
   log "System setup completed successfully"
