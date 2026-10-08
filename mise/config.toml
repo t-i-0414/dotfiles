@@ -2,7 +2,7 @@
 # Languages
 python = "3.11.4"
 node = "24.11.1"
-go = "1.26.3"
+go = "1.27.1"
 ruby = "4.0.0"
 rust = "1.94.0"
 deno = "2.7.14"
