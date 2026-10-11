@@ -8,7 +8,7 @@ rust = "1.94.0"
 deno = "2.7.14"
 
 # Package Managers
-pnpm = "11.1.2"
+pnpm = "12.11.2"
 yarn = "1.22.19"
 bun = "1.4.2"
 uv = "0.12.13"
