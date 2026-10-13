@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu pipefail
+set -euo pipefail
 
 THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
 FONT_DIR="$HOME/Library/Fonts"
