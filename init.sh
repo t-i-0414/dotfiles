@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu pipefail
+set -euo pipefail
 
 THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -21,6 +21,7 @@ main() {
   run_setup "homebrew"
   run_setup "git"
   run_setup "tmux"
+  run_setup "markdownlint"
   run_setup "starship"
   run_setup "mise"
   run_setup "claude"
