@@ -163,3 +163,5 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+**/.claude/settings.local.json
