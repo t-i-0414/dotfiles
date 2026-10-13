@@ -21,7 +21,7 @@ check_requirements() {
 }
 
 install_markdownlint_config() {
-  ln -snfv "$THIS_DIR/$TARGET_FILE" "$HOME/$TARGET_FILE"
+  ln -snfv "$THIS_DIR/$TARGET_FILE" "$HOME/$TARGET_FILE" || return 1
   log "Linked $TARGET_FILE to $HOME"
 }
 
