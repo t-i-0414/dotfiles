@@ -3,7 +3,9 @@
 set -euo pipefail
 
 THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
+DEV_CONFIG_DIR="$THIS_DIR/../node_modules/dev-config"
 TARGET_FILE="cspell.json"
+BASE_FILE="base.cspell.json"
 TARGET_DIR="$HOME/.config/cspell"
 
 if command -v source >/dev/null 2>&1; then
@@ -19,12 +21,18 @@ check_requirements() {
     log "Error: $TARGET_FILE not found in $THIS_DIR"
     return 1
   fi
+
+  if [ ! -f "$DEV_CONFIG_DIR/$BASE_FILE" ]; then
+    log "Error: $BASE_FILE not found. Run 'mise run setup' in the repository root first"
+    return 1
+  fi
 }
 
 install_cspell_config() {
   mkdir -p "$TARGET_DIR" || return 1
   ln -snfv "$THIS_DIR/$TARGET_FILE" "$TARGET_DIR/$TARGET_FILE" || return 1
-  log "Linked $TARGET_FILE to $TARGET_DIR"
+  ln -snfv "$(cd "$DEV_CONFIG_DIR" && pwd)/$BASE_FILE" "$TARGET_DIR/$BASE_FILE" || return 1
+  log "Linked $TARGET_FILE and $BASE_FILE to $TARGET_DIR"
 }
 
 main() {

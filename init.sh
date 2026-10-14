@@ -21,10 +21,15 @@ main() {
   run_setup "homebrew"
   run_setup "git"
   run_setup "tmux"
+  run_setup "mise"
+
+  log "Installing repository dependencies..."
+  mise trust "$THIS_DIR/mise.toml"
+  mise --cd "$THIS_DIR" run setup
+
   run_setup "markdownlint"
   run_setup "cspell"
   run_setup "starship"
-  run_setup "mise"
   run_setup "claude"
   run_setup "zsh"
 
