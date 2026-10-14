@@ -1,0 +1,10 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  validate:
+    uses: takudev-works/dev-config/.github/workflows/reusable-validate.yml@4ffeb47a0d1489592dc17495951673b9cdb95693 # v3.0.0
