@@ -14,6 +14,16 @@ The script calls `sudo` in several places, so it prompts for the account passwor
 settings are written to nvram and to the login window, which only take effect after a
 restart.
 
+## Development
+
+The lint configs come from [takudev-works/dev-config](https://github.com/takudev-works/dev-config),
+installed as a devDependency. `init.sh` runs `mise run setup`, which installs it and the
+git hooks. `cspell/setup.sh` and `markdownlint/setup.sh` link its files into `~/.config`
+for the editor.
+
+Changes go through pull requests. Run `bun run check` before pushing; CI runs the same
+checks.
+
 ## Other manual settings
 
 `mac/setup.sh` covers what `defaults`, `pmset`, `nvram`, and `pluginkit` can reach. The
@@ -61,7 +71,7 @@ drag the icons to reorder them.
 
 ### Dock contents
 
-The script sets the Dock's size, position, and behaviour, but not which apps are pinned to
+The script sets the Dock's size, position, and behavior, but not which apps are pinned to
 it. Add and arrange those by hand.
 
 ### Keys left out of the script
