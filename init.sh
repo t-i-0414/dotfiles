@@ -22,6 +22,7 @@ main() {
   run_setup "git"
   run_setup "tmux"
   run_setup "markdownlint"
+  run_setup "cspell"
   run_setup "starship"
   run_setup "mise"
   run_setup "claude"
