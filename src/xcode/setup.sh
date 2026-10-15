@@ -14,20 +14,20 @@ $SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 check_requirements() {
   if ! command -v xcode-select &>/dev/null; then
-    log "Error: xcode-select command not found"
+    log "エラー: xcode-select コマンドがありません"
     return 1
   fi
 }
 
 install_xcode_command_line_tools() {
   if ! xcode-select -p &>/dev/null; then
-    log "Installing Xcode Command Line Tools..."
+    log "Xcode Command Line Tools を入れます"
     xcode-select --install
-    log "Please complete the installation in the system dialog"
-    log "After installation completes, run this script again"
+    log "表示されたダイアログでインストールを終えてください"
+    log "インストールが終わったら、このスクリプトをもう一度実行してください"
     exit 0
   else
-    log "Xcode Command Line Tools are already installed"
+    log "Xcode Command Line Tools は入っています"
   fi
 }
 

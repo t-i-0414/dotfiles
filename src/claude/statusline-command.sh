@@ -1,18 +1,16 @@
 #!/bin/bash
-# Claude Code status line script
-# Matches tonkotsuboy_com's setup
+# tonkotsuboy_com さんの表示に合わせている
 
 input=$(cat)
 
-# --- Line 1: Current folder path with emoji ---
+# 1 行目: 今いるディレクトリ
 cwd=$(echo "$input" | jq -r '.cwd // empty')
 if [ -z "$cwd" ]; then
   cwd=$(pwd)
 fi
-# Shorten home directory to ~
 folder_path="${cwd/#$HOME/\~}"
 
-# --- Line 2: Repository name | Branch name with emojis ---
+# 2 行目: repo とブランチ
 repo_line=""
 if git_root=$(git -C "${cwd}" rev-parse --show-toplevel 2>/dev/null); then
   repo_name=$(basename "$git_root" 2>/dev/null)
@@ -24,12 +22,11 @@ if git_root=$(git -C "${cwd}" rev-parse --show-toplevel 2>/dev/null); then
   fi
 fi
 
-# --- Line 3: Context usage with progress bar | Model ---
+# 3 行目: コンテキストの使用率
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 context_line=""
 if [ -n "$used_pct" ]; then
   used_int=$(printf "%.0f" "$used_pct" 2>/dev/null || echo "0")
-  # Build progress bar (20 chars wide)
   bar_width=20
   filled=$(( used_int * bar_width / 100 ))
   empty=$(( bar_width - filled ))
@@ -39,7 +36,7 @@ if [ -n "$used_pct" ]; then
   context_line="🧠 ${bar} ${used_int}%"
 fi
 
-# --- Line 4+: ccusage (remove 🧠 context part to avoid duplication with line 3) ---
+# 4 行目: ccusage
 ccusage_line=""
 if command -v ccusage >/dev/null 2>&1; then
   ccusage_line=$(echo "$input" | ccusage statusline 2>/dev/null || true)
@@ -48,7 +45,7 @@ elif command -v bunx >/dev/null 2>&1; then
 elif command -v npx >/dev/null 2>&1; then
   ccusage_line=$(echo "$input" | npx ccusage statusline 2>/dev/null || true)
 fi
-# Filter ccusage output: keep session cost + block remaining time only
+# ccusage のコンテキストの使用率は 3 行目と重なるので、セッションの費用とブロックの残り時間だけを残す
 if [ -n "$ccusage_line" ]; then
   session=$(echo "$ccusage_line" | grep -o '\$[0-9.]*[[:space:]]*session' || true)
   block_time=$(echo "$ccusage_line" | grep -o '([0-9h ]*[0-9m]*[[:space:]]*left)' || true)
@@ -58,7 +55,6 @@ if [ -n "$ccusage_line" ]; then
   ccusage_line="$parts"
 fi
 
-# --- Build output ---
 output="📁 ${folder_path}"
 
 if [ -n "$repo_line" ]; then

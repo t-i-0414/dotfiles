@@ -17,7 +17,7 @@ DOTFILES=(.gitconfig .gitignore_global .czrc)
 check_requirements() {
   for file in "${DOTFILES[@]}"; do
     if [ ! -f "$THIS_DIR/$file" ]; then
-      log "Error: $file not found in $THIS_DIR"
+      log "エラー: $THIS_DIR に $file がありません"
       return 1
     fi
   done
@@ -27,7 +27,7 @@ install_dotfiles() {
   for file in "${DOTFILES[@]}"; do
     ln -snfv "$THIS_DIR/$file" "$HOME/$file"
   done
-  log "Dotfiles linked to home directory."
+  log "git の設定をホームディレクトリにリンクしました"
 }
 
 main() {

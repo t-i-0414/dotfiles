@@ -18,7 +18,7 @@ DOTFILES=(settings.json statusline-command.sh)
 check_requirements() {
   for file in "${DOTFILES[@]}"; do
     if [ ! -f "$THIS_DIR/$file" ]; then
-      log "Error: $file not found in $THIS_DIR"
+      log "エラー: $THIS_DIR に $file がありません"
       return 1
     fi
   done
@@ -30,7 +30,7 @@ install_dotfiles() {
   for file in "${DOTFILES[@]}"; do
     ln -snfv "$THIS_DIR/$file" "$CONFIG_DIR/$file"
   done
-  log "Claude Code config linked to $CONFIG_DIR."
+  log "Claude Code の設定を $CONFIG_DIR にリンクしました"
 }
 
 main() {

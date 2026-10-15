@@ -15,14 +15,14 @@ $SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 check_requirements() {
   if [ ! -f "$THIS_DIR/$TARGET_FILE" ]; then
-    log "Error: $TARGET_FILE not found in $THIS_DIR"
+    log "エラー: $THIS_DIR に $TARGET_FILE がありません"
     return 1
   fi
 }
 
 install_tmux_config() {
   ln -snfv "$THIS_DIR/$TARGET_FILE" "$HOME/$TARGET_FILE"
-  log "Linked $TARGET_FILE to $HOME"
+  log "$TARGET_FILE を $HOME にリンクしました"
 }
 
 main() {

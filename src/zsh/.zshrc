@@ -3,26 +3,25 @@
 setopt incappendhistory
 
 # ===========================
-# environment variables
+# 環境変数
 # ===========================
 
-# Load environment variables
+# 手元だけの環境変数
 [[ -f ~/.zsh_envvars ]] && source ~/.zsh_envvars
 
-# Basic environment settings
+# 基本
 export LANG="ja_JP.UTF-8"
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=50000
 export SAVEHIST=50000
 export DIRSTACKSIZE=100
 
-# PATH settings
+# PATH
 typeset -U path PATH
 
-# Setup Homebrew paths based on OS and architecture
+# Homebrew の場所は OS と CPU で変わる
 if [[ "$(uname)" == "Darwin" ]]; then
   if [[ "$(uname -m)" == "arm64" ]]; then
-    # Apple Silicon Mac
     path=(
       /opt/homebrew/bin
       /opt/homebrew/sbin
@@ -31,7 +30,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     )
     export HOMEBREW_PREFIX="/opt/homebrew"
   else
-    # Intel Mac
     path=(
       /usr/local/bin
       /usr/local/sbin
@@ -40,14 +38,13 @@ if [[ "$(uname)" == "Darwin" ]]; then
     export HOMEBREW_PREFIX="/usr/local"
   fi
 else
-  # Linux
   if [[ -d "/home/linuxbrew/.linuxbrew" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
   fi
 fi
 
-# Development environments
+# Android の開発
 export ANDROID_HOME=$HOME/Library/Android/sdk
 path=(
   $ANDROID_HOME/emulator
@@ -55,16 +52,16 @@ path=(
   $path
 )
 
-# Tool configurations
+# ツールの設定
 export RUST_WITHOUT="rust-docs"
 export PATH
 
-# Development settings
+# 開発
 export RUBY_DEBUG_DAP_SHOW_PROTOCOL=1
 export AWS_PROFILE="default"
 
 # ===========================
-# zsh options
+# zsh のオプション
 # ===========================
 
 setopt hist_ignore_dups     # 直前のコマンドの重複を削除
@@ -75,30 +72,29 @@ setopt no_beep              # ビープ音を鳴らさない
 setopt AUTO_PUSHD           # ディレクトリを移動したら自動的にpushd
 
 # ===========================
-# platform specific settings
+# バージョン管理
 # ===========================
 
-# Activate mise (version manager)
 if command -v mise &>/dev/null; then
   eval "$(mise activate zsh)"
 fi
 
 # ===========================
-# plugins & tools
+# プラグインとツール
 # ===========================
 
 autoload -Uz compinit
 compinit
 
-# Initialize starship prompt
+# starship
 eval "$(starship init zsh)"
 
-# Initialize direnv
+# direnv
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-# zsh plugins
+# zsh のプラグイン
 if [[ -n "$HOMEBREW_PREFIX" ]]; then
   if [[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
     source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -109,20 +105,20 @@ if [[ -n "$HOMEBREW_PREFIX" ]]; then
   fi
 fi
 
-# terraform zsh completion
+# terraform の補完
 autoload -U +X bashcompinit && bashcompinit
 if command -v terraform &>/dev/null; then
   complete -o nospace -C "$(command -v terraform)" terraform
 fi
 
 # ===========================
-# aliases & functions
+# alias と関数
 # ===========================
 
-# Load custom aliases if exists
+# 手元だけの alias
 [[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases
 
-# Base aliases
+# 基本
 alias g='git'
 alias galias='git config --get-regexp ^alias\.'
 alias d='docker'
@@ -130,7 +126,7 @@ alias tf='terraform'
 alias awsprofile='aws --profile default sts get-caller-identity'
 alias awsprofilelist='aws configure list-profiles'
 
-# Docker aliases
+# Docker
 alias di='docker images'
 alias db='docker build'
 alias dbx='docker buildx build --platform linux/amd64'
@@ -142,11 +138,11 @@ alias dpa='docker system prune -a'
 alias dpa24='docker system prune -a --filter "until=24h"'
 alias dpv='docker volume prune'
 
-# Terraform aliases
+# Terraform
 alias tfp='terraform plan'
 alias tfa='terraform apply'
 
-# System aliases
+# 標準のコマンド
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -154,20 +150,20 @@ alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias l.='ls -d .* --color=auto'
 
-# Development workflow aliases
+# 開発の作業
 alias gm='brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor'
 alias cdr='cd $(git rev-parse --show-toplevel)'
 alias saml2awssetup="bash -c 'read -sp \"ClientID: \" client_id && echo && read -sp \"ClientSecret: \" client_secret && echo && saml2aws configure --client-id=\$client_id --client-secret=\$client_secret'"
 alias saml2awslogin='saml2aws login --session-duration 14400 --force --skip-prompt --browser-type=chrome'
 alias awsprofile='aws --profile default sts get-caller-identity'
 
-# AI tools aliases
+# AI
 alias c='~/.local/bin/claude'
 
-# Load custom functions if exists
+# 手元だけの関数
 [[ -f ~/.zsh_functions ]] && source ~/.zsh_functions
 
-# Git workflow functions
+# git の作業
 function checkout_origin_pr {
   if [[ $# -ne 1 ]]; then
     echo "Usage: checkout_origin_pr <PR_NUMBER>"

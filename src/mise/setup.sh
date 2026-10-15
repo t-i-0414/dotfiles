@@ -14,12 +14,12 @@ $SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 check_requirements() {
   if ! command -v mise >/dev/null 2>&1; then
-    log "Error: mise is not installed"
+    log "エラー: mise が入っていません"
     return 1
   fi
 
   if [ ! -f "$THIS_DIR/config.toml" ]; then
-    log "Error: config.toml not found"
+    log "エラー: config.toml がありません"
     return 1
   fi
 }
@@ -31,7 +31,7 @@ create_symlinks() {
 
 install_all() {
   mise install || {
-    log "Error: Failed to install tools via mise"
+    log "エラー: mise でツールを入れられませんでした"
     return 1
   }
 }

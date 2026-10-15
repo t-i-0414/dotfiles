@@ -23,7 +23,7 @@ check_requirements() {
   done
 
   if [ ${#missing_files[@]} -ne 0 ]; then
-    log "Error: Following files not found in $THIS_DIR:"
+    log "エラー: $THIS_DIR に次のファイルがありません"
     printf '%s\n' "${missing_files[@]}"
     return 1
   fi
@@ -32,7 +32,7 @@ check_requirements() {
 install_zsh_config() {
   for file in "${DOTFILES[@]}"; do
     ln -snfv "$THIS_DIR/$file" "$HOME/$file"
-    log "Linked $file to $HOME"
+    log "$file を $HOME にリンクしました"
   done
 }
 

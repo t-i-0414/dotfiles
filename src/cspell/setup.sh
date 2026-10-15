@@ -18,12 +18,12 @@ $SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 check_requirements() {
   if [ ! -f "$THIS_DIR/$TARGET_FILE" ]; then
-    log "Error: $TARGET_FILE not found in $THIS_DIR"
+    log "エラー: $THIS_DIR に $TARGET_FILE がありません"
     return 1
   fi
 
   if [ ! -f "$DEV_CONFIG_DIR/$BASE_FILE" ]; then
-    log "Error: $BASE_FILE not found. Run 'mise run setup' in the repository root first"
+    log "エラー: $BASE_FILE がありません。先に repo のルートで 'mise run setup' を実行してください"
     return 1
   fi
 }
@@ -32,7 +32,7 @@ install_cspell_config() {
   mkdir -p "$TARGET_DIR" || return 1
   ln -snfv "$THIS_DIR/$TARGET_FILE" "$TARGET_DIR/$TARGET_FILE" || return 1
   ln -snfv "$(cd "$DEV_CONFIG_DIR" && pwd)/$BASE_FILE" "$TARGET_DIR/$BASE_FILE" || return 1
-  log "Linked $TARGET_FILE and $BASE_FILE to $TARGET_DIR"
+  log "$TARGET_FILE と $BASE_FILE を $TARGET_DIR にリンクしました"
 }
 
 main() {

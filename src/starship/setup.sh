@@ -16,7 +16,7 @@ $SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 check_requirements() {
   if [ ! -f "$THIS_DIR/$TARGET_FILE" ]; then
-    log "Error: $TARGET_FILE not found in $THIS_DIR"
+    log "エラー: $THIS_DIR に $TARGET_FILE がありません"
     return 1
   fi
 
@@ -25,7 +25,7 @@ check_requirements() {
 
 install_starship_config() {
   ln -snfv "$THIS_DIR/$TARGET_FILE" "$CONFIG_DIR/$TARGET_FILE"
-  log "Linked $TARGET_FILE to $CONFIG_DIR"
+  log "$TARGET_FILE を $CONFIG_DIR にリンクしました"
 }
 
 main() {

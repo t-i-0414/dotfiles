@@ -14,43 +14,43 @@ $SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 check_requirements() {
   if [ "$(uname)" != "Darwin" ]; then
-    log "Error: This script is for macOS only!"
+    log "エラー: このスクリプトは macOS 専用です"
     return 1
   fi
 }
 
 if [ "$(uname)" != "Darwin" ]; then
-  log "This script is for macOS only!"
+  log "このスクリプトは macOS 専用です"
   exit 1
 fi
 
 configure_sound_effects() {
-  log "Configuring sound effects..."
+  log "効果音を設定します"
 
   sudo nvram StartupMute=%01 #起動音をミュート
 
-  log "Complete configuring sound effects!"
+  log "効果音を設定しました"
 }
 
 configure_scrollbar() {
-  log "Configuring scrollbar..."
+  log "スクロールバーを設定します"
 
   defaults write NSGlobalDomain AppleShowScrollBars -string "Always" # スクロールバーを常に表示
 
-  log "Complete configuring scrollbar!"
+  log "スクロールバーを設定しました"
 }
 
 configure_appearance() {
-  log "Configuring Appearance settings..."
+  log "外観を設定します"
 
   defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"                   # 外観モードをダークに
   defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool false # 外観の自動切り替えを無効化
 
-  log "Complete configuring Appearance settings!"
+  log "外観を設定しました"
 }
 
 configure_time() {
-  log "Configuring time settings..."
+  log "日付と時刻を設定します"
 
   defaults write NSGlobalDomain AppleICUForce24HourTime -bool true  # 24時間表示にする
   defaults write com.apple.menuextra.clock Show24Hour -bool true    # メニューバーの時計を24時間表示にする
@@ -59,29 +59,29 @@ configure_time() {
   defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true # 曜日を表示
   defaults write com.apple.menuextra.clock ShowSeconds -bool true   # 秒を表示
 
-  log "Complete configuring time settings!"
+  log "日付と時刻を設定しました"
 }
 
 configure_battery() {
-  log "Configuring battery settings..."
+  log "バッテリーを設定します"
 
   sudo pmset -a LowPowerMode 0 # Low Power Modeを無効化
 
-  log "Complete configuring battery settings!"
+  log "バッテリーを設定しました"
 }
 
 configure_screenshot() {
-  log "Configuring screenshot settings..."
+  log "スクリーンショットを設定します"
 
   defaults write com.apple.screencapture "disable-shadow" -bool true  # スクリーンショットに影を付けない
   defaults write com.apple.screencapture location "${HOME}/Downloads" # スクリーンショットの保存先をDownloadsに変更
   defaults write com.apple.screencapture type -string "png"           # スクリーンショットのファイル形式をPNGに変更
 
-  log "Complete configuring screenshot settings!"
+  log "スクリーンショットを設定しました"
 }
 
 configure_controlcenter() {
-  log "Configuring control center settings..."
+  log "コントロールセンターを設定します"
 
   # メニューバーに表示するかどうか
   defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool false                   # Wi-Fi: メニューバーに表示しない
@@ -107,11 +107,11 @@ configure_controlcenter() {
 
   killall ControlCenter
 
-  log "Complete configuring control center settings!"
+  log "コントロールセンターを設定しました"
 }
 
 configure_dock_desktop() {
-  log "Configuring Dock and Desktop settings..."
+  log "Dock とデスクトップを設定します"
 
   # Dock
   defaults write com.apple.dock tilesize -int 48                            # アイコンサイズを48pxに
@@ -175,11 +175,11 @@ configure_dock_desktop() {
   killall Dock
   killall Finder
 
-  log "Complete configuring Dock and Desktop settings!"
+  log "Dock とデスクトップを設定しました"
 }
 
 configure_notifications() {
-  log "Configuring Notification Center settings..."
+  log "通知を設定します"
 
   defaults write com.apple.notificationcenterui bannerPreviewStyle -int 2               # 通知のプレビューを「ロック解除時のみ」に設定
   defaults write com.apple.notificationcenterui doNotDisturb -bool true                 # ディスプレイがスリープ中でも通知を許可しない
@@ -188,33 +188,33 @@ configure_notifications() {
 
   killall NotificationCenter
 
-  log "Complete configuring Notification Center settings!"
+  log "通知を設定しました"
 }
 
 configure_sound() {
-  log "Configuring Sound settings..."
+  log "サウンドを設定します"
 
   sudo nvram SystemAudioVolume="%80"                                                                           # 起動音の音量（ミュート自体は configure_sound_effects の StartupMute で行う）
   defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool true                                     # UI のサウンドエフェクトを有効化
   defaults write -g com.apple.sound.beep.feedback -bool false                                                  # 音量変更時のフィードバック音を無効化
   defaults write com.apple.systemsound "com.apple.sound.beep.sound" -string "/System/Library/Sounds/Boop.aiff" # 警告音を "Boop" に設定
 
-  log "Complete configuring Sound settings!"
+  log "サウンドを設定しました"
 }
 
 configure_focus() {
-  log "Configuring Focus settings..."
+  log "集中モードを設定します"
 
   defaults write com.apple.ncprefs.plist focusMode -dict-add "shareAcrossDevices" -bool true # フォーカスモードをデバイス間で共有する
   defaults write com.apple.ncprefs.plist focusMode -dict-add "focusStatus" -bool true        # フォーカスステータスをアプリと共有する
 
   killall NotificationCenter
 
-  log "Complete configuring Focus settings!"
+  log "集中モードを設定しました"
 }
 
 configure_lock_screen() {
-  log "Configuring Lock Screen settings..."
+  log "ロック画面を設定します"
 
   defaults -currentHost write com.apple.screensaver idleTime -int 180 # スクリーンセーバーの開始時間（3 分）
   sudo pmset -b displaysleep 5                                        # バッテリー使用時のディスプレイオフ時間（5 分）
@@ -226,18 +226,18 @@ configure_lock_screen() {
   defaults write com.apple.menuextra.clock IsAnalog -bool false                           # デジタル時計を表示
   sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false # ゲストユーザーを無効化
 
-  log "Complete configuring Lock Screen settings!"
+  log "ロック画面を設定しました"
 }
 
 configure_security() {
-  log "Configuring Security settings..."
+  log "セキュリティを設定します"
 
   # 許可するアプリのソースは「App Store & Known Developers」（macOS の既定値）
   # spctl での変更は現行 macOS では Recovery からしか行えないため、状態の確認だけする
   if spctl --status 2>/dev/null | grep -q "assessments enabled"; then
-    log "Gatekeeper is enabled."
+    log "Gatekeeper は有効です"
   else
-    log "Gatekeeper is disabled. Enable it from Recovery OS."
+    log "Gatekeeper が無効です。復旧モード（Recovery OS）で有効にしてください"
   fi
 
   sudo defaults write /Library/Preferences/com.apple.AccessorySecurity "AccessorySecurityPolicy" -int 1 # アクセサリの接続を「新しいアクセサリの接続を確認」に設定
@@ -245,16 +245,16 @@ configure_security() {
   if ! fdesetup status | grep -q "FileVault is On."; then                                               # FileVault を有効化
     sudo fdesetup enable
   else
-    log "FileVault is already enabled. Skipping."
+    log "FileVault は有効なので飛ばします"
   fi
   defaults write com.apple.screensaver askForPassword -int 1      # スクリーンセーバーやスリープ解除時にパスワードを要求
   defaults write com.apple.screensaver askForPasswordDelay -int 0 # スクリーンセーバーやスリープ解除後のパスワード要求を即時に
 
-  log "Complete configuring Security settings!"
+  log "セキュリティを設定しました"
 }
 
 configure_autofill_passwords() {
-  log "Configuring AutoFill & Passwords settings..."
+  log "自動入力とパスワードを設定します"
 
   defaults write com.apple.onetimepasscodes DeleteVerificationCodes -bool false # 確認コードを使用後に自動削除しない
 
@@ -262,19 +262,19 @@ configure_autofill_passwords() {
   if [ -n "$(pluginkit -m -i com.1password.1password.autofill-extension 2>/dev/null)" ]; then
     pluginkit -e use -i com.1password.1password.autofill-extension
   else
-    log "1Password AutoFill extension not found. Skipping."
+    log "1Password の自動入力の拡張機能が無いので飛ばします"
   fi
 
   # 「AutoFill Passwords and Passkeys」本体のオンオフと、候補元「Passwords」(Apple 純正) のオフは
   # ~/Library/Application Support/com.apple.AuthenticationServices 配下に保存され、
   # TCC で保護されていて defaults からは書き換えられないため、System Settings で手動設定する
-  log "Set 'AutoFill Passwords and Passkeys' = on and 'Passwords' (Apple) = off manually in System Settings > General > AutoFill & Passwords."
+  log "システム設定 > 一般 > 自動入力とパスワード で、「パスワードとパスキーを自動入力」をオン、自動入力元の「パスワード」をオフに手で設定してください"
 
-  log "Complete configuring AutoFill & Passwords settings!"
+  log "自動入力とパスワードを設定しました"
 }
 
 configure_keyboard() {
-  log "Configuring Keyboard settings..."
+  log "キーボードを設定します"
 
   defaults write NSGlobalDomain KeyRepeat -int 2                                                          # キーリピート速度（0 が最速、2 以上で遅くなる）
   defaults write NSGlobalDomain InitialKeyRepeat -int 15                                                  # キーリピート開始の遅延（短くする）
@@ -287,11 +287,11 @@ configure_keyboard() {
   defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false                              # 自動大文字変換を無効化
   defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false                          # 自動スペルチェックを無効化
 
-  log "Complete configuring Keyboard settings!"
+  log "キーボードを設定しました"
 }
 
 configure_trackpad() {
-  log "Configuring Trackpad settings..."
+  log "トラックパッドを設定します"
 
   defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3                                                   # トラッキング速度（1 ～ 3 の範囲で設定）
   defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 1                                         # クリック強度（0=軽い, 1=中, 2=強い）
@@ -324,11 +324,11 @@ configure_trackpad() {
   defaults write com.apple.dock showLaunchpadGestureEnabled -bool true                                                # Launchpad（親指と 3 本指でピンチ）
   defaults write com.apple.dock showDesktopGestureEnabled -bool true                                                  # デスクトップ表示（親指と 3 本指で広げる）
 
-  log "Complete configuring Trackpad settings!"
+  log "トラックパッドを設定しました"
 }
 
 configure_mouse() {
-  log "Configuring Mouse settings..."
+  log "マウスを設定します"
 
   defaults write NSGlobalDomain com.apple.mouse.scaling -float 1.5                                   # マウスのトラッキング速度（トラックパッド側は configure_trackpad で設定）
   defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true                            # ナチュラルスクロール（オン）
@@ -336,11 +336,11 @@ configure_mouse() {
   defaults write NSGlobalDomain com.apple.mouse.doubleClickThreshold -float 0.75                     # ダブルクリックの速度（最速に近い設定）
   defaults write NSGlobalDomain com.apple.scrollwheel.scaling -float 0.75                            # スクロール速度（中程度に設定）
 
-  log "Complete configuring Mouse settings!"
+  log "マウスを設定しました"
 }
 
 configure_finder() {
-  log "Configuring Finder settings..."
+  log "Finderを設定します"
 
   # Finder のデフォルト並び順を「Kind」に設定
   defaults write com.apple.finder FXPreferredGroupBy -string "Kind"
@@ -413,7 +413,7 @@ configure_finder() {
   sleep 1
   killall Finder
 
-  log "Complete configuring Finder settings!"
+  log "Finderを設定しました"
 }
 
 main() {
