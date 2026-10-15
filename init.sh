@@ -13,7 +13,7 @@ fi
 $SOURCE_CMD "${THIS_DIR}/utils.sh"
 
 main() {
-  log "Starting system setup..."
+  log "セットアップを始めます"
 
   run_setup "mac"
   run_setup "fonts"
@@ -21,14 +21,19 @@ main() {
   run_setup "homebrew"
   run_setup "git"
   run_setup "tmux"
+  run_setup "mise"
+
+  log "この repo の依存と git hook を入れます"
+  mise trust "$THIS_DIR/mise.toml"
+  mise --cd "$THIS_DIR" run setup
+
   run_setup "markdownlint"
   run_setup "cspell"
   run_setup "starship"
-  run_setup "mise"
   run_setup "claude"
   run_setup "zsh"
 
-  log "System setup completed successfully"
+  log "セットアップが終わりました"
 }
 
 main

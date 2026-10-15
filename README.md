@@ -1,94 +1,85 @@
 # dotfiles
 
-## Setup
+Mac の開発環境の設定と、それを入れるスクリプト。
 
-Log in to App Store and Apple ID
+## 準備
 
-## Run script
+App Store と Apple ID にログインしておく。
+
+## スクリプトの実行
 
 ```bash
 bash init.sh
 ```
 
-The script calls `sudo` in several places, so it prompts for the account password. A few
-settings are written to nvram and to the login window, which only take effect after a
-restart.
+スクリプトの中で何度か `sudo` を呼ぶので、アカウントのパスワードを聞かれる。nvram とログインウインドウに書く設定は、再起動するまで効かない。
 
-## Other manual settings
+`init.sh` は `src/` の下にあるツールごとの `setup.sh` を順に実行する。1 つだけやり直すときは、その `setup.sh` を直接実行する（例: `bash src/zsh/setup.sh`）。
 
-`mac/setup.sh` covers what `defaults`, `pmset`, `nvram`, and `pluginkit` can reach. The
-items below have to be done by hand.
+## 開発
 
-### AutoFill & Passwords
+lint の設定は [takudev-works/dev-config](https://github.com/takudev-works/dev-config) を devDependencies として入れて使う。`init.sh` の中で `mise run setup` を実行し、dev-config と git hook を入れる。`src/cspell/setup.sh` と `src/markdownlint/setup.sh` は、エディタが読めるように dev-config の設定ファイルを `~/.config` にリンクする。
 
-The master toggle and the built-in Passwords provider are stored under
-`~/Library/Application Support/com.apple.AuthenticationServices/CredentialProviders`.
-That directory is protected by TCC, so no script can write it.
+変更は PR で出し、validate が通ってから merge する。push の前に `bun run check` を実行する。CI でも同じ検査をする。
 
-1. Open System Settings > General > AutoFill & Passwords.
-2. Turn on **AutoFill Passwords and Passkeys**.
-3. Under **AutoFill from**, turn off **Passwords** (the built-in provider).
-4. Under **AutoFill from**, turn on **1Password**.
+## 手で行う設定
 
-Step 4 is normally handled by `configure_autofill_passwords`, which enables the extension
-with `pluginkit`. On a fresh machine it gets skipped: `init.sh` runs the `mac` step before
-the `homebrew` step, so 1Password is not installed yet. Either do step 4 by hand, or
-re-run `bash mac/setup.sh` once `init.sh` has finished.
+`src/mac/setup.sh` は、`defaults`、`pmset`、`nvram`、`pluginkit` で変えられる設定を扱う。それ以外の次の項目は手で行う。
+
+### 自動入力とパスワード
+
+全体のスイッチと、標準の「パスワード」アプリによる自動入力の設定は、`~/Library/Application Support/com.apple.AuthenticationServices/CredentialProviders` に保存される。このディレクトリは TCC（macOS のプライバシー保護の仕組み）で守られていて、スクリプトからは書けない。
+
+1. システム設定 > 一般 > 自動入力とパスワード を開く。
+2. **パスワードとパスキーを自動入力** をオンにする。
+3. **自動入力元** で **パスワード**（標準のアプリ）をオフにする。
+4. **自動入力元** で **1Password** をオンにする。
+
+手順 4 は、通常は `configure_autofill_passwords` が `pluginkit` で拡張機能を有効にする。ただし新しいマシンでは飛ばされる。`init.sh` は `mac` の手順を `homebrew` の手順より先に実行するので、その時点では 1Password が入っていないため。手順 4 を手で行うか、`init.sh` が終わってから `bash src/mac/setup.sh` を実行し直す。
 
 ### Gatekeeper
 
-`spctl --master-enable` no longer exists, so `configure_security` only reports the current
-state. If `spctl --status` prints anything other than `assessments enabled`, boot into
-Recovery OS and turn Gatekeeper back on from there.
+`spctl --master-enable` はもう無いので、`configure_security` は今の状態を表示するだけにしている。`spctl --status` の結果が `assessments enabled` 以外なら、復旧モード（Recovery OS）で起動して Gatekeeper を有効に戻す。
 
-### Lockdown Mode
+### ロックダウンモード
 
-`configure_security` writes the `Mode` key under
-`/Library/Preferences/com.apple.security.lockdown`, but the supported way to change
-Lockdown Mode is System Settings > Privacy & Security > Lockdown Mode, and it needs a
-restart. Check that pane after running the script.
+`configure_security` は `/Library/Preferences/com.apple.security.lockdown` の `Mode` キーに書くが、ロックダウンモードを変える正式な方法は システム設定 > プライバシーとセキュリティ > ロックダウンモード で、再起動も要る。スクリプトを実行した後に、この画面で状態を確かめる。
 
 ### FileVault
 
-`configure_security` runs `sudo fdesetup enable` when FileVault is off. It prompts for the
-account password and prints a recovery key. Save the key before moving on.
+FileVault がオフのとき、`configure_security` は `sudo fdesetup enable` を実行する。アカウントのパスワードを聞かれ、復旧キーが表示される。次に進む前に復旧キーを保存する。
 
-### Menu bar icon order
+### メニューバーのアイコンの並び
 
-The script controls which icons appear, not where they sit. Positions are stored as
-`NSStatusItem Preferred Position *` keys under `com.apple.controlcenter`. Hold Command and
-drag the icons to reorder them.
+スクリプトが決めるのはどのアイコンを出すかだけで、並び順は決めない。並び順は `com.apple.controlcenter` の `NSStatusItem Preferred Position *` キーに保存される。Command キーを押しながらアイコンをドラッグして並べ替える。
 
-### Dock contents
+### Dock に置くアプリ
 
-The script sets the Dock's size, position, and behaviour, but not which apps are pinned to
-it. Add and arrange those by hand.
+スクリプトは Dock の大きさ、位置、動きを設定するが、どのアプリを置くかは決めない。アプリの追加と並べ替えは手で行う。
 
-### Keys left out of the script
+### スクリプトに入れていないキー
 
-Two keys are set on the current machine but are not in `mac/setup.sh`, because the System
-Settings item they correspond to could not be identified:
+次の 2 つのキーは今のマシンでは設定されているが、システム設定のどの項目にあたるか分からなかったので、`src/mac/setup.sh` に入れていない。
 
 - `com.apple.WindowManager HideDesktop`
 - `com.apple.WindowManager AppWindowGroupingBehavior`
 
-Go through System Settings > Desktop & Dock by hand if the desktop or window grouping
-behaves unexpectedly after a fresh install.
+新しいマシンでデスクトップやウインドウのまとめ方の動きがおかしいときは、システム設定 > デスクトップと Dock を手で見直す。
 
-### Everything else
+### その他
 
-- Rename computer name
-- Set up Wallet & Apple Pay settings
-- Register additional fingerprints for Touch ID
-- Set up to unlock Mac using Apple Watch
-- Set up Screen Saver
-- Set up Wallpaper randomly
-- Set up Focus mode
-- Turn off Night Shift
-- Turn off True Tone
-- Turn off Auto-Brightness
-- Turn on bio-metric authentication to unlock Mac
-- Change keyboard input source to Google Japanese Input
-- Change default web browser to Google Chrome
-- Setup each app
-- Setup ESET
+- コンピュータ名を変える
+- ウォレットと Apple Pay を設定する
+- Touch ID の指紋を追加する
+- Apple Watch で Mac のロックを解除できるようにする
+- スクリーンセーバを設定する
+- 壁紙をランダムに変わるように設定する
+- 集中モードを設定する
+- Night Shift をオフにする
+- True Tone をオフにする
+- 明るさの自動調節をオフにする
+- 生体認証（Touch ID）で Mac のロックを解除できるようにする
+- キーボードの入力ソースを Google 日本語入力に変える
+- 標準の Web ブラウザを Google Chrome に変える
+- 各アプリを設定する
+- ESET を設定する

@@ -1,0 +1,20 @@
+name: Claude
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  pull_request_review:
+    types: [submitted]
+  issues:
+    types: [opened]
+
+jobs:
+  claude:
+    uses: takudev-works/dev-config/.github/workflows/reusable-claude.yml@4ffeb47a0d1489592dc17495951673b9cdb95693 # v3.0.0
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write

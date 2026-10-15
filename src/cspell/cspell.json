@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "dictionaries": [
+    "aws",
+    "google",
+    "terraform",
+    "docker",
+    "bash",
+    "git",
+    "fullstack",
+    "typescript",
+    "node",
+    "npm",
+    "ruby",
+    "python",
+    "php",
+    "sql"
+  ],
+  "words": [
+    "aisaac",
+    "controlcenter",
+    "direnv",
+    "ESET",
+    "fdesetup",
+    "hasura",
+    "Inoreader",
+    "lockdown",
+    "nvram",
+    "pluginkit",
+    "pmset",
+    "refino",
+    "snfv",
+    "spctl",
+    "ticketjam"
+  ]
+}
