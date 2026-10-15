@@ -79,7 +79,6 @@ brew 'ollama'
 brew 'blueutil'
 brew 'gibo'
 brew 'gnupg'
-brew "go-task/tap/go-task"
 brew 'libyaml'
 brew 'mas'
 brew 'openssl@3'
