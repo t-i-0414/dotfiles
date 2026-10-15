@@ -18,7 +18,7 @@ restart.
 
 The lint configs come from [takudev-works/dev-config](https://github.com/takudev-works/dev-config),
 installed as a devDependency. `init.sh` runs `mise run setup`, which installs it and the
-git hooks. `cspell/setup.sh` and `markdownlint/setup.sh` link its files into `~/.config`
+git hooks. `src/cspell/setup.sh` and `src/markdownlint/setup.sh` link its files into `~/.config`
 for the editor.
 
 Changes go through pull requests. Run `bun run check` before pushing; CI runs the same
@@ -26,7 +26,7 @@ checks.
 
 ## Other manual settings
 
-`mac/setup.sh` covers what `defaults`, `pmset`, `nvram`, and `pluginkit` can reach. The
+`src/mac/setup.sh` covers what `defaults`, `pmset`, `nvram`, and `pluginkit` can reach. The
 items below have to be done by hand.
 
 ### AutoFill & Passwords
@@ -43,7 +43,7 @@ That directory is protected by TCC, so no script can write it.
 Step 4 is normally handled by `configure_autofill_passwords`, which enables the extension
 with `pluginkit`. On a fresh machine it gets skipped: `init.sh` runs the `mac` step before
 the `homebrew` step, so 1Password is not installed yet. Either do step 4 by hand, or
-re-run `bash mac/setup.sh` once `init.sh` has finished.
+re-run `bash src/mac/setup.sh` once `init.sh` has finished.
 
 ### Gatekeeper
 
@@ -76,7 +76,7 @@ it. Add and arrange those by hand.
 
 ### Keys left out of the script
 
-Two keys are set on the current machine but are not in `mac/setup.sh`, because the System
+Two keys are set on the current machine but are not in `src/mac/setup.sh`, because the System
 Settings item they correspond to could not be identified:
 
 - `com.apple.WindowManager HideDesktop`

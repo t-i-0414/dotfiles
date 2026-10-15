@@ -3,7 +3,6 @@
 set -euo pipefail
 
 THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
-CONFIG_DIR="$HOME/.claude"
 
 if command -v source >/dev/null 2>&1; then
   SOURCE_CMD="source"
@@ -11,9 +10,9 @@ else
   SOURCE_CMD="."
 fi
 
-$SOURCE_CMD "${THIS_DIR}/../utils.sh"
+$SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
-DOTFILES=(settings.json statusline-command.sh)
+DOTFILES=(.gitconfig .gitignore_global .czrc)
 
 check_requirements() {
   for file in "${DOTFILES[@]}"; do
@@ -22,15 +21,13 @@ check_requirements() {
       return 1
     fi
   done
-
-  mkdir -p "$CONFIG_DIR"
 }
 
 install_dotfiles() {
   for file in "${DOTFILES[@]}"; do
-    ln -snfv "$THIS_DIR/$file" "$CONFIG_DIR/$file"
+    ln -snfv "$THIS_DIR/$file" "$HOME/$file"
   done
-  log "Claude Code config linked to $CONFIG_DIR."
+  log "Dotfiles linked to home directory."
 }
 
 main() {

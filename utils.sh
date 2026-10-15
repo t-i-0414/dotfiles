@@ -11,19 +11,20 @@ error_handler() {
 
 run_setup() {
   local module=$1
+  local module_dir="$THIS_DIR/src/$module"
   log "Setting up $module..."
 
-  if [ ! -d "$THIS_DIR/$module" ]; then
+  if [ ! -d "$module_dir" ]; then
     log "Error: $module directory not found"
     return 1
   fi
 
-  if [ ! -f "$THIS_DIR/$module/setup.sh" ]; then
+  if [ ! -f "$module_dir/setup.sh" ]; then
     log "Error: $module setup script not found"
     return 1
   fi
 
-  cd "$THIS_DIR/$module" || return 1
+  cd "$module_dir" || return 1
   ./setup.sh
   cd "$THIS_DIR" || return 1
 }

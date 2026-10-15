@@ -3,7 +3,7 @@
 set -euo pipefail
 
 THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
-DEV_CONFIG_DIR="$THIS_DIR/../node_modules/dev-config"
+DEV_CONFIG_DIR="$THIS_DIR/../../node_modules/dev-config"
 BASE_FILE="base.markdownlint-cli2.jsonc"
 TARGET_DIR="$HOME/.config/markdownlint"
 LEGACY_FILE="$HOME/.markdownlint.json"
@@ -14,7 +14,7 @@ else
   SOURCE_CMD="."
 fi
 
-$SOURCE_CMD "${THIS_DIR}/../utils.sh"
+$SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 check_requirements() {
   if [ ! -f "$DEV_CONFIG_DIR/$BASE_FILE" ]; then

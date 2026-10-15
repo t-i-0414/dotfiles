@@ -10,7 +10,7 @@ else
   SOURCE_CMD="."
 fi
 
-$SOURCE_CMD "${THIS_DIR}/../utils.sh"
+$SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 check_requirements() {
   if [ "$(uname)" != "Darwin" ]; then

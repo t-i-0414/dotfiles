@@ -3,7 +3,7 @@
 set -euo pipefail
 
 THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
-DEV_CONFIG_DIR="$THIS_DIR/../node_modules/dev-config"
+DEV_CONFIG_DIR="$THIS_DIR/../../node_modules/dev-config"
 TARGET_FILE="cspell.json"
 BASE_FILE="base.cspell.json"
 TARGET_DIR="$HOME/.config/cspell"
@@ -14,7 +14,7 @@ else
   SOURCE_CMD="."
 fi
 
-$SOURCE_CMD "${THIS_DIR}/../utils.sh"
+$SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 check_requirements() {
   if [ ! -f "$THIS_DIR/$TARGET_FILE" ]; then

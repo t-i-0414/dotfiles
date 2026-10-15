@@ -10,7 +10,7 @@ else
   SOURCE_CMD="."
 fi
 
-$SOURCE_CMD "${THIS_DIR}/../utils.sh"
+$SOURCE_CMD "${THIS_DIR}/../../utils.sh"
 
 setup_homebrew() {
   if ! command -v brew >/dev/null 2>&1; then
