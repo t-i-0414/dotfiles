@@ -19,4 +19,4 @@ pre-commit:
       run: bun secretlint --secretlintrc node_modules/dev-config/base.secretlintrc.json --secretlintignore node_modules/dev-config/base.secretlintignore {staged_files}
     package-json:
       glob: '**/package.json'
-      run: bun run check:package-json
+      run: bun run validate:package-json
