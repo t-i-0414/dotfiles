@@ -1,0 +1,10 @@
+name: Org Requirements
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  dev-config:
+    uses: takudev-works/dev-config/.github/workflows/reusable-validate.yml@0193ba893fb40a7bdc960a9a6e0b15eb9d923c2c # v4.0.0

@@ -20,7 +20,7 @@ bash init.sh
 
 lint の設定は [takudev-works/dev-config](https://github.com/takudev-works/dev-config) を devDependencies として入れて使う。`init.sh` の中で `mise run setup` を実行し、dev-config と git hook を入れる。`src/cspell/setup.sh` と `src/markdownlint/setup.sh` は、エディタが読めるように dev-config の設定ファイルを `~/.config` にリンクする。
 
-変更は PR で出し、validate が通ってから merge する。push の前に `bun run check` を実行する。CI でも同じ検査をする。
+変更は PR で出し、`Org Requirements`（check の名前は `dev-config / validate`）が通ってから merge する。push の前に `bun run validate` を実行する。CI でも同じ検査をする。
 
 ## 手で行う設定
 
