@@ -1,3 +1,0 @@
-{
-  "markdownlint.configFile": "${workspaceFolder}/node_modules/dev-config/base.markdownlint-cli2.jsonc"
-}
