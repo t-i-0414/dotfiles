@@ -4,13 +4,14 @@
   "scripts": {
     "validate": "run-p validate:*",
     "validate:format": "prettier --check .",
-    "validate:markdown": "markdownlint-cli2 --config node_modules/dev-config/base.markdownlint-cli2.jsonc \"**/*.md\"",
-    "validate:package-json": "npmPkgJsonLint --configFile node_modules/dev-config/base.npmpackagejsonlintrc.json \"**/package.json\"",
-    "validate:secrets": "secretlint --secretlintrc node_modules/dev-config/base.secretlintrc.json --secretlintignore node_modules/dev-config/base.secretlintignore \"**/*\"",
-    "validate:spell": "cspell --no-progress \"**\""
+    "validate:markdown": "markdownlint-cli2 --config node_modules/dev-config/src/markdownlint-cli2.jsonc \"**/*.md\"",
+    "validate:package-json": "npmPkgJsonLint --configFile node_modules/dev-config/src/npmpackagejsonlintrc.json \"**/package.json\"",
+    "validate:secrets": "secretlint --secretlintrc node_modules/dev-config/src/secretlintrc.json --secretlintignore node_modules/dev-config/src/secretlintignore \"**/*\"",
+    "validate:spell": "cspell --no-progress \"**\"",
+    "validate:text": "textlint --config node_modules/dev-config/src/textlintrc.json \"**/*.md\""
   },
   "devDependencies": {
-    "dev-config": "github:takudev-works/dev-config#v4.0.0"
+    "dev-config": "github:takudev-works/dev-config#v5.0.0"
   },
-  "prettier": "dev-config/base.prettierrc.json"
+  "prettier": "dev-config/src/prettierrc.json"
 }

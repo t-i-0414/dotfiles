@@ -7,4 +7,4 @@ on:
 
 jobs:
   dev-config:
-    uses: takudev-works/dev-config/.github/workflows/reusable-validate.yml@0193ba893fb40a7bdc960a9a6e0b15eb9d923c2c # v4.0.0
+    uses: takudev-works/dev-config/.github/workflows/reusable-validate.yml@f8a6bfecde6062f6ac6ef68df3b2e9b10a0c6976 # v5.0.0
