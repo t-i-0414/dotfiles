@@ -13,7 +13,7 @@ pre-commit:
       run: bun markdownlint-cli2 --config node_modules/dev-config/src/markdownlint-cli2.jsonc {staged_files}
     textlint:
       glob: '**/*.md'
-      run: bun textlint --config node_modules/dev-config/src/textlintrc.json {staged_files}
+      run: bun textlint --config node_modules/dev-config/src/textlintrc.json --ignore-path node_modules/dev-config/src/textlintignore {staged_files}
     prettier:
       run: bun prettier --check --ignore-unknown {staged_files}
     cspell:

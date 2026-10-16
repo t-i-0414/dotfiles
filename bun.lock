@@ -5,7 +5,7 @@
     "": {
       "name": "dotfiles",
       "devDependencies": {
-        "dev-config": "github:takudev-works/dev-config#v5.0.0",
+        "dev-config": "github:takudev-works/dev-config#v5.1.0",
       },
     },
   },
@@ -590,7 +590,7 @@
 
     "detect-libc": ["detect-libc@2.1.2", "", {}, "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ=="],
 
-    "dev-config": ["dev-config@github:takudev-works/dev-config#f8a6bfe", { "dependencies": { "@commitlint/cli": "^21.2.3", "@commitlint/config-conventional": "^21.2.3", "@eslint/js": "^10.0.1", "@secretlint/secretlint-rule-preset-recommend": "^13.0.6", "@vitest/coverage-v8": "5.0.3", "cspell": "^10.3.6", "eslint": "^10.11.0", "eslint-config-prettier": "^10.1.8", "markdownlint-cli2": "^0.23.3", "npm-package-json-lint": "^11.0.0", "npm-run-all2": "^9.0.3", "prettier": "^3.9.9", "secretlint": "^13.0.6", "textlint": "^15.8.0", "textlint-rule-preset-ja-technical-writing": "^12.0.2", "textlint-rule-prh": "^6.1.1", "typescript": "^6.0.3", "typescript-eslint": "^8.71.0", "vitest": "^5.0.3" } }, "takudev-works-dev-config-f8a6bfe", "sha512-1XBQ0XxRSdtRQPvYPxCKQ+YTL2Uh6WUe7Q0UcNBJSuHQRhj5XfBhCDrdnRcD8eL6wZVWsbVWSAS50l6jc9Y41g=="],
+    "dev-config": ["dev-config@github:takudev-works/dev-config#3576945", { "dependencies": { "@commitlint/cli": "^21.2.3", "@commitlint/config-conventional": "^21.2.3", "@eslint/js": "^10.0.1", "@secretlint/secretlint-rule-preset-recommend": "^13.0.6", "@vitest/coverage-v8": "5.0.3", "cspell": "^10.3.6", "eslint": "^10.11.0", "eslint-config-prettier": "^10.1.8", "markdownlint-cli2": "^0.23.3", "npm-package-json-lint": "^11.0.0", "npm-run-all2": "^9.0.3", "prettier": "^3.9.9", "secretlint": "^13.0.6", "textlint": "^15.8.0", "textlint-rule-preset-ja-technical-writing": "^12.0.2", "textlint-rule-prh": "^6.1.1", "typescript": "^6.0.3", "typescript-eslint": "^8.71.0", "vitest": "^5.0.3" } }, "takudev-works-dev-config-3576945", "sha512-t1Nuy5QXRP449ENzC69a4IcJ863wcZ8zC8WnfWAxefsCzAak1MBVzcNimvVQASZfUxwurDljriI9OjR98xUkxw=="],
 
     "devlop": ["devlop@1.1.0", "", { "dependencies": { "dequal": "^2.0.0" } }, "sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA=="],
 
