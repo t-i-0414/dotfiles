@@ -27,7 +27,7 @@ main() {
   mise trust "$THIS_DIR/mise.toml"
   mise --cd "$THIS_DIR" run setup
 
-  run_setup "markdownlint"
+  run_setup "dev-config"
   run_setup "cspell"
   run_setup "starship"
   run_setup "claude"
